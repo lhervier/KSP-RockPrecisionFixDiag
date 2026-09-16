@@ -19,79 +19,103 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
     }
 
     /// <summary>
-    /// How far one set of rocks sits from the terrain quad it was placed on: the position of the object
-    /// holding the rocks, minus the position of the quad, in the world.
+    /// Where one rock stands against the ground: the height of its lowest point and the height of the
+    /// terrain collision surface right under that point. Heights are distances from the centre of the
+    /// body, in metres.
     /// </summary>
-    internal class RockGap
+    internal class RockReading
     {
-        /// <summary>Name of the terrain quad.</summary>
-        public string QuadName;
+        /// <summary>Rank of the rock among the rocks of its holder, from 0, in the order stock built them.</summary>
+        public int Index;
 
+        /// <summary>Height of the terrain collision surface under the lowest point of the rock.</summary>
+        public double GroundM;
+
+        /// <summary>Height of the lowest vertex of the rock, as it is drawn.</summary>
+        public double LowestM;
+
+        /// <summary>
+        /// Height of the lowest point of the rock above the ground under it, in millimetres. Negative: that
+        /// point is below the ground, which stock does on purpose to some extent.
+        /// </summary>
+        public double AboveGroundMm => (LowestM - GroundM) * 1000.0;
+    }
+
+    /// <summary>
+    /// One object holding a set of rocks, measured against its quad. Heights are distances from the centre
+    /// of the body, in metres.
+    /// </summary>
+    internal class HolderReading
+    {
         /// <summary>Name of the kind of scatter (the rock or tree type), as the body's terrain calls it.</summary>
         public string ScatterName;
 
         /// <summary>Where the holder hangs in the scene hierarchy.</summary>
         public HolderHang Hang;
 
-        /// <summary>Distance from the craft to the origin of the quad, which is its centre, in metres.</summary>
-        public double DistanceM;
+        /// <summary>Height of the holder's transform position.</summary>
+        public double HeightM;
 
-        /// <summary>Part of the gap along the local vertical, in millimetres. Positive: rocks above the ground.</summary>
+        /// <summary>
+        /// Height of the translation of the holder's local to world matrix: the origin its rocks are drawn
+        /// from.
+        /// </summary>
+        public double MatrixHeightM;
+
+        /// <summary>
+        /// The translation of the holder's matrix minus the transform position of its quad, along the
+        /// vertical of the quad, in millimetres. Positive: rocks drawn above the ground.
+        /// </summary>
         public double UpMm;
 
-        /// <summary>What is left of the gap once the vertical part is removed, in millimetres.</summary>
+        /// <summary>The same gap, what is left once the vertical part is removed, in millimetres.</summary>
         public double AcrossMm;
 
-        /// <summary>Full length of the gap, in millimetres.</summary>
-        public double LengthMm;
+        /// <summary>
+        /// Every rock of the holder whose ground could be found, in the order stock built them. Empty when
+        /// the rocks of the holder were not measured.
+        /// </summary>
+        public readonly List<RockReading> Rocks = new List<RockReading>();
+
+        /// <summary>Rocks of the holder for which no terrain was found under their lowest point.</summary>
+        public int RocksMissed;
+
+        /// <summary>Whether the rocks of this holder were read at all.</summary>
+        public bool RocksMeasured;
 
         /// <summary>
-        /// For the holder: the translation of its local to world matrix minus its transform position,
-        /// along the local vertical, in millimetres. Both are where Unity says the holder is; the matrix is
-        /// what the rocks are drawn with.
+        /// Mean of <see cref="RockReading.AboveGroundMm"/> over <see cref="Rocks"/>, in millimetres, or NaN
+        /// when there is none.
         /// </summary>
-        public double MatrixUpMm;
-
-        /// <summary>The same for the quad, in millimetres.</summary>
-        public double QuadMatrixUpMm;
-
-        /// <summary>
-        /// The translation of the holder's local to world matrix minus the translation of the quad's, along
-        /// the local vertical, in millimetres: where the rocks are drawn against where the ground is drawn.
-        /// Positive: rocks drawn above the ground.
-        /// </summary>
-        public double DrawnUpMm;
+        public double RocksMeanMm = double.NaN;
     }
 
     /// <summary>
-    /// Where one rock stands against the ground: the height of its lowest point above the terrain
-    /// collision surface right under that point.
+    /// One terrain quad carrying rocks, and its holders. Heights are distances from the centre of the body,
+    /// in metres.
     /// </summary>
-    internal class RockDepth
+    internal class QuadReading
     {
-        /// <summary>Name of the kind of scatter the rock belongs to.</summary>
-        public string ScatterName;
+        /// <summary>Name of the terrain quad.</summary>
+        public string Name;
 
-        /// <summary>Rank of the rock among the rocks of its kind on its quad, from 0.</summary>
-        public int Index;
+        /// <summary>Distance from the craft to the origin of the quad, in metres.</summary>
+        public double DistanceM;
 
-        /// <summary>
-        /// Height of the lowest point of the rock above the ground under it, in millimetres. Negative: that
-        /// point is below the ground, which stock does on purpose to some extent.
-        /// </summary>
-        public double BottomMm;
+        /// <summary>Height of the quad's transform position: its origin, on the ground under its centre.</summary>
+        public double HeightM;
 
-        /// <summary>
-        /// <see cref="BottomMm"/> minus the part of it that comes from the holder's matrix not being at the
-        /// holder's transform position: what the height would be if the rock were drawn at that position.
-        /// </summary>
-        public double BottomLessMatrixMm;
+        /// <summary>Height of the translation of the quad's local to world matrix: where the ground is drawn from.</summary>
+        public double MatrixHeightM;
+
+        /// <summary>The holders of the quad, one per kind of scatter, by name of scatter kind.</summary>
+        public readonly List<HolderReading> Holders = new List<HolderReading>();
     }
 
     /// <summary>
-    /// One line of the table, at one moment: the gaps between the holders of the rocks and their quads,
-    /// over every quad carrying rocks, and where the rocks of the nearest quad stand against the ground.
-    /// Everything starts unknown, and stays so when there are no rocks to measure.
+    /// One reading, at one moment: every quad carrying rocks around the craft with its holders, and the rocks
+    /// of the nearest quad against the ground. Everything starts unknown, and stays so when there are no
+    /// rocks to measure.
     /// </summary>
     internal class Reading
     {
@@ -101,115 +125,85 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         /// <summary>Whether terrain scatter is switched on in the game settings. Without it there are no rocks.</summary>
         public bool ScatterEnabled;
 
-        /// <summary>Every set of rocks measured, nearest to the craft first.</summary>
-        public readonly List<RockGap> Gaps = new List<RockGap>();
+        /// <summary>Every quad carrying rocks, nearest to the craft first. The rocks are only read on the first one.</summary>
+        public readonly List<QuadReading> Quads = new List<QuadReading>();
 
-        /// <summary>Number of distinct quads carrying rocks.</summary>
-        public int QuadCount;
+        /// <summary>The quad nearest to the craft, or null when there is none.</summary>
+        public QuadReading Nearest => Quads.Count > 0 ? Quads[0] : null;
 
-        /// <summary>Holders counted in <see cref="Gaps"/> that hang directly under their own quad.</summary>
+        /// <summary>Number of holders over every quad.</summary>
+        public int HolderCount;
+
+        /// <summary>Holders that hang directly under their own quad.</summary>
         public int HoldersOnOwnQuad;
 
-        /// <summary>Holders counted in <see cref="Gaps"/> that hang under the terrain sphere, not directly under their quad.</summary>
+        /// <summary>Holders that hang under the terrain sphere, not directly under their quad.</summary>
         public int HoldersUnderSphere;
 
-        /// <summary>Holders counted in <see cref="Gaps"/> that hang anywhere else.</summary>
+        /// <summary>Holders that hang anywhere else.</summary>
         public int HoldersElsewhere;
 
         /// <summary>
         /// Holders hanging under a quad given back to the pool of quads, whatever their state, or -1 when
-        /// the pool could not be reached. Not counted in <see cref="Gaps"/>.
+        /// the pool could not be reached. Not counted anywhere else.
         /// </summary>
         public int HoldersOnPooledQuads = -1;
 
-        /// <summary>Vertical gap of the rocks nearest to the craft, in millimetres.</summary>
-        public double NearestUpMm = double.NaN;
-
-        /// <summary>Whether the holder of the rocks nearest to the craft hangs directly under its own quad.</summary>
-        public bool NearestOnOwnQuad;
-
-        /// <summary>
-        /// Lowest vertical gap over every set of rocks whose holder does not hang directly under its own
-        /// quad, in millimetres.
-        /// </summary>
+        /// <summary>Lowest <see cref="HolderReading.UpMm"/> over every holder of every quad.</summary>
         public double LowestUpMm = double.NaN;
 
         /// <summary>The same, highest.</summary>
         public double HighestUpMm = double.NaN;
 
-        /// <summary>The same, longest gap, all directions included.</summary>
-        public double LargestMm = double.NaN;
-
-        /// <summary>Every rock of the nearest quad whose ground could be found, in the order stock built them.</summary>
-        public readonly List<RockDepth> Rocks = new List<RockDepth>();
-
-        /// <summary>Rocks of the nearest quad for which no terrain was found under their lowest point.</summary>
-        public int RocksMissed;
-
-        /// <summary>Mean of <see cref="RockDepth.BottomMm"/> over <see cref="Rocks"/>, in millimetres.</summary>
-        public double RocksMeanBottomMm = double.NaN;
-
-        /// <summary>Mean of <see cref="RockDepth.BottomLessMatrixMm"/> over <see cref="Rocks"/>, in millimetres.</summary>
-        public double RocksMeanBottomLessMatrixMm = double.NaN;
-
-        /// <summary><see cref="RockGap.MatrixUpMm"/> of the holder nearest to the craft, in millimetres.</summary>
-        public double NearestMatrixUpMm = double.NaN;
-
-        /// <summary><see cref="RockGap.DrawnUpMm"/> of the holder nearest to the craft, in millimetres.</summary>
-        public double NearestDrawnUpMm = double.NaN;
+        /// <summary>Largest <see cref="HolderReading.AcrossMm"/> over every holder of every quad.</summary>
+        public double LargestAcrossMm = double.NaN;
 
         /// <summary>
         /// Writes the reading to KSP.log, under the given record number: a summary line, the line saying
-        /// where the holders hang, one line per set of rocks, nearest to the craft first, then one line per
-        /// rock of the nearest quad.
+        /// where the holders hang, then every quad, nearest to the craft first, each followed by its holders,
+        /// and for the nearest quad by the rocks of each holder.
         /// </summary>
         public void Log(int number)
         {
             StringBuilder text = new StringBuilder();
             text.Append(Constants.LOG_PREFIX)
                 .AppendFormat(CultureInfo.InvariantCulture,
-                    "Record {0} on {1}: {2} quads with rocks, {3} sets of rocks, scatter {4}",
-                    number, BodyName, QuadCount, Gaps.Count, ScatterEnabled ? "on" : "off")
-                .AppendFormat(CultureInfo.InvariantCulture,
-                    ", nearest {0}, rocks {1} mm, matrix {2} mm, rocks less matrix {3} mm, drawn {4} mm",
-                    NearestOnOwnQuad ? "on quad" : FormatUtils.FormatSigned(NearestUpMm) + " mm",
-                    FormatUtils.FormatSigned(RocksMeanBottomMm),
-                    FormatUtils.FormatSigned(NearestMatrixUpMm),
-                    FormatUtils.FormatSigned(RocksMeanBottomLessMatrixMm),
-                    FormatUtils.FormatSigned(NearestDrawnUpMm))
-                .AppendFormat(CultureInfo.InvariantCulture,
-                    ", lowest {0} mm, highest {1} mm, largest {2} mm",
+                    "Record {0} on {1}: scatter {2}, {3} quads with rocks, {4} holders,"
+                    + " up from {5} to {6} mm, largest across {7} mm."
+                    + " Heights are distances from the centre of {1}, in metres",
+                    number, BodyName, ScatterEnabled ? "on" : "off", Quads.Count, HolderCount,
                     FormatUtils.FormatSigned(LowestUpMm), FormatUtils.FormatSigned(HighestUpMm),
-                    FormatUtils.Format(LargestMm));
-            text.AppendLine()
-                .Append(Constants.LOG_PREFIX)
-                .Append("  ")
-                .Append(DescribeHolders());
-            foreach (RockGap gap in Gaps)
+                    FormatUtils.Format(LargestAcrossMm));
+            AppendLine(text, "  ").Append(DescribeHolders());
+            foreach (QuadReading quad in Quads)
             {
-                text.AppendLine()
-                    .Append(Constants.LOG_PREFIX)
-                    .AppendFormat(CultureInfo.InvariantCulture,
-                        "  quad '{0}' scatter '{1}' [{2}], centre at {3:0} m: up {4} mm, across {5} mm,"
-                        + " holder matrix {6} mm, quad matrix {7} mm, drawn {8} mm",
-                        gap.QuadName, gap.ScatterName, HangTag(gap.Hang), gap.DistanceM,
-                        FormatUtils.FormatSigned(gap.UpMm), FormatUtils.Format(gap.AcrossMm),
-                        FormatUtils.FormatSigned(gap.MatrixUpMm), FormatUtils.FormatSigned(gap.QuadMatrixUpMm),
-                        FormatUtils.FormatSigned(gap.DrawnUpMm));
-            }
-            text.AppendLine()
-                .Append(Constants.LOG_PREFIX)
-                .AppendFormat(CultureInfo.InvariantCulture,
-                    "  rocks of the nearest quad: {0} measured, {1} without ground under them",
-                    Rocks.Count, RocksMissed);
-            foreach (RockDepth rock in Rocks)
-            {
-                text.AppendLine()
-                    .Append(Constants.LOG_PREFIX)
-                    .AppendFormat(CultureInfo.InvariantCulture,
-                        "  rock '{0}' #{1}: lowest point {2} mm above the ground, {3} mm less the matrix",
-                        rock.ScatterName, rock.Index, FormatUtils.FormatSigned(rock.BottomMm),
-                        FormatUtils.FormatSigned(rock.BottomLessMatrixMm));
+                AppendLine(text, "  ").AppendFormat(CultureInfo.InvariantCulture,
+                    "quad '{0}', {1:0} m from the craft: height {2}, matrix {3}",
+                    quad.Name, quad.DistanceM, FormatUtils.FormatHeight(quad.HeightM),
+                    FormatUtils.FormatHeight(quad.MatrixHeightM));
+                foreach (HolderReading holder in quad.Holders)
+                {
+                    AppendLine(text, "    ").AppendFormat(CultureInfo.InvariantCulture,
+                        "holder '{0}' [{1}]: height {2}, matrix {3}, up {4} mm, across {5} mm",
+                        holder.ScatterName, HangTag(holder.Hang), FormatUtils.FormatHeight(holder.HeightM),
+                        FormatUtils.FormatHeight(holder.MatrixHeightM), FormatUtils.FormatSigned(holder.UpMm),
+                        FormatUtils.Format(holder.AcrossMm));
+                    if (!holder.RocksMeasured)
+                    {
+                        continue;
+                    }
+                    AppendLine(text, "      ").AppendFormat(CultureInfo.InvariantCulture,
+                        "rocks: {0} measured, {1} without ground under them, lowest point {2} mm above the"
+                        + " ground on average",
+                        holder.Rocks.Count, holder.RocksMissed, FormatUtils.FormatSigned(holder.RocksMeanMm));
+                    foreach (RockReading rock in holder.Rocks)
+                    {
+                        AppendLine(text, "        ").AppendFormat(CultureInfo.InvariantCulture,
+                            "rock #{0}: ground {1}, lowest point {2}, {3} mm above the ground",
+                            rock.Index, FormatUtils.FormatHeight(rock.GroundM),
+                            FormatUtils.FormatHeight(rock.LowestM), FormatUtils.FormatSigned(rock.AboveGroundMm));
+                    }
+                }
             }
             Debug.Log(text.ToString());
         }
@@ -231,8 +225,8 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
             return text;
         }
 
-        /// <summary>The short tag given in KSP.log to a place where a holder hangs.</summary>
-        private static string HangTag(HolderHang hang)
+        /// <summary>The short tag given to a place where a holder hangs, in KSP.log and in the window.</summary>
+        public static string HangTag(HolderHang hang)
         {
             switch (hang)
             {
@@ -243,6 +237,12 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 default:
                     return "elsewhere";
             }
+        }
+
+        /// <summary>Starts a new log line in the text, with the log prefix and the given indent, and returns the text.</summary>
+        private static StringBuilder AppendLine(StringBuilder text, string indent)
+        {
+            return text.AppendLine().Append(Constants.LOG_PREFIX).Append(indent);
         }
     }
 }

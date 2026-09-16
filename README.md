@@ -12,24 +12,34 @@ Kerbin, and by a different amount at every load.
 
 ## What it measures
 
-**The scatter against the ground.** For every object of the terrain quad nearest to the craft, the mod
-reads the object's shape from its mesh, takes its lowest point, and measures how high that point is
-above the ground right under it. The ground is the terrain collision surface, the one a craft rests on,
-found by a ray cast straight down from 100 m above the point, so that it is found even under an object
-sunk into it. Stock sinks scatter partly into the ground on purpose, so the value itself says little.
-What matters is whether it stays the same from one load to the next.
+**Heights.** Every height is a distance from the centre of the body, in double precision, from the
+exact position of that centre that KSP keeps (`CelestialBody.position`). Stock builds the scatter of a
+terrain quad as one mesh per kind of scatter, each held by an object of its own
+(`PQSMod_LandClassScatterQuad`). For every quad carrying scatter around the craft, and for every holder
+of that quad, the mod reads two heights: one from the transform position, one from the translation of the
+local to world matrix. Unity gives a transform both, computes them separately, and draws with the matrix.
 
-**The holders against their quads.** Stock builds the scatter of a terrain quad as one mesh, held by an
-object of its own (`PQSMod_LandClassScatterQuad`). The mod measures, for every holder, its position
-minus the position of its quad, split into a vertical part and the rest.
+**The holder against its quad.** The translation of the holder's matrix minus the transform position of
+its quad, split in two: *up*, along the vertical of the quad, and *across*, the length of what is left.
+This is the gap that moves the scatter against the ground, since the scatter is drawn from the holder's
+matrix and the ground is placed by its quad. *Across* matters on a slope: an object moved sideways by
+*d* on a slope of angle *θ* stands above a ground higher or lower by up to *d* · tan *θ*.
 
-**The holder's matrix against its position.** Unity gives a transform both a position and a local to
-world matrix, and draws with the matrix. The mod measures the translation of the holder's matrix minus
-its position, and the translation of the holder's matrix minus that of its quad's matrix: where the
-scatter is drawn against where the ground is drawn.
+**The scatter against the ground.** For every object held by the quad nearest to the craft, the mod
+reads the object's shape from its mesh and takes its lowest point as drawn, the vertex nearest to the
+centre of the body. It then casts a ray straight down from 100 m above that point, so that the ground
+is found even under an object sunk into it, and reads the height of the terrain collision surface it
+hits: the surface a craft rests on. Stock sinks scatter partly into the ground on purpose, so the gap
+between the two heights says little on its own. What matters is whether it stays the same from one load
+to the next.
 
 **Where each holder hangs** in the scene hierarchy: under the terrain sphere, directly under its own
 quad, or elsewhere.
+
+**Precision.** The positions read from transforms are single precision world coordinates. The world
+origin stays near the craft, so close to it they resolve a fraction of a millimetre, but the step of a
+`float` is 0.5 mm at 4 km from that origin and 1 mm at 8 km. The nearest quad is not affected; the
+extremes over every quad around can be.
 
 ## What is wrong in stock
 
@@ -48,6 +58,12 @@ scatterPos = Vector3.Lerp(q.quad.verts[num3], q.quad.verts[num2], UnityEngine.Ra
 ```
 
 So the scatter lies on the ground only if the holder is drawn exactly where the quad is.
+
+The figures below were taken with an earlier version of this mod, which showed gaps rather than
+heights; the names in italics are its columns. Its *Rocks* averaged every object of the nearest quad,
+all holders together. Its *Matrix* was the translation of a holder's matrix minus the holder's own
+transform position: wherever the holder has the same position as its quad, as it does here, that is the
+holder's **Matrix** in the current version.
 
 **The positions agree.** On Gilly, in one reading over 128 quads carrying scatter, the holder and its
 quad have the same transform position to the bit: 0.000 mm on every quad. On Kerbin, 0.000 mm on every quad as well,
@@ -81,29 +97,29 @@ residue of a few centimetres from one load to the next once *Matrix* is taken of
 
 ## The window
 
-In flight, a window shows one line per recorded reading. The **bottom line is the reading in
+In flight, a window shows one block of lines per recorded reading. The **bottom block is the reading in
 progress**, refreshed twice a second, and its *Record* button freezes it into the table. The table
-survives scene changes, so the lines pile up as you reload. *Delete* removes a line, *Clear table* all
-of them. All distances are in millimetres; `--` means there is nothing to show.
+survives scene changes, so the blocks pile up as you reload. *Delete* removes a block, *Clear table* all
+of them. `--` means there is nothing to show.
 
-| column | meaning |
-|---|---|
-| **Quads** | number of terrain quads carrying scatter around the craft |
-| **Nearest** | vertical gap between the holder and the quad whose centre is nearest to the craft, from their transform positions. *on quad* when that holder hangs directly under its quad: the gap then says nothing |
-| **Rocks** | on that same quad, the height of the lowest point of each object above the ground under it, averaged over its objects |
-| **Matrix** | for the holder of that quad (the first by name of scatter kind, when the quad carries several kinds), the translation of its local to world matrix minus its transform position, vertical part |
-| **Rocks-Matrix** | **Rocks**, with each object's share of **Matrix** taken off: where the objects would stand if they were drawn at the holder's transform position |
-| **Drawn** | for that same holder, the translation of its matrix minus the translation of its quad's matrix, vertical part: where the scatter is drawn against where the ground is drawn |
-| **Lowest** | the most negative vertical gap between a holder and its quad, over all quads, holders hanging directly under their quad left out |
-| **Highest** | the same, most positive |
+A block reads:
 
-Under the table: the name of the nearest quad, the distance from the craft to its centre, and how many
-of its objects were measured. The distance is not the distance to the nearest object: a quad is a couple
-of hundred metres wide or more. The quad has to be the same on every line for the lines to compare
-anything. An object counted as without ground under it is one where the ray found no terrain, and it is
-left out.
+| line | Where | Height | Matrix | Up | Across |
+|---|---|---|---|---|---|
+| the nearest quad, by name | distance from the craft to the quad's origin | height of the quad's transform position, in metres | height of the quad's matrix, in mm above the quad | | |
+| each holder of that quad, by kind of scatter | where it hangs | height of the holder's transform position, in mm above the quad | height of the holder's matrix, in mm above the quad | *up*, in mm | *across*, in mm |
+| under each holder, its objects: how many were measured, how many had no ground under them | | height of their lowest point above the ground under each, averaged, in mm | | | |
+| all the quads around, and their holders | | | | lowest and highest *up*, in mm | largest *across*, in mm |
 
-Then the **Holders** line:
+Everything but the height of the quad is measured against that height, so that millimetres can be read
+next to hundreds of kilometres. A holder's **Matrix** and its **Up** are nearly the same number, by two
+different routes: a difference of heights, and a projection on the vertical. The distance to the quad is
+not the distance to the nearest object: a quad is a couple of hundred metres wide or more. The quad has
+to be the same in every block for the blocks to compare anything. An object without ground under it is
+one where the ray found no terrain, and it is left out of the average. Objects are only read once KSP has
+built them.
+
+Under the table, the **Holders** line:
 
 ```
 Holders: <n> under the terrain sphere, <n> under their own quad, <n> elsewhere, <n> on pooled quads
@@ -113,30 +129,37 @@ The first three counts cover every holder measured. The last one counts holders 
 KSP has put back into its pool of unused quads: they belong to no terrain and are not measured. It is
 left out when the pool cannot be found.
 
-Every recorded reading is also written to `KSP.log`, on lines starting with `[RockPrecisionFixDiag]`:
-a summary line with every column, the **Holders** line, one line per holder (nearest first, then by name of scatter kind, tagged
-`[sphere]`, `[own quad]` or `[elsewhere]`, with its gap to its quad, its matrix, its quad's matrix and
-*Drawn*), then one line per object of the nearest quad. The longest gap between a holder and its quad,
-all directions included, is in the log only. KSP overwrites that file each time it starts: copy it
-before relaunching.
+Every recorded reading is also written to `KSP.log`, on lines starting with `[RockPrecisionFixDiag]`,
+with every height in metres, from the centre of the body, to the micrometre: subtract two of them and
+you get back the millimetres of the window. First a summary line with the extremes, and the **Holders**
+line. Then **every** quad around, nearest first, with its two heights; under each quad, each of its
+holders, tagged `[sphere]`, `[own quad]` or `[elsewhere]`, with its two heights, *up* and *across*;
+and, for the nearest quad only, under each holder the average of its objects, then one line per object
+with the height of the ground and of its lowest point. An object keeps its number from one load to the
+next: stock places the scatter from a seed. KSP overwrites that file each time it starts: copy it before
+relaunching.
 
 ## The protocol
 
 1. **Terrain scatter must be on**: *Settings → Graphics → Terrain Scatters*. The window says so when it
    is off.
-2. **Land a craft where there is scatter.** Any craft, anywhere, as long as **Quads** is not zero.
+2. **Land a craft where there is scatter.** Any craft, anywhere, as long as the window shows quads.
    Scatter only exists on the most detailed terrain, and is only built below 200 m/s (the stock
    default). The simplest way is the debug menu: launch any craft, then `Alt+F12 → Cheats → Set
    Position`, either on another body or, with *Use middle click to set position* ticked, by
    middle-clicking a spot on the ground.
 3. **Save once.**
-4. **Load that save, wait until Quads stops changing, and press *Record*.** Quads are built over several
-   frames after loading.
-5. **Load the same save again**, and record again. Five or six lines.
+4. **Load that save, wait until the number of quads stops changing and the objects are read, and press
+   *Record*.** Quads and their scatter are built over several frames after loading.
+5. **Load the same save again**, and record again. Five or six blocks.
 
-Then compare the lines. **Rocks** answers the question on its own: constant over the loads, the scatter
-is drawn at the same height against the ground every time; changing, it is not. **Rocks-Matrix** and
-**Drawn** tell where a change comes from.
+Then compare the blocks, holder by holder. The line of objects under a holder answers the question on
+its own: constant over the loads, that scatter is drawn at the same height against the ground every
+time; changing, it is not. The heights above it tell where a change comes from: the objects' line minus
+the holder's **Matrix** stays constant when the change is the holder's matrix, and the holder's
+**Height** tells whether its transform position left its quad too. The height of the quad itself may
+change from one load to the next as well: every other value is measured against it, so that does not
+blur them.
 
 ## Get it
 

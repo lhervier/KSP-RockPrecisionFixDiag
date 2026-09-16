@@ -5,12 +5,12 @@ using UnityEngine;
 namespace com.github.lhervier.ksp.rockprecisionfixdiag
 {
     /// <summary>
-    /// Terrain scatter recorder. Shows, live and in millimetres, how far the holders of the rocks of the
-    /// terrain quads around the active vessel sit from the quads themselves, where they hang, and where the
-    /// rocks of the nearest quad stand against the ground. The player freezes a reading into a table
-    /// whenever it suits them, and the table survives scene changes, so reloading the same save several
-    /// times builds it up line by line. Each frozen reading is also written to KSP.log in full, quad by
-    /// quad and rock by rock.
+    /// Terrain scatter recorder. Shows, live, the height of the terrain quad nearest to the active vessel,
+    /// and in millimetres against it the heights of its holders of rocks, where they hang, and where their
+    /// rocks stand against the ground, with the extremes over every quad around. The player freezes a
+    /// reading into a table whenever it suits them, and the table survives scene changes, so reloading the
+    /// same save several times builds it up reading by reading. Each frozen reading is also written to
+    /// KSP.log in full, quad by quad and rock by rock.
     /// </summary>
     [KSPAddon(KSPAddon.Startup.Flight, false)]
     public class RockPrecisionFixDiagMod : MonoBehaviour
@@ -33,7 +33,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 return;
             }
             nextSurvey = Time.realtimeSinceStartup + Constants.SURVEY_PERIOD;
-            live = RockSurvey.Take(FlightGlobals.ActiveVessel);
+            live = RocksSurvey.Take(FlightGlobals.ActiveVessel);
         }
 
         // =========================================================
@@ -64,42 +64,33 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
 
             // Header
             GUILayout.BeginHorizontal();
-            DrawCells("Record #", "Quads", "Nearest (mm)", "Rocks (mm)", "Matrix (mm)", "Rocks-Matrix",
-                "Drawn (mm)", "Lowest (mm)", "Highest (mm)");
+            DrawCells("Record #", "Quad, holders, rocks", "Where", "Height (m, mm)", "Matrix (mm)", "Up (mm)",
+                "Across (mm)");
             GUILayout.EndHorizontal();
 
-            // Recorded lines
+            // Recorded readings
             int deleteIndex = -1;
             for (int i = 0; i < READINGS.Count; i++)
             {
-                GUILayout.BeginHorizontal();
-                DrawReading(i + 1, READINGS[i]);
-                if (GUILayout.Button("Delete", GUILayout.Width(Constants.COL_BUTTON)))
+                if (DrawReading(i + 1, READINGS[i], "Delete"))
                 {
                     deleteIndex = i;
                 }
-                GUILayout.EndHorizontal();
+                GUILayout.Space(4f);
             }
             if (deleteIndex >= 0)
             {
                 READINGS.RemoveAt(deleteIndex);
             }
 
-            // Current line
-            GUILayout.BeginHorizontal();
-            DrawReading(READINGS.Count + 1, live);
-            if (GUILayout.Button("Record", GUILayout.Width(Constants.COL_BUTTON)))
+            // Current reading
+            if (DrawReading(READINGS.Count + 1, live, "Record") && live != null && live.Nearest != null)
             {
-                if (live != null && live.Gaps.Count > 0)
-                {
-                    READINGS.Add(live);
-                    live.Log(READINGS.Count);
-                }
+                READINGS.Add(live);
+                live.Log(READINGS.Count);
             }
-            GUILayout.EndHorizontal();
 
-            // What the live line refers to: the nearest quad has to be the same one from one loading to the
-            // next for its column to compare anything.
+            // What the live reading refers to, and where its holders hang.
             GUILayout.Space(5f);
             GUILayout.Label(DescribeLive(live));
             if (live != null)
@@ -129,50 +120,110 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
             {
                 return "Terrain scatter is switched off in the settings: there are no rocks to measure.";
             }
-            if (reading.Gaps.Count == 0)
+            if (reading.Nearest == null)
             {
                 return $"No rocks around the craft on {reading.BodyName} (yet?).";
             }
-            RockGap nearest = reading.Gaps[0];
             return string.Format(CultureInfo.InvariantCulture,
-                "Nearest: quad '{0}', its centre {1:0} m from the craft. {2} of its rocks measured, {3} without"
-                + " ground under them.",
-                nearest.QuadName, nearest.DistanceM, reading.Rocks.Count, reading.RocksMissed);
+                "Height of the nearest quad: from the centre of {0}, in metres. Everything else: in millimetres,"
+                + " against that height.",
+                reading.BodyName);
         }
 
-        /// <summary>Draws the columns of one reading, or dashes when there is none yet.</summary>
-        private static void DrawReading(int number, Reading reading)
+        /// <summary>
+        /// Draws one reading as a block of lines: its nearest quad, each holder of that quad followed by its
+        /// rocks, then the extremes over every quad. Draws a line of dashes when there is no reading yet.
+        /// Returns whether the button at the end of the first line was pressed.
+        /// </summary>
+        private static bool DrawReading(int number, Reading reading, string button)
         {
-            bool none = reading == null || reading.Gaps.Count == 0;
+            QuadReading quad = reading != null ? reading.Nearest : null;
+
+            GUILayout.BeginHorizontal();
+            if (quad == null)
+            {
+                DrawCells(FormatUtils.Format(number), "--", "--", "--", "--", "--", "--");
+            }
+            else
+            {
+                DrawCells(
+                    FormatUtils.Format(number),
+                    quad.Name,
+                    string.Format(CultureInfo.InvariantCulture, "{0:0} m", quad.DistanceM),
+                    FormatUtils.FormatHeight(quad.HeightM),
+                    FormatUtils.FormatSigned(MmAbove(quad.MatrixHeightM, quad)),
+                    "",
+                    "");
+            }
+            bool pressed = GUILayout.Button(button, GUILayout.Width(Constants.COL_BUTTON));
+            GUILayout.EndHorizontal();
+            if (quad == null)
+            {
+                return pressed;
+            }
+
+            foreach (HolderReading holder in quad.Holders)
+            {
+                GUILayout.BeginHorizontal();
+                DrawCells(
+                    "",
+                    "  " + holder.ScatterName,
+                    Reading.HangTag(holder.Hang),
+                    FormatUtils.FormatSigned(MmAbove(holder.HeightM, quad)),
+                    FormatUtils.FormatSigned(MmAbove(holder.MatrixHeightM, quad)),
+                    FormatUtils.FormatSigned(holder.UpMm),
+                    FormatUtils.Format(holder.AcrossMm));
+                GUILayout.EndHorizontal();
+
+                // The rocks of the holder, under it: the mean height of their lowest point above the ground
+                // under each of them.
+                GUILayout.BeginHorizontal();
+                DrawCells(
+                    "",
+                    holder.RocksMeasured
+                        ? string.Format(CultureInfo.InvariantCulture, "    {0} rocks, {1} without ground",
+                            holder.Rocks.Count, holder.RocksMissed)
+                        : "    rocks not read (not built yet?)",
+                    "",
+                    FormatUtils.FormatSigned(holder.RocksMeanMm),
+                    "",
+                    "",
+                    "");
+                GUILayout.EndHorizontal();
+            }
+
+            GUILayout.BeginHorizontal();
             DrawCells(
-                FormatUtils.Format(number),
-                none ? "--" : FormatUtils.Format(reading.QuadCount),
-                // A holder hanging from its own quad has no gap to it by construction: say so rather than
-                // show a zero that would look measured.
-                none ? "--" : reading.NearestOnOwnQuad ? "on quad" : FormatUtils.FormatSigned(reading.NearestUpMm),
-                none ? "--" : FormatUtils.FormatSigned(reading.RocksMeanBottomMm),
-                none ? "--" : FormatUtils.FormatSigned(reading.NearestMatrixUpMm),
-                none ? "--" : FormatUtils.FormatSigned(reading.RocksMeanBottomLessMatrixMm),
-                none ? "--" : FormatUtils.FormatSigned(reading.NearestDrawnUpMm),
-                none ? "--" : FormatUtils.FormatSigned(reading.LowestUpMm),
-                none ? "--" : FormatUtils.FormatSigned(reading.HighestUpMm)
-            );
+                "",
+                string.Format(CultureInfo.InvariantCulture, "All {0} quads, {1} holders", reading.Quads.Count,
+                    reading.HolderCount),
+                "",
+                "",
+                "",
+                FormatUtils.FormatSigned(reading.LowestUpMm) + " to " + FormatUtils.FormatSigned(reading.HighestUpMm),
+                FormatUtils.Format(reading.LargestAcrossMm));
+            GUILayout.EndHorizontal();
+            return pressed;
+        }
+
+        /// <summary>How far a height is above the height of a quad, in millimetres.</summary>
+        private static double MmAbove(double heightM, QuadReading quad)
+        {
+            return (heightM - quad.HeightM) * 1000.0;
         }
 
         /// <summary>Draws the columns of one line. The caller owns the surrounding horizontal group, so
         /// that it can put a button at the end of the line.</summary>
-        private static void DrawCells(string record, string quads, string nearest, string rocks, string matrix,
-            string rocksLessMatrix, string drawn, string lowest, string highest)
+        private static void DrawCells(string record, string name, string where, string height, string matrix,
+            string up, string across)
         {
             GUILayout.Label(record, GUILayout.Width(Constants.COL_RECORD));
-            GUILayout.Label(quads, GUILayout.Width(Constants.COL_QUADS));
-            GUILayout.Label(nearest, GUILayout.Width(Constants.COL_GAP));
-            GUILayout.Label(rocks, GUILayout.Width(Constants.COL_GAP));
+            GUILayout.Label(name, GUILayout.Width(Constants.COL_NAME));
+            GUILayout.Label(where, GUILayout.Width(Constants.COL_WHERE));
+            GUILayout.Label(height, GUILayout.Width(Constants.COL_HEIGHT));
             GUILayout.Label(matrix, GUILayout.Width(Constants.COL_GAP));
-            GUILayout.Label(rocksLessMatrix, GUILayout.Width(Constants.COL_GAP));
-            GUILayout.Label(drawn, GUILayout.Width(Constants.COL_GAP));
-            GUILayout.Label(lowest, GUILayout.Width(Constants.COL_GAP));
-            GUILayout.Label(highest, GUILayout.Width(Constants.COL_GAP));
+            GUILayout.Label(up, GUILayout.Width(Constants.COL_UP));
+            GUILayout.Label(across, GUILayout.Width(Constants.COL_GAP));
         }
     }
 }

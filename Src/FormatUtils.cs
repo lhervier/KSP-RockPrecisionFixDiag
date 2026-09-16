@@ -30,5 +30,14 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         {
             return double.IsNaN(mm) ? "--" : mm.ToString("+0.000;-0.000;0.000", CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// A height from the centre of the body, in metres, to the micrometre: the same resolution as the
+        /// distances in millimetres, so that subtracting two heights gives back the digits of a gap.
+        /// </summary>
+        public static string FormatHeight(double m)
+        {
+            return double.IsNaN(m) ? "--" : m.ToString("0.000000", CultureInfo.InvariantCulture) + " m";
+        }
     }
 }
