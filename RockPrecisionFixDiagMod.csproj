@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>RockOffsetProbeMod</AssemblyName>
-    <RootNamespace>com.github.lhervier.ksp.rockoffsetprobe</RootNamespace>
+    <AssemblyName>RockPrecisionFixDiagMod</AssemblyName>
+    <RootNamespace>com.github.lhervier.ksp.rockprecisionfixdiag</RootNamespace>
     <OutputType>Library</OutputType>
     <OutputPath>Output\bin</OutputPath>
     <IntermediateOutputPath>Output\obj</IntermediateOutputPath>
@@ -20,8 +20,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <!-- Stock KSP only: no Harmony, no third party assembly. The probe has to run unchanged on a stock
-         install, with or without the terrain fix, so that the two can be compared. -->
+    <!-- Stock KSP only: no Harmony, no third party assembly. It only reads the scene, and runs unchanged
+         on a stock install. -->
     <Reference Include="Assembly-CSharp">
       <HintPath>$(KSP_DATA_DIR)\Managed\Assembly-CSharp.dll</HintPath>
       <Private>false</Private>

@@ -1,4 +1,5 @@
 Output/
 obj/
-GameData/RockOffsetProbeMod/*.dll
-GameData/RockOffsetProbeMod/*.zip
+GameData/RockPrecisionFixDiagMod/*.dll
+GameData/RockPrecisionFixDiagMod/*.zip
+CLAUDE.md
