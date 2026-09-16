@@ -9,41 +9,44 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
     /// </summary>
     internal class RockMeasure
     {
+        /// <summary>Name of the terrain quad the rock's holder is attached to.</summary>
+        public string QuadName;
+
+        /// <summary>Name of the kind of scatter of the rock's holder (the rock or tree type).</summary>
+        public string ScatterName;
+
         /// <summary>Rank of the rock among the rocks of its holder, from 0, in the order stock built them.</summary>
         public int Index;
 
         /// <summary>Height of the lowest vertex of the rock, as it is drawn.</summary>
         public double LowestM;
 
-        /// <summary>Height of the terrain collision surface under the lowest vertex of the rock.</summary>
-        public double GroundM;
-
         /// <summary>
-        /// Height of the lowest vertex of the rock above the ground under it, in millimetres. Negative: that
-        /// vertex is below the ground, which stock does on purpose to some extent.
+        /// Height of the terrain collision surface under the lowest vertex of the rock, or NaN when no terrain
+        /// was found under it.
         /// </summary>
-        public double AboveGroundMm => (LowestM - GroundM) * 1000.0;
+        public double GroundM;
 
         /// <summary>Adds the rock to a record, on a line of its own.</summary>
         public void Log(RecordLog log)
         {
-            log.Line(4, "rock #{0}: ground {1}, lowest point {2}, {3} mm above the ground",
-                Index, FormatUtils.FormatHeight(GroundM), FormatUtils.FormatHeight(LowestM),
-                FormatUtils.FormatSigned(AboveGroundMm));
+            // NaN when no terrain was found. Negative: the lowest vertex is below the ground, which stock does
+            // on purpose to some extent.
+            log.Line(1, "rock '{0}' '{1}' #{2}: ground {3}, lowest point {4}, {5} mm above the ground",
+                QuadName, ScatterName, Index, FormatUtils.FormatHeight(GroundM), FormatUtils.FormatHeight(LowestM),
+                FormatUtils.FormatSigned((LowestM - GroundM) * 1000.0));
         }
 
         /// <summary>
-        /// Measures every rock of a holder, in the order stock built them. Rocks without terrain under their
-        /// lowest vertex are left out and counted in <paramref name="missed"/>. Returns null, with nothing
-        /// missed, when the rocks of the holder are not built yet or their mesh does not have the expected
-        /// layout.
+        /// Measures every rock of a holder, in the order stock built them. Returns an empty list when the rocks
+        /// of the holder are not built yet or their mesh does not have the expected layout.
         /// </summary>
-        public static List<RockMeasure> TakeAll(PQSMod_LandClassScatterQuad holder, CelestialBody body, out int missed)
+        public static List<RockMeasure> TakeAll(PQSMod_LandClassScatterQuad holder, CelestialBody body)
         {
-            missed = 0;
+            List<RockMeasure> rocks = new List<RockMeasure>();
             if (!holder.isBuilt || holder.mesh == null)
             {
-                return null;
+                return rocks;
             }
 
             // Stock writes the rocks into the mesh one after the other, each as a copy of the scatter's mesh
@@ -54,30 +57,29 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
             holder.mesh.GetVertices(vertices);
             if (stride <= 0 || holder.count < 0 || holder.count * stride > vertices.Count)
             {
-                return null;
+                return rocks;
             }
 
-            List<RockMeasure> rocks = new List<RockMeasure>(holder.count);
+            string quadName = holder.quad.name;
+            string scatterName = HolderFinder.ScatterNameOf(holder);
             Matrix4x4 toWorld = holder.transform.localToWorldMatrix;
             for (int rock = 0; rock < holder.count; rock++)
             {
-                RockMeasure measure = Take(rock, vertices,rock * stride, stride, toWorld, body);
-                if (measure == null)
-                {
-                    missed++;
-                    continue;
-                }
+                RockMeasure measure = Take(vertices, rock * stride, stride, toWorld, body);
+                measure.QuadName = quadName;
+                measure.ScatterName = scatterName;
+                measure.Index = rock;
                 rocks.Add(measure);
             }
             return rocks;
         }
 
         /// <summary>
-        /// Measures the rock of the given rank, whose vertices are the <paramref name="stride"/> vertices of
+        /// Measures the heights of the rock whose vertices are the <paramref name="stride"/> vertices of
         /// <paramref name="vertices"/> starting at <paramref name="first"/>, drawn through the given matrix.
-        /// Returns null when there is no terrain under its lowest vertex.
+        /// The names and the rank of the rock are left to the caller.
         /// </summary>
-        private static RockMeasure Take(int index, List<Vector3> vertices, int first, int stride, Matrix4x4 toWorld,
+        private static RockMeasure Take(List<Vector3> vertices, int first, int stride, Matrix4x4 toWorld,
             CelestialBody body)
         {
             // The lowest vertex is the one nearest to the centre of the body, as drawn.
@@ -99,18 +101,14 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
             Vector3d up = (bottom - body.position).normalized;
             RaycastHit hit;
             Vector3 start = (Vector3)(bottom + up * Constants.RAY_START_HEIGHT);
-            if (!Physics.Raycast(start, -(Vector3)up, out hit, 2f * Constants.RAY_START_HEIGHT,
+            bool onGround = Physics.Raycast(start, -(Vector3)up, out hit, 2f * Constants.RAY_START_HEIGHT,
                     1 << Constants.TERRAIN_LAYER, QueryTriggerInteraction.Ignore)
-                || hit.collider.GetComponent<PQ>() == null)
-            {
-                return null;
-            }
+                && hit.collider.GetComponent<PQ>() != null;
 
             return new RockMeasure
             {
-                Index = index,
                 LowestM = lowest,
-                GroundM = HeightUtils.HeightOf(hit.point, body)
+                GroundM = onGround ? HeightUtils.HeightOf(hit.point, body) : double.NaN
             };
         }
     }

@@ -19,11 +19,13 @@ terrain quad as one mesh per kind of scatter, each held by an object of its own
 of that quad, the mod reads two heights: one from the transform position, one from the translation of the
 local to world matrix. Unity gives a transform both, computes them separately, and draws with the matrix.
 
-**The holder against its quad.** The translation of the holder's matrix minus the transform position of
-its quad, split in two: *up*, along the vertical of the quad, and *across*, the length of what is left.
-This is the gap that moves the scatter against the ground, since the scatter is drawn from the holder's
-matrix and the ground is placed by its quad. *Across* matters on a slope: an object moved sideways by
-*d* on a slope of angle *θ* stands above a ground higher or lower by up to *d* · tan *θ*.
+**The matrix against the quad.** For the quad and for each of its holders, the translation of the
+matrix minus the transform position of the quad, split in two: *up*, along the vertical of the quad, and
+*across*, the length of what is left. For a holder, this is the gap that moves the scatter against the
+ground, since the scatter is drawn from the holder's matrix and the ground is placed by its quad. For the
+quad, it tells whether the ground itself is drawn where the quad stands. *Across* matters on a slope:
+an object moved sideways by *d* on a slope of angle *θ* stands above a ground higher or lower by up to
+*d* · tan *θ*.
 
 **The scatter against the ground.** For every object held by the quad nearest to the craft, the mod
 reads the object's shape from its mesh and takes its lowest point as drawn, the vertex nearest to the
@@ -106,8 +108,8 @@ residue of a few centimetres from one load to the next once *Matrix* is taken of
    ground.
 4. **Save.**
 5. **Load that save and press `Alt+F6`** (`Mod+F6`: the modifier key of the game). The reading is
-   written to `KSP.log`, and its last line tells what it holds: how many quads carry scatter, and for
-   the nearest one how many objects were measured and how many holders are not built yet. Quads and
+   written to `KSP.log`, and its last line tells what it holds: how many quads carry scatter, how many
+   holders are not built yet, and how many objects were measured on the nearest quad. Quads and
    their scatter are built over several frames after loading: if holders are not built yet, or the
    counts still grow from one press to the next, wait a few seconds and press again.
    Only the last record of each load is needed.
@@ -124,36 +126,39 @@ the centre of the body, to the micrometre: subtracting two of them gives millime
 
 ```
 Record … on …: scatter on. Heights are …
-  quad '…': height …, matrix …
-    holder '…': height …, matrix …, up … mm, across … mm
-      rocks: … measured, … without ground under them, lowest point … mm above the ground on average
-        rock #0: ground …, lowest point …, … mm above the ground
-        …
-End of record …: … quads with rocks, … holders; nearest quad '…': … rocks measured, … without ground under them, … holders not built yet
+  quad '…': height …, matrix …, up … mm, across … mm
+    holder '…': built, height …, matrix …, up … mm, across … mm
+    …
+  …
+  rock '…' '…' #0: ground …, lowest point …, … mm above the ground
+  …
+End of record …: … quads with rocks, … holders (… not built yet); nearest quad '…': … rocks, … without ground under them
 ```
 
 - An opening line, with the body and whether scatter is on.
-- **Every** quad carrying scatter around the craft, with the heights of its transform
-  position and of its matrix.
-- Under each quad, each of its holders, one per kind of scatter, with the same two heights, *up* and
-  *across* in millimetres.
-- For the nearest quad only, under each holder, the average of its objects, then one line per object
-  with the height of the ground under it and of its lowest point. An object without ground under it is
-  one where the ray found no terrain: it is counted, and left out of the average. An object keeps its
-  number from one load to the next, since stock places the scatter from a seed.
+- **Every** quad carrying scatter around the craft, with the height of its transform position, the height
+  of its matrix, *up* and *across* in millimetres.
+- Under each quad, each of its holders, one per kind of scatter, ordered by name: whether its objects are
+  built yet, then the same heights, *up* and *across*, still against the transform position of the quad.
+- Then, for the nearest quad only, one line per object, holder after holder: the quad, the kind of
+  scatter, the object's number, the height of the ground under it and of its lowest point, and the gap
+  between the two in millimetres. An object without ground under it is one where the ray found no
+  terrain: its ground and its gap read `--`. An object keeps its number from one load to the next, since
+  stock places the scatter from a seed.
 - A closing line, with the counts: it is the one left in sight when following the file as it grows.
 
 A holder's matrix height minus its quad's height and its *up* are nearly the same number, by two
 different routes: a difference of heights, and a projection on the vertical.
 
-**Reading the records.** Compare the records of the successive loads, holder by holder, on the nearest
-quad. Its name has to be the same in every record for them to compare anything. The average of a
-holder's objects above the ground answers the question on its own: constant over the loads, that
-scatter is drawn at the same height against the ground every time; changing, it is not. The heights
-above it tell where a change comes from: the objects' average minus the holder's *up* stays constant
-when the change is the holder's matrix, and the holder's height minus its quad's height tells whether
-its transform position left its quad too. The height of the quad itself may change from one load to the
-next as well: comparing everything to it keeps that from blurring the rest.
+**Reading the records.** Compare the records of the successive loads on the nearest quad. Its name has to
+be the same in every record for them to compare anything. Object by object, the same kind of scatter and
+the same number, the height above the ground answers the question on its own: constant over the loads,
+that object is drawn at the same height against the ground every time; changing, it is not. The heights
+above it tell where a change comes from: the object's height above the ground minus its holder's *up*
+stays constant when the change is the holder's matrix, and the holder's height minus its quad's height
+tells whether its transform position left its quad too. The quad's own *up* and *across* tell whether the
+ground is drawn away from the quad. The height of the quad itself may change from one load to the next as
+well: comparing everything to it keeps that from blurring the rest.
 
 ## Get it
 

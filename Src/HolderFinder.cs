@@ -11,7 +11,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         /// <summary>
         /// Every holder of rocks attached to a quad of a terrain sphere, inactive ones included, grouped by the
         /// quad it is attached to. Each holder appears once, and each quad carries one holder per kind of
-        /// scatter on it.
+        /// scatter on it, ordered by the name of that kind of scatter. The quads come in no set order.
         /// </summary>
         public static Dictionary<PQ, List<PQSMod_LandClassScatterQuad>> Find(PQS sphere)
         {
@@ -32,7 +32,20 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
             {
                 Collect(sphere.LocalSpacePQStorage.transform, sphere, holders, seen);
             }
+
+            // The holders of one quad are found in no set order: the name of the kind of scatter orders them, so
+            // that the lines of a record keep their order from one reading to the next.
+            foreach (List<PQSMod_LandClassScatterQuad> quadHolders in holders.Values)
+            {
+                quadHolders.Sort((a, b) => string.CompareOrdinal(ScatterNameOf(a), ScatterNameOf(b)));
+            }
             return holders;
+        }
+
+        /// <summary>Name of the kind of scatter of a holder (the rock or tree type), or "?" when it has none.</summary>
+        public static string ScatterNameOf(PQSMod_LandClassScatterQuad holder)
+        {
+            return holder.scatter != null ? holder.scatter.scatterName : "?";
         }
 
         /// <summary>
