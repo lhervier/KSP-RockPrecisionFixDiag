@@ -35,13 +35,12 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         // the layout, which grows it as records pile up.
         public const float WINDOW_X = 60f;
         public const float WINDOW_Y = 60f;
-        public const float WINDOW_WIDTH = 1060f;
+        public const float WINDOW_WIDTH = 970f;
 
         // Column widths, in pixels. Fixed rather than laid out by content: the numbers only speak once
         // aligned as a column, and the skin font is not monospaced.
         public const float COL_RECORD = 70f;
         public const float COL_NAME = 230f;
-        public const float COL_WHERE = 90f;
         public const float COL_HEIGHT = 150f;
         public const float COL_GAP = 100f;
         public const float COL_UP = 160f;

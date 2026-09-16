@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using System.Globalization;
+using com.github.lhervier.ksp.rockprecisionfixdiag.measures;
 using UnityEngine;
 
 namespace com.github.lhervier.ksp.rockprecisionfixdiag
 {
     /// <summary>
     /// Terrain scatter recorder. Shows, live, the height of the terrain quad nearest to the active vessel,
-    /// and in millimetres against it the heights of its holders of rocks, where they hang, and where their
+    /// and in millimetres against it the heights of its holders of rocks and where their
     /// rocks stand against the ground, with the extremes over every quad around. The player freezes a
     /// reading into a table whenever it suits them, and the table survives scene changes, so reloading the
     /// same save several times builds it up reading by reading. Each frozen reading is also written to
@@ -64,7 +65,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
 
             // Header
             GUILayout.BeginHorizontal();
-            DrawCells("Record #", "Quad, holders, rocks", "Where", "Height (m, mm)", "Matrix (mm)", "Up (mm)",
+            DrawCells("Record #", "Quad, holders, rocks", "Height (m, mm)", "Matrix (mm)", "Up (mm)",
                 "Across (mm)");
             GUILayout.EndHorizontal();
 
@@ -84,19 +85,15 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
             }
 
             // Current reading
-            if (DrawReading(READINGS.Count + 1, live, "Record") && live != null && live.Nearest != null)
+            if (DrawReading(READINGS.Count + 1, live, "Record") && live != null && live.Quads.Count > 0)
             {
                 READINGS.Add(live);
                 live.Log(READINGS.Count);
             }
 
-            // What the live reading refers to, and where its holders hang.
+            // What the live reading refers to.
             GUILayout.Space(5f);
             GUILayout.Label(DescribeLive(live));
-            if (live != null)
-            {
-                GUILayout.Label(live.DescribeHolders());
-            }
 
             // Clear table button
             GUILayout.Space(10f);
@@ -120,7 +117,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
             {
                 return "Terrain scatter is switched off in the settings: there are no rocks to measure.";
             }
-            if (reading.Nearest == null)
+            if (reading.Quads.Count == 0)
             {
                 return $"No rocks around the craft on {reading.BodyName} (yet?).";
             }
@@ -131,25 +128,24 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         }
 
         /// <summary>
-        /// Draws one reading as a block of lines: its nearest quad, each holder of that quad followed by its
+        /// Draws one reading as a block of lines: the quad whose rocks were measured, each holder of that quad followed by its
         /// rocks, then the extremes over every quad. Draws a line of dashes when there is no reading yet.
         /// Returns whether the button at the end of the first line was pressed.
         /// </summary>
         private static bool DrawReading(int number, Reading reading, string button)
         {
-            QuadReading quad = reading != null ? reading.Nearest : null;
+            QuadMeasure quad = reading != null ? reading.RocksQuad : null;
 
             GUILayout.BeginHorizontal();
             if (quad == null)
             {
-                DrawCells(FormatUtils.Format(number), "--", "--", "--", "--", "--", "--");
+                DrawCells(FormatUtils.Format(number), "--", "--", "--", "--", "--");
             }
             else
             {
                 DrawCells(
                     FormatUtils.Format(number),
                     quad.Name,
-                    string.Format(CultureInfo.InvariantCulture, "{0:0} m", quad.DistanceM),
                     FormatUtils.FormatHeight(quad.HeightM),
                     FormatUtils.FormatSigned(MmAbove(quad.MatrixHeightM, quad)),
                     "",
@@ -162,13 +158,12 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 return pressed;
             }
 
-            foreach (HolderReading holder in quad.Holders)
+            foreach (HolderMeasure holder in quad.Holders)
             {
                 GUILayout.BeginHorizontal();
                 DrawCells(
                     "",
                     "  " + holder.ScatterName,
-                    Reading.HangTag(holder.Hang),
                     FormatUtils.FormatSigned(MmAbove(holder.HeightM, quad)),
                     FormatUtils.FormatSigned(MmAbove(holder.MatrixHeightM, quad)),
                     FormatUtils.FormatSigned(holder.UpMm),
@@ -184,7 +179,6 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                         ? string.Format(CultureInfo.InvariantCulture, "    {0} rocks, {1} without ground",
                             holder.Rocks.Count, holder.RocksMissed)
                         : "    rocks not read (not built yet?)",
-                    "",
                     FormatUtils.FormatSigned(holder.RocksMeanMm),
                     "",
                     "",
@@ -199,7 +193,6 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                     reading.HolderCount),
                 "",
                 "",
-                "",
                 FormatUtils.FormatSigned(reading.LowestUpMm) + " to " + FormatUtils.FormatSigned(reading.HighestUpMm),
                 FormatUtils.Format(reading.LargestAcrossMm));
             GUILayout.EndHorizontal();
@@ -207,19 +200,18 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         }
 
         /// <summary>How far a height is above the height of a quad, in millimetres.</summary>
-        private static double MmAbove(double heightM, QuadReading quad)
+        private static double MmAbove(double heightM, QuadMeasure quad)
         {
             return (heightM - quad.HeightM) * 1000.0;
         }
 
         /// <summary>Draws the columns of one line. The caller owns the surrounding horizontal group, so
         /// that it can put a button at the end of the line.</summary>
-        private static void DrawCells(string record, string name, string where, string height, string matrix,
-            string up, string across)
+        private static void DrawCells(string record, string name, string height, string matrix, string up,
+            string across)
         {
             GUILayout.Label(record, GUILayout.Width(Constants.COL_RECORD));
             GUILayout.Label(name, GUILayout.Width(Constants.COL_NAME));
-            GUILayout.Label(where, GUILayout.Width(Constants.COL_WHERE));
             GUILayout.Label(height, GUILayout.Width(Constants.COL_HEIGHT));
             GUILayout.Label(matrix, GUILayout.Width(Constants.COL_GAP));
             GUILayout.Label(up, GUILayout.Width(Constants.COL_UP));

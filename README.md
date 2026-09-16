@@ -33,9 +33,6 @@ hits: the surface a craft rests on. Stock sinks scatter partly into the ground o
 between the two heights says little on its own. What matters is whether it stays the same from one load
 to the next.
 
-**Where each holder hangs** in the scene hierarchy: under the terrain sphere, directly under its own
-quad, or elsewhere.
-
 **Precision.** The positions read from transforms are single precision world coordinates. The world
 origin stays near the craft, so close to it they resolve a fraction of a millimetre, but the step of a
 `float` is 0.5 mm at 4 km from that origin and 1 mm at 8 km. The nearest quad is not affected; the
@@ -104,36 +101,24 @@ of them. `--` means there is nothing to show.
 
 A block reads:
 
-| line | Where | Height | Matrix | Up | Across |
-|---|---|---|---|---|---|
-| the nearest quad, by name | distance from the craft to the quad's origin | height of the quad's transform position, in metres | height of the quad's matrix, in mm above the quad | | |
-| each holder of that quad, by kind of scatter | where it hangs | height of the holder's transform position, in mm above the quad | height of the holder's matrix, in mm above the quad | *up*, in mm | *across*, in mm |
-| under each holder, its objects: how many were measured, how many had no ground under them | | height of their lowest point above the ground under each, averaged, in mm | | | |
-| all the quads around, and their holders | | | | lowest and highest *up*, in mm | largest *across*, in mm |
+| line | Height | Matrix | Up | Across |
+|---|---|---|---|---|
+| the nearest quad, by name | height of the quad's transform position, in metres | height of the quad's matrix, in mm above the quad | | |
+| each holder of that quad, by kind of scatter | height of the holder's transform position, in mm above the quad | height of the holder's matrix, in mm above the quad | *up*, in mm | *across*, in mm |
+| under each holder, its objects: how many were measured, how many had no ground under them | height of their lowest point above the ground under each, averaged, in mm | | | |
+| all the quads around, and their holders | | | lowest and highest *up*, in mm | largest *across*, in mm |
 
 Everything but the height of the quad is measured against that height, so that millimetres can be read
 next to hundreds of kilometres. A holder's **Matrix** and its **Up** are nearly the same number, by two
-different routes: a difference of heights, and a projection on the vertical. The distance to the quad is
-not the distance to the nearest object: a quad is a couple of hundred metres wide or more. The quad has
-to be the same in every block for the blocks to compare anything. An object without ground under it is
-one where the ray found no terrain, and it is left out of the average. Objects are only read once KSP has
-built them.
-
-Under the table, the **Holders** line:
-
-```
-Holders: <n> under the terrain sphere, <n> under their own quad, <n> elsewhere, <n> on pooled quads
-```
-
-The first three counts cover every holder measured. The last one counts holders found under quads that
-KSP has put back into its pool of unused quads: they belong to no terrain and are not measured. It is
-left out when the pool cannot be found.
+different routes: a difference of heights, and a projection on the vertical. The quad has to be the same
+in every block for the blocks to compare anything. An object without ground under it is one where the ray
+found no terrain, and it is left out of the average. Objects are only read once KSP has built them.
 
 Every recorded reading is also written to `KSP.log`, on lines starting with `[RockPrecisionFixDiag]`,
 with every height in metres, from the centre of the body, to the micrometre: subtract two of them and
-you get back the millimetres of the window. First a summary line with the extremes, and the **Holders**
-line. Then **every** quad around, nearest first, with its two heights; under each quad, each of its
-holders, tagged `[sphere]`, `[own quad]` or `[elsewhere]`, with its two heights, *up* and *across*;
+you get back the millimetres of the window. First a summary line with the extremes. Then **every** quad
+around, nearest first, with its two heights; under each quad, each of its holders, with its two heights,
+*up* and *across*;
 and, for the nearest quad only, under each holder the average of its objects, then one line per object
 with the height of the ground and of its lowest point. An object keeps its number from one load to the
 next: stock places the scatter from a seed. KSP overwrites that file each time it starts: copy it before

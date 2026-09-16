@@ -38,24 +38,6 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         }
 
         /// <summary>
-        /// The number of holders hanging under the pool of unused quads, inactive ones included, or -1 when
-        /// there is no pool to look into.
-        /// </summary>
-        public static int CountOnPooledQuads()
-        {
-            // A quad given back to the pool is hung from it, deactivated, and loses its sphere, so a holder
-            // it carried along would be left out by the quad filter of Find.
-            PQSCache pool = PQSCache.Instance;
-            if (pool == null)
-            {
-                return -1;
-            }
-            FOUND.Clear();
-            pool.GetComponentsInChildren(true, FOUND);
-            return FOUND.Count;
-        }
-
-        /// <summary>
         /// Adds to the holders found every holder under a transform, attached to a quad of the sphere, and
         /// not found yet.
         /// </summary>
