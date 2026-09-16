@@ -40,30 +40,6 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
         /// <summary>Rocks of the holder for which no terrain was found under their lowest point.</summary>
         public int RocksMissed;
 
-        /// <summary>Whether the rocks of this holder were measured at all.</summary>
-        public bool RocksMeasured => Rocks != null;
-
-        /// <summary>
-        /// Mean of <see cref="RockMeasure.AboveGroundMm"/> over <see cref="Rocks"/>, in millimetres, or NaN
-        /// when there is none.
-        /// </summary>
-        public double RocksMeanMm
-        {
-            get
-            {
-                if (Rocks == null || Rocks.Count == 0)
-                {
-                    return double.NaN;
-                }
-                double sum = 0.0;
-                foreach (RockMeasure rock in Rocks)
-                {
-                    sum += rock.AboveGroundMm;
-                }
-                return sum / Rocks.Count;
-            }
-        }
-
         /// <summary>Measures a holder of rocks attached to a quad of the given body.</summary>
         public static HolderMeasure Take(PQSMod_LandClassScatterQuad holder, CelestialBody body)
         {
@@ -82,6 +58,40 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
                 UpMm = upM * 1000.0,
                 AcrossMm = (gap - up * upM).magnitude * 1000.0
             };
+        }
+
+        /// <summary>
+        /// Adds the holder to a record: its line and, when <paramref name="withRocks"/> is set, the mean of its
+        /// rocks above the ground and a line per rock, or a line saying they are not built yet.
+        /// </summary>
+        public void Log(RecordLog log, bool withRocks)
+        {
+            log.Line(2, "holder '{0}': height {1}, matrix {2}, up {3} mm, across {4} mm",
+                ScatterName, FormatUtils.FormatHeight(HeightM), FormatUtils.FormatHeight(MatrixHeightM),
+                FormatUtils.FormatSigned(UpMm), FormatUtils.Format(AcrossMm));
+            if (!withRocks)
+            {
+                return;
+            }
+            if (Rocks == null)
+            {
+                log.Line(3, "rocks: not built yet");
+                return;
+            }
+
+            double sumMm = 0.0;
+            foreach (RockMeasure rock in Rocks)
+            {
+                sumMm += rock.AboveGroundMm;
+            }
+            double meanMm = Rocks.Count > 0 ? sumMm / Rocks.Count : double.NaN;
+            log.Line(3,
+                "rocks: {0} measured, {1} without ground under them, lowest point {2} mm above the ground on average",
+                Rocks.Count, RocksMissed, FormatUtils.FormatSigned(meanMm));
+            foreach (RockMeasure rock in Rocks)
+            {
+                rock.Log(log);
+            }
         }
     }
 }

@@ -3,17 +3,11 @@ using System.Globalization;
 namespace com.github.lhervier.ksp.rockprecisionfixdiag
 {
     /// <summary>
-    /// Turns what has been measured into what the table shows. Invariant culture throughout, so that two
-    /// players comparing their tables read the same digits whatever their machine is set to.
+    /// Turns what has been measured into what the log shows. Invariant culture throughout, so that two
+    /// players comparing their logs read the same digits whatever their machine is set to.
     /// </summary>
     internal static class FormatUtils
     {
-        /// <summary>A count, such as a record number.</summary>
-        public static string Format(int number)
-        {
-            return number.ToString(CultureInfo.InvariantCulture);
-        }
-
         /// <summary>
         /// A distance in millimetres, to the thousandth, or "--" when there is nothing to show.
         /// </summary>

@@ -33,5 +33,19 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
                 MatrixHeightM = HeightUtils.HeightOf(HeightUtils.MatrixTranslation(quad.transform), body)
             };
         }
+
+        /// <summary>
+        /// Adds the quad to a record: its line, then each of its holders, with their rocks when
+        /// <paramref name="withRocks"/> is set.
+        /// </summary>
+        public void Log(RecordLog log, bool withRocks)
+        {
+            log.Line(1, "quad '{0}': height {1}, matrix {2}",
+                Name, FormatUtils.FormatHeight(HeightM), FormatUtils.FormatHeight(MatrixHeightM));
+            foreach (HolderMeasure holder in Holders)
+            {
+                holder.Log(log, withRocks);
+            }
+        }
     }
 }

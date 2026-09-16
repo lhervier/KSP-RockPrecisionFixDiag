@@ -4,48 +4,46 @@ using UnityEngine;
 namespace com.github.lhervier.ksp.rockprecisionfixdiag
 {
     /// <summary>
-    /// Finds the holders of rocks (PQSMod_LandClassScatterQuad) in the scene, wherever they hang. The lists
-    /// it returns are reused from one call to the next.
+    /// Finds the holders of rocks (PQSMod_LandClassScatterQuad) in the scene, wherever they hang.
     /// </summary>
     internal static class HolderFinder
     {
-        // Reused from one call to the next: the terrain hierarchy holds hundreds of holders.
-        private static readonly List<PQSMod_LandClassScatterQuad> FOUND = new List<PQSMod_LandClassScatterQuad>();
-        private static readonly List<PQSMod_LandClassScatterQuad> HOLDERS = new List<PQSMod_LandClassScatterQuad>();
-        private static readonly HashSet<PQSMod_LandClassScatterQuad> SEEN = new HashSet<PQSMod_LandClassScatterQuad>();
-
         /// <summary>
-        /// Every holder of rocks attached to a quad of a terrain sphere, each once, inactive ones included.
-        /// The list returned is only valid until the next call to Find.
+        /// Every holder of rocks attached to a quad of a terrain sphere, inactive ones included, grouped by the
+        /// quad it is attached to. Each holder appears once, and each quad carries one holder per kind of
+        /// scatter on it.
         /// </summary>
-        public static List<PQSMod_LandClassScatterQuad> Find(PQS sphere)
+        public static Dictionary<PQ, List<PQSMod_LandClassScatterQuad>> Find(PQS sphere)
         {
-            HOLDERS.Clear();
-            SEEN.Clear();
+            // A quad knows nothing of its holders: only a holder points to its quad, so the holders are searched
+            // for and grouped under their quad.
+            Dictionary<PQ, List<PQSMod_LandClassScatterQuad>> holders =
+                new Dictionary<PQ, List<PQSMod_LandClassScatterQuad>>();
+            HashSet<PQSMod_LandClassScatterQuad> seen = new HashSet<PQSMod_LandClassScatterQuad>();
             // Inactive holders are included: a holder is placed as soon as its quad is built, and only
             // shown once the quad is visible.
             // Stock hangs every holder under the sphere, in a "Scatter <name>" object.
-            Collect(sphere.transform, sphere);
+            Collect(sphere.transform, sphere, holders, seen);
             // A mod may instead hang a holder under its own quad. The most detailed quads, the only ones
             // carrying rocks, are kept under a storage object which is not under the sphere when the scene
             // has a LocalSpace, so both places have to be searched. When the scene has none, the storage is
-            // under the sphere and its holders were found above: SEEN keeps them from being added twice.
+            // under the sphere and its holders were found above: seen keeps them from being added twice.
             if (sphere.LocalSpacePQStorage != null)
             {
-                Collect(sphere.LocalSpacePQStorage.transform, sphere);
+                Collect(sphere.LocalSpacePQStorage.transform, sphere, holders, seen);
             }
-            return HOLDERS;
+            return holders;
         }
 
         /// <summary>
-        /// Adds to the holders found every holder under a transform, attached to a quad of the sphere, and
-        /// not found yet.
+        /// Adds to <paramref name="holders"/>, under its quad, every holder under a transform that is attached
+        /// to a quad of the sphere and not in <paramref name="seen"/> yet, and adds it to
+        /// <paramref name="seen"/>.
         /// </summary>
-        private static void Collect(Transform root, PQS sphere)
+        private static void Collect(Transform root, PQS sphere, Dictionary<PQ, List<PQSMod_LandClassScatterQuad>> holders,
+            HashSet<PQSMod_LandClassScatterQuad> seen)
         {
-            FOUND.Clear();
-            root.GetComponentsInChildren(true, FOUND);
-            foreach (PQSMod_LandClassScatterQuad rocks in FOUND)
+            foreach (PQSMod_LandClassScatterQuad rocks in root.GetComponentsInChildren<PQSMod_LandClassScatterQuad>(true))
             {
                 // A holder waiting in its pool has no quad. The storage of the most detailed quads is shared
                 // by every body, so holders of other bodies may be found there too.
@@ -53,10 +51,16 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 {
                     continue;
                 }
-                if (SEEN.Add(rocks))
+                if (!seen.Add(rocks))
                 {
-                    HOLDERS.Add(rocks);
+                    continue;
                 }
+                if (!holders.TryGetValue(rocks.quad, out List<PQSMod_LandClassScatterQuad> quadHolders))
+                {
+                    quadHolders = new List<PQSMod_LandClassScatterQuad>();
+                    holders.Add(rocks.quad, quadHolders);
+                }
+                quadHolders.Add(rocks);
             }
         }
     }

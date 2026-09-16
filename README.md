@@ -36,7 +36,7 @@ to the next.
 **Precision.** The positions read from transforms are single precision world coordinates. The world
 origin stays near the craft, so close to it they resolve a fraction of a millimetre, but the step of a
 `float` is 0.5 mm at 4 km from that origin and 1 mm at 8 km. The nearest quad is not affected; the
-extremes over every quad around can be.
+quads further away can be.
 
 ## What is wrong in stock
 
@@ -60,7 +60,7 @@ The figures below were taken with an earlier version of this mod, which showed g
 heights; the names in italics are its columns. Its *Rocks* averaged every object of the nearest quad,
 all holders together. Its *Matrix* was the translation of a holder's matrix minus the holder's own
 transform position: wherever the holder has the same position as its quad, as it does here, that is the
-holder's **Matrix** in the current version.
+holder's matrix height minus its quad's height in the current version.
 
 **The positions agree.** On Gilly, in one reading over 128 quads carrying scatter, the holder and its
 quad have the same transform position to the bit: 0.000 mm on every quad. On Kerbin, 0.000 mm on every quad as well,
@@ -92,59 +92,68 @@ amount, and that amount changes at every load. Stock scatter has no collider: th
 About fifty of the 218 objects, those whose lowest point is 0.5 to 1.8 m away from the ground, keep a
 residue of a few centimetres from one load to the next once *Matrix* is taken off. It is not explained.
 
-## The window
-
-In flight, a window shows one block of lines per recorded reading. The **bottom block is the reading in
-progress**, refreshed twice a second, and its *Record* button freezes it into the table. The table
-survives scene changes, so the blocks pile up as you reload. *Delete* removes a block, *Clear table* all
-of them. `--` means there is nothing to show.
-
-A block reads:
-
-| line | Height | Matrix | Up | Across |
-|---|---|---|---|---|
-| the nearest quad, by name | height of the quad's transform position, in metres | height of the quad's matrix, in mm above the quad | | |
-| each holder of that quad, by kind of scatter | height of the holder's transform position, in mm above the quad | height of the holder's matrix, in mm above the quad | *up*, in mm | *across*, in mm |
-| under each holder, its objects: how many were measured, how many had no ground under them | height of their lowest point above the ground under each, averaged, in mm | | | |
-| all the quads around, and their holders | | | lowest and highest *up*, in mm | largest *across*, in mm |
-
-Everything but the height of the quad is measured against that height, so that millimetres can be read
-next to hundreds of kilometres. A holder's **Matrix** and its **Up** are nearly the same number, by two
-different routes: a difference of heights, and a projection on the vertical. The quad has to be the same
-in every block for the blocks to compare anything. An object without ground under it is one where the ray
-found no terrain, and it is left out of the average. Objects are only read once KSP has built them.
-
-Every recorded reading is also written to `KSP.log`, on lines starting with `[RockPrecisionFixDiag]`,
-with every height in metres, from the centre of the body, to the micrometre: subtract two of them and
-you get back the millimetres of the window. First a summary line with the extremes. Then **every** quad
-around, nearest first, with its two heights; under each quad, each of its holders, with its two heights,
-*up* and *across*;
-and, for the nearest quad only, under each holder the average of its objects, then one line per object
-with the height of the ground and of its lowest point. An object keeps its number from one load to the
-next: stock places the scatter from a seed. KSP overwrites that file each time it starts: copy it before
-relaunching.
-
 ## The protocol
 
-1. **Terrain scatter must be on**: *Settings → Graphics → Terrain Scatters*. The window says so when it
-   is off.
-2. **Land a craft where there is scatter.** Any craft, anywhere, as long as the window shows quads.
-   Scatter only exists on the most detailed terrain, and is only built below 200 m/s (the stock
-   default). The simplest way is the debug menu: launch any craft, then `Alt+F12 → Cheats → Set
-   Position`, either on another body or, with *Use middle click to set position* ticked, by
-   middle-clicking a spot on the ground.
-3. **Save once.**
-4. **Load that save, wait until the number of quads stops changing and the objects are read, and press
-   *Record*.** Quads and their scatter are built over several frames after loading.
-5. **Load the same save again**, and record again. Five or six blocks.
+1. **Terrain scatter must be on**: *Settings → Graphics → Terrain Scatters*.
+2. **Have KSP write its log at once**: in the debug menu (`Alt+F12 → Debugging`), tick the option that
+   flushes the log instantly (`LOG_INSTANT_FLUSH` in `settings.cfg`). Otherwise KSP writes `KSP.log` in
+   batches, and a record can wait there until more lines come. Follow the file as it grows, for
+   instance with `tail -f KSP.log`.
+3. **Land a craft**, any craft, on any body, preferably where there is scatter around it. Scatter only
+   exists on the most detailed terrain, and is only built below 200 m/s (the stock default). The
+   simplest way is the debug menu: launch any craft, then `Alt+F12 → Cheats → Set Position`, either on
+   another body or, with *Use middle click to set position* ticked, by middle-clicking a spot on the
+   ground.
+4. **Save.**
+5. **Load that save and press `Alt+F6`** (`Mod+F6`: the modifier key of the game). The reading is
+   written to `KSP.log`, and its last line tells what it holds: how many quads carry scatter, and for
+   the nearest one how many objects were measured and how many holders are not built yet. Quads and
+   their scatter are built over several frames after loading: if holders are not built yet, or the
+   counts still grow from one press to the next, wait a few seconds and press again.
+   Only the last record of each load is needed.
+6. **Load the same save again, and press `Alt+F6` again.** As many times as needed: five or six loads
+   are enough.
 
-Then compare the blocks, holder by holder. The line of objects under a holder answers the question on
-its own: constant over the loads, that scatter is drawn at the same height against the ground every
-time; changing, it is not. The heights above it tell where a change comes from: the objects' line minus
-the holder's **Matrix** stays constant when the change is the holder's matrix, and the holder's
-**Height** tells whether its transform position left its quad too. The height of the quad itself may
-change from one load to the next as well: every other value is measured against it, so that does not
-blur them.
+KSP overwrites `KSP.log` each time it starts: copy it before relaunching. Reloading the save from within
+the game does not overwrite it, and the record numbers keep counting from one load to the next.
+
+## The log
+
+Every record is written on lines starting with `[RockPrecisionFixDiag]`, every height in metres, from
+the centre of the body, to the micrometre: subtracting two of them gives millimetres. A record reads:
+
+```
+Record … on …: scatter on. Heights are …
+  quad '…': height …, matrix …
+    holder '…': height …, matrix …, up … mm, across … mm
+      rocks: … measured, … without ground under them, lowest point … mm above the ground on average
+        rock #0: ground …, lowest point …, … mm above the ground
+        …
+End of record …: … quads with rocks, … holders; nearest quad '…': … rocks measured, … without ground under them, … holders not built yet
+```
+
+- An opening line, with the body and whether scatter is on.
+- **Every** quad carrying scatter around the craft, with the heights of its transform
+  position and of its matrix.
+- Under each quad, each of its holders, one per kind of scatter, with the same two heights, *up* and
+  *across* in millimetres.
+- For the nearest quad only, under each holder, the average of its objects, then one line per object
+  with the height of the ground under it and of its lowest point. An object without ground under it is
+  one where the ray found no terrain: it is counted, and left out of the average. An object keeps its
+  number from one load to the next, since stock places the scatter from a seed.
+- A closing line, with the counts: it is the one left in sight when following the file as it grows.
+
+A holder's matrix height minus its quad's height and its *up* are nearly the same number, by two
+different routes: a difference of heights, and a projection on the vertical.
+
+**Reading the records.** Compare the records of the successive loads, holder by holder, on the nearest
+quad. Its name has to be the same in every record for them to compare anything. The average of a
+holder's objects above the ground answers the question on its own: constant over the loads, that
+scatter is drawn at the same height against the ground every time; changing, it is not. The heights
+above it tell where a change comes from: the objects' average minus the holder's *up* stays constant
+when the change is the holder's matrix, and the holder's height minus its quad's height tells whether
+its transform position left its quad too. The height of the quad itself may change from one load to the
+next as well: comparing everything to it keeps that from blurring the rest.
 
 ## Get it
 

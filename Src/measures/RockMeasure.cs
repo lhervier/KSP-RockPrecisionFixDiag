@@ -9,9 +9,6 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
     /// </summary>
     internal class RockMeasure
     {
-        // Reused from one call to the next: a rock mesh holds thousands of vertices.
-        private static readonly List<Vector3> VERTICES = new List<Vector3>();
-
         /// <summary>Rank of the rock among the rocks of its holder, from 0, in the order stock built them.</summary>
         public int Index;
 
@@ -26,6 +23,14 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
         /// vertex is below the ground, which stock does on purpose to some extent.
         /// </summary>
         public double AboveGroundMm => (LowestM - GroundM) * 1000.0;
+
+        /// <summary>Adds the rock to a record, on a line of its own.</summary>
+        public void Log(RecordLog log)
+        {
+            log.Line(4, "rock #{0}: ground {1}, lowest point {2}, {3} mm above the ground",
+                Index, FormatUtils.FormatHeight(GroundM), FormatUtils.FormatHeight(LowestM),
+                FormatUtils.FormatSigned(AboveGroundMm));
+        }
 
         /// <summary>
         /// Measures every rock of a holder, in the order stock built them. Rocks without terrain under their
@@ -45,8 +50,9 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
             // (moved, turned and scaled), and fills the rest of the mesh with zeros.
             Mesh baseMesh = holder.scatter != null ? holder.scatter.baseMesh : null;
             int stride = baseMesh != null ? baseMesh.vertexCount : Constants.FALLBACK_ROCK_VERTICES;
-            holder.mesh.GetVertices(VERTICES);
-            if (stride <= 0 || holder.count < 0 || holder.count * stride > VERTICES.Count)
+            List<Vector3> vertices = new List<Vector3>();
+            holder.mesh.GetVertices(vertices);
+            if (stride <= 0 || holder.count < 0 || holder.count * stride > vertices.Count)
             {
                 return null;
             }
@@ -55,7 +61,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
             Matrix4x4 toWorld = holder.transform.localToWorldMatrix;
             for (int rock = 0; rock < holder.count; rock++)
             {
-                RockMeasure measure = Take(rock, VERTICES, rock * stride, stride, toWorld, body);
+                RockMeasure measure = Take(rock, vertices,rock * stride, stride, toWorld, body);
                 if (measure == null)
                 {
                     missed++;

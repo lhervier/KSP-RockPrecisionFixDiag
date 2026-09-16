@@ -1,16 +1,11 @@
-using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
 using com.github.lhervier.ksp.rockprecisionfixdiag.measures;
-using UnityEngine;
 
 namespace com.github.lhervier.ksp.rockprecisionfixdiag
 {
     /// <summary>
     /// One reading, at one moment: every quad carrying rocks around the craft with its holders, and the rocks
-    /// of one quad against the ground. Everything starts unknown, and stays so when there are no rocks to
-    /// measure.
+    /// of one quad against the ground.
     /// </summary>
     internal class Reading
     {
@@ -20,88 +15,132 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         /// <summary>Whether terrain scatter is switched on in the game settings. Without it there are no rocks.</summary>
         public bool ScatterEnabled;
 
-        /// <summary>Every quad carrying rocks, nearest to the craft first.</summary>
+        /// <summary>Every quad carrying rocks, in no set order.</summary>
         public readonly List<QuadMeasure> Quads = new List<QuadMeasure>();
 
         /// <summary>The quad whose rocks were measured, or null when no quad carries rocks.</summary>
         public QuadMeasure RocksQuad;
 
-        /// <summary>Number of holders over every quad.</summary>
-        public int HolderCount;
-
-        /// <summary>Lowest <see cref="HolderMeasure.UpMm"/> over every holder of every quad.</summary>
-        public double LowestUpMm = double.NaN;
-
-        /// <summary>The same, highest.</summary>
-        public double HighestUpMm = double.NaN;
-
-        /// <summary>Largest <see cref="HolderMeasure.AcrossMm"/> over every holder of every quad.</summary>
-        public double LargestAcrossMm = double.NaN;
-
-        /// <summary>Adds a holder to the counts and extremes of the reading.</summary>
-        public void Count(HolderMeasure holder)
+        /// <summary>
+        /// Takes a reading of the rocks on the body the vessel is on, or returns null when there is no
+        /// vessel or no terrain to read. The reading holds three measures:
+        /// - <see cref="QuadMeasure"/>, on every terrain quad carrying rocks;
+        /// - <see cref="HolderMeasure"/>, on every holder of rocks of those quads;
+        /// - <see cref="RockMeasure"/>, on every rock of the quad nearest to the craft.
+        /// </summary>
+        public static Reading Take(Vessel vessel)
         {
-            HolderCount++;
+            if (vessel == null || vessel.mainBody == null || vessel.mainBody.pqsController == null)
+            {
+                return null;
+            }
 
-            // The extremes start unknown (NaN), which Math.Min and Math.Max would carry along.
-            bool first = HolderCount == 1;
-            LowestUpMm = first ? holder.UpMm : Math.Min(LowestUpMm, holder.UpMm);
-            HighestUpMm = first ? holder.UpMm : Math.Max(HighestUpMm, holder.UpMm);
-            LargestAcrossMm = first ? holder.AcrossMm : Math.Max(LargestAcrossMm, holder.AcrossMm);
+            // Usefull variables
+            CelestialBody body = vessel.mainBody;
+            Vector3d craft = vessel.vesselTransform.position;
+            PQS sphere = body.pqsController;
+
+            // Prepare the reading
+            Reading reading = new Reading
+            {
+                BodyName = body.bodyName,
+                ScatterEnabled = PQS.Global_AllowScatter
+            };
+
+            // The holders are what can be found in the scene, grouped under the quads carrying rocks.
+            Dictionary<PQ, List<PQSMod_LandClassScatterQuad>> holders = HolderFinder.Find(sphere);
+
+            // Measure 3 covers only the rocks of one quad, the nearest to the craft. That is enough to compare
+            // with the heights of its holders, and one line per rock of every quad around the craft would bury
+            // the log in tens of thousands of lines at each reading.
+            PQ nearest = null;
+            double nearestDistance = double.MaxValue;
+            foreach (PQ quad in holders.Keys)
+            {
+                double distance = ((Vector3d)quad.transform.position - craft).magnitude;
+                if (distance < nearestDistance)
+                {
+                    nearest = quad;
+                    nearestDistance = distance;
+                }
+            }
+
+            // Measures 1 and 2 on every quad and every holder, and measure 3 on the holders of the nearest quad.
+            foreach (KeyValuePair<PQ, List<PQSMod_LandClassScatterQuad>> quadHolders in holders)
+            {
+                QuadMeasure quadMeasure = QuadMeasure.Take(quadHolders.Key, body);
+                reading.Quads.Add(quadMeasure);
+                bool isNearest = quadHolders.Key == nearest;
+                if (isNearest)
+                {
+                    reading.RocksQuad = quadMeasure;
+                }
+
+                foreach (PQSMod_LandClassScatterQuad holder in quadHolders.Value)
+                {
+                    HolderMeasure holderMeasure = HolderMeasure.Take(holder, body);
+                    if (isNearest)
+                    {
+                        holderMeasure.Rocks = RockMeasure.TakeAll(holder, body, out holderMeasure.RocksMissed);
+                    }
+                    quadMeasure.Holders.Add(holderMeasure);
+                }
+
+                // The holders of one quad come in no set order: the name of the kind of scatter orders them, so
+                // that the lines keep their order from one reading to the next.
+                quadMeasure.Holders.Sort((a, b) => string.CompareOrdinal(a.ScatterName, b.ScatterName));
+            }
+            return reading;
         }
 
         /// <summary>
-        /// Writes the reading to KSP.log, under the given record number: a summary line, then every quad, nearest to the craft first, each followed by its holders,
-        /// and for the quad whose rocks were measured by the rocks of each holder.
+        /// Writes the reading to KSP.log, under the given record number: an opening line, every quad with its
+        /// holders and, for the quad whose rocks were measured, their rocks, then
+        /// a closing line counting what was written.
         /// </summary>
         public void Log(int number)
         {
-            StringBuilder text = new StringBuilder();
-            text.Append(Constants.LOG_PREFIX)
-                .AppendFormat(CultureInfo.InvariantCulture,
-                    "Record {0} on {1}: scatter {2}, {3} quads with rocks, {4} holders,"
-                    + " up from {5} to {6} mm, largest across {7} mm."
-                    + " Heights are distances from the centre of {1}, in metres",
-                    number, BodyName, ScatterEnabled ? "on" : "off", Quads.Count, HolderCount,
-                    FormatUtils.FormatSigned(LowestUpMm), FormatUtils.FormatSigned(HighestUpMm),
-                    FormatUtils.Format(LargestAcrossMm));
+            RecordLog log = new RecordLog();
+            log.Line(0, "Record {0} on {1}: scatter {2}. Heights are distances from the centre of {1}, in metres",
+                number, BodyName, ScatterEnabled ? "on" : "off");
             foreach (QuadMeasure quad in Quads)
             {
-                AppendLine(text, "  ").AppendFormat(CultureInfo.InvariantCulture,
-                    "quad '{0}': height {1}, matrix {2}",
-                    quad.Name, FormatUtils.FormatHeight(quad.HeightM),
-                    FormatUtils.FormatHeight(quad.MatrixHeightM));
-                foreach (HolderMeasure holder in quad.Holders)
+                quad.Log(log, quad == RocksQuad);
+            }
+
+            // Last, so that it is what stays in sight of whoever follows the log as it grows: the counts tell
+            // whether the scene has settled since the load.
+            if (RocksQuad == null)
+            {
+                log.Line(0, "End of record {0}: no quad with rocks", number);
+            }
+            else
+            {
+                int holderCount = 0;
+                foreach (QuadMeasure quad in Quads)
                 {
-                    AppendLine(text, "    ").AppendFormat(CultureInfo.InvariantCulture,
-                        "holder '{0}': height {1}, matrix {2}, up {3} mm, across {4} mm",
-                        holder.ScatterName, FormatUtils.FormatHeight(holder.HeightM),
-                        FormatUtils.FormatHeight(holder.MatrixHeightM), FormatUtils.FormatSigned(holder.UpMm),
-                        FormatUtils.Format(holder.AcrossMm));
-                    if (!holder.RocksMeasured)
+                    holderCount += quad.Holders.Count;
+                }
+                int rockCount = 0;
+                int missedRockCount = 0;
+                int unbuiltHolderCount = 0;
+                foreach (HolderMeasure holder in RocksQuad.Holders)
+                {
+                    if (holder.Rocks == null)
                     {
+                        unbuiltHolderCount++;
                         continue;
                     }
-                    AppendLine(text, "      ").AppendFormat(CultureInfo.InvariantCulture,
-                        "rocks: {0} measured, {1} without ground under them, lowest point {2} mm above the"
-                        + " ground on average",
-                        holder.Rocks.Count, holder.RocksMissed, FormatUtils.FormatSigned(holder.RocksMeanMm));
-                    foreach (RockMeasure rock in holder.Rocks)
-                    {
-                        AppendLine(text, "        ").AppendFormat(CultureInfo.InvariantCulture,
-                            "rock #{0}: ground {1}, lowest point {2}, {3} mm above the ground",
-                            rock.Index, FormatUtils.FormatHeight(rock.GroundM),
-                            FormatUtils.FormatHeight(rock.LowestM), FormatUtils.FormatSigned(rock.AboveGroundMm));
-                    }
+                    rockCount += holder.Rocks.Count;
+                    missedRockCount += holder.RocksMissed;
                 }
+                log.Line(0,
+                    "End of record {0}: {1} quads with rocks, {2} holders; nearest quad '{3}': {4} rocks measured,"
+                    + " {5} without ground under them, {6} holders not built yet",
+                    number, Quads.Count, holderCount, RocksQuad.Name, rockCount, missedRockCount,
+                    unbuiltHolderCount);
             }
-            Debug.Log(text.ToString());
-        }
-
-        /// <summary>Starts a new log line in the text, with the log prefix and the given indent, and returns the text.</summary>
-        private static StringBuilder AppendLine(StringBuilder text, string indent)
-        {
-            return text.AppendLine().Append(Constants.LOG_PREFIX).Append(indent);
+            log.Write();
         }
     }
 }
