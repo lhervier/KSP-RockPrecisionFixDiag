@@ -47,7 +47,11 @@ At each load, for every quad carrying scatter around the craft, the mod reads:
 3. **the centre of each holder of the quad**, one per kind of scatter;
 4. **the matrix of each of these holders**.
 
-These four heights should be exactly the same from one load to the next. In stock, they are not.
+These four heights should be exactly the same from one load to the next. In stock, they are not. Installing
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) is not enough to keep them
+equal: the quad's two heights then come back the same at every load, but its holders' still do not, and
+the scatter moves against the ground even more than in stock (see
+[What the readings show](#what-the-readings-show)).
 
 Two heights alone do not tell whether two points are shifted against each other: at the same distance
 from the centre of the body, they can still stand apart sideways. So for each matrix, the quad's and each
