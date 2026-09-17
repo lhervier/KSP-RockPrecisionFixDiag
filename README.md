@@ -24,7 +24,7 @@ This instrument exists for another reason. [Terrain Precision Fix](https://githu
 changes the height at which KSP builds the ground, and checking a change like that means checking
 everything placed against that ground. Scatter is one of those things, so this instrument is meant to be
 run on stock and with Terrain Precision Fix installed. The readings taken both ways, on the same saves, are
-kept under [perfs](perfs/README.md) and summed up under [What the readings show](#what-the-readings-show). Why stock draws scatter off the ground is on
+kept under [diag](diag/README.md) and summed up under [What the readings show](#what-the-readings-show). Why stock draws scatter off the ground is on
 [Rock Precision Fix's page](https://github.com/lhervier/KSP-RockPrecisionFix/blob/main/README.md#the-culprit).
 This page sticks to how to measure it.
 
@@ -149,14 +149,14 @@ well: comparing everything to it keeps that from blurring the rest.
 
 ## What the readings show
 
-The readings kept under [perfs](perfs/README.md) follow the protocol above on two saves, each loaded twelve
+The readings kept under [diag](diag/README.md) follow the protocol above on two saves, each loaded twelve
 times on stock and twelve times with
 [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) installed:
 
-- [`reference-kerbin.sfs`](perfs/reference-kerbin.sfs), on Kerbin: every record holds the same 64 quads
+- [`reference-kerbin.sfs`](diag/reference-kerbin.sfs), on Kerbin: every record holds the same 64 quads
   and 118 holders, and names the same nearest quad, `Kerbin Zn3010000130`, with the same 218 objects:
   200 `Grass00`, with 8 vertices each, all measured, and 18 `Tree00`, with 10 vertices measured each;
-- [`reference-mune.sfs`](perfs/reference-mune.sfs), on the Mun: 128 quads and 128 holders, and the same
+- [`reference-mune.sfs`](diag/reference-mune.sfs), on the Mun: 128 quads and 128 holders, and the same
   nearest quad, `Mun Zp211333000`, with 20 `Rock00`, 10 vertices measured each.
 
 Below, the *range* of a reading is its largest value minus its smallest over the twelve loads of a series,
