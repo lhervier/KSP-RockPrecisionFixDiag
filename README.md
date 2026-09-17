@@ -47,12 +47,6 @@ At each load, for every quad carrying scatter around the craft, the mod reads:
 3. **the centre of each holder of the quad**, one per kind of scatter;
 4. **the matrix of each of these holders**.
 
-These four heights should be exactly the same from one load to the next. In stock, they are not. Installing
-[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) is not enough to keep them
-equal: the quad's two heights then come back the same at every load, but its holders' still do not, and
-the scatter moves against the ground even more than in stock (see
-[What the readings show](#what-the-readings-show)).
-
 Two heights alone do not tell whether two points are shifted against each other: at the same distance
 from the centre of the body, they can still stand apart sideways. So for each matrix, the quad's and each
 holder's, the mod also measures how far it stands from the centre of the quad, in two parts: *up*, the
@@ -65,10 +59,14 @@ gap in height, and *across*, the gap sideways.
      rests on, hit by a ray cast straight down from 100 m above that point, so that the ground is found
      even under an object sunk into it.
 
-Here again, both heights should stay the same over the loads, and neither does: the lowest point moves at
-every load, and so does the ground found under it. Stock sinks scatter partly into the ground on purpose,
-so the gap between the two, which the log gives as well, says little on its own. What matters is whether
-it stays the same from one load to the next.
+In stock, none of these heights stays the same from one load to the next: the quads, their holders, the
+lowest point of every object and the ground under it all move. Installing
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) is not enough to keep them
+equal: the quads' heights then come back the same at every load, but the holders' still do not, and the
+objects move against the ground even more than in stock (see
+[What the readings show](#what-the-readings-show)). Stock sinks scatter partly into the ground on purpose,
+so the gap between an object and the ground, which the log gives as well, says little on its own. What
+matters is whether it stays the same from one load to the next.
 
 **Precision.** Unity gives centres, matrices and vertices as single precision world coordinates. The world
 origin stays near the craft, so close to it they resolve a fraction of a millimetre, but the step of a
