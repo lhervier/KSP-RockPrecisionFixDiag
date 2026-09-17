@@ -1,0 +1,402 @@
+[RockPrecisionFixDiag] Record 3 on Kerbin: scatter on. Heights are distances from the centre of Kerbin, in metres
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222230': height 600176.853784 m, matrix 600176.853784 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600176.875702 m, matrix 600176.898870 m, up +45.086 mm, across 9.862 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600176.875702 m, matrix 600176.898870 m, up +45.086 mm, across 9.862 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222231': height 600177.289335 m, matrix 600177.289335 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600177.306458 m, matrix 600177.327387 m, up +38.052 mm, across 16.312 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600177.306458 m, matrix 600177.327387 m, up +38.052 mm, across 16.312 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222232': height 600186.581159 m, matrix 600186.581159 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600186.627985 m, matrix 600186.627985 m, up +46.827 mm, across 28.085 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600186.627985 m, matrix 600186.627985 m, up +46.827 mm, across 28.085 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222233': height 600173.701580 m, matrix 600173.701580 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600173.718559 m, matrix 600173.718559 m, up +16.979 mm, across 29.399 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600173.718559 m, matrix 600173.718559 m, up +16.979 mm, across 29.399 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222300': height 600210.992649 m, matrix 600210.992649 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600211.029913 m, matrix 600211.050799 m, up +58.150 mm, across 0.576 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600211.029913 m, matrix 600211.050799 m, up +58.150 mm, across 0.576 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222302': height 600210.795166 m, matrix 600210.795166 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600210.766498 m, matrix 600210.808270 m, up +13.105 mm, across 21.709 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600210.766498 m, matrix 600210.808270 m, up +13.105 mm, across 21.709 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222320': height 600203.253102 m, matrix 600203.253102 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600203.287868 m, matrix 600203.285509 m, up +32.407 mm, across 26.022 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600203.287868 m, matrix 600203.285509 m, up +32.407 mm, across 26.022 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn1232222322': height 600241.011636 m, matrix 600241.011636 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600241.015076 m, matrix 600241.038320 m, up +26.684 mm, across 11.799 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600241.015076 m, matrix 600241.038320 m, up +26.684 mm, across 11.799 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000000': height 600249.582855 m, matrix 600249.582855 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600249.583491 m, matrix 600249.648694 m, up +65.839 mm, across 11.330 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600249.583491 m, matrix 600249.648694 m, up +65.839 mm, across 11.330 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000001': height 600248.200886 m, matrix 600248.200886 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600248.224705 m, matrix 600248.224705 m, up +23.819 mm, across 33.116 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600248.224705 m, matrix 600248.224705 m, up +23.819 mm, across 33.116 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000002': height 600219.460167 m, matrix 600219.460167 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600219.505929 m, matrix 600219.484872 m, up +24.706 mm, across 3.904 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600219.505929 m, matrix 600219.484872 m, up +24.706 mm, across 3.904 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000003': height 600238.468504 m, matrix 600238.468504 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600238.474634 m, matrix 600238.453620 m, up -14.884 mm, across 14.842 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600238.474634 m, matrix 600238.453620 m, up -14.884 mm, across 14.842 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000010': height 600189.654901 m, matrix 600189.654901 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600189.638263 m, matrix 600189.638263 m, up -16.638 mm, across 0.901 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600189.638263 m, matrix 600189.638263 m, up -16.638 mm, across 0.901 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000011': height 600220.717630 m, matrix 600220.717630 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600220.652905 m, matrix 600220.715691 m, up -1.939 mm, across 20.818 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600220.652905 m, matrix 600220.715691 m, up -1.939 mm, across 20.818 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000012': height 600273.374959 m, matrix 600273.374959 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600273.402654 m, matrix 600273.381683 m, up +6.724 mm, across 35.077 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600273.402654 m, matrix 600273.381683 m, up +6.724 mm, across 35.077 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000013': height 600242.615987 m, matrix 600242.615987 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600242.600529 m, matrix 600242.600529 m, up -15.457 mm, across 21.502 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600242.600529 m, matrix 600242.600529 m, up -15.457 mm, across 21.502 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000020': height 600242.273505 m, matrix 600242.273505 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600242.285221 m, matrix 600242.285221 m, up +11.716 mm, across 15.749 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600242.285221 m, matrix 600242.285221 m, up +11.716 mm, across 15.749 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000021': height 600225.876001 m, matrix 600225.876001 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600225.835575 m, matrix 600225.877603 m, up +1.602 mm, across 24.273 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600225.835575 m, matrix 600225.877603 m, up +1.602 mm, across 24.273 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000022': height 600288.746571 m, matrix 600288.746571 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600288.742728 m, matrix 600288.807930 m, up +61.360 mm, across 25.991 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600288.742728 m, matrix 600288.807930 m, up +61.360 mm, across 25.991 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000023': height 600244.637910 m, matrix 600244.637910 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600244.593208 m, matrix 600244.635235 m, up -2.675 mm, across 5.486 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600244.593208 m, matrix 600244.635235 m, up -2.675 mm, across 5.486 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000030': height 600256.866989 m, matrix 600256.866989 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600256.843697 m, matrix 600256.906610 m, up +39.622 mm, across 40.864 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600256.843697 m, matrix 600256.906610 m, up +39.622 mm, across 40.864 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000031': height 600280.001025 m, matrix 600280.001025 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600279.954952 m, matrix 600279.996810 m, up -4.215 mm, across 48.184 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600279.954952 m, matrix 600279.996810 m, up -4.215 mm, across 48.184 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000032': height 600248.663719 m, matrix 600248.663719 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600248.604070 m, matrix 600248.666983 m, up +3.264 mm, across 17.793 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600248.604070 m, matrix 600248.666983 m, up +3.264 mm, across 17.793 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000033': height 600313.717062 m, matrix 600313.717062 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600313.748506 m, matrix 600313.769434 m, up +52.372 mm, across 20.168 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600313.748506 m, matrix 600313.769434 m, up +52.372 mm, across 20.168 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000100': height 600253.724535 m, matrix 600253.724535 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600253.804374 m, matrix 600253.762602 m, up +38.067 mm, across 5.845 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600253.804374 m, matrix 600253.762602 m, up +38.067 mm, across 5.845 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000101': height 600259.953335 m, matrix 600259.953335 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600259.954557 m, matrix 600259.956996 m, up +3.661 mm, across 1.802 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600259.954557 m, matrix 600259.956996 m, up +3.661 mm, across 1.802 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000102': height 600230.717332 m, matrix 600230.717332 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600230.724792 m, matrix 600230.703906 m, up -13.427 mm, across 8.618 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600230.724792 m, matrix 600230.703906 m, up -13.427 mm, across 8.618 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000103': height 600230.029938 m, matrix 600230.029938 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600230.053088 m, matrix 600230.055528 m, up +25.590 mm, across 0.770 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600230.053088 m, matrix 600230.055528 m, up +25.590 mm, across 0.770 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000112': height 600227.195433 m, matrix 600227.195433 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600227.214226 m, matrix 600227.172624 m, up -22.810 mm, across 10.847 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600227.214226 m, matrix 600227.172624 m, up -22.810 mm, across 10.847 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000120': height 600226.532414 m, matrix 600226.532414 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600226.584848 m, matrix 600226.587207 m, up +54.793 mm, across 1.813 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600226.584848 m, matrix 600226.587207 m, up +54.793 mm, across 1.813 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000121': height 600217.201151 m, matrix 600217.201151 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600217.212425 m, matrix 600217.212425 m, up +11.274 mm, across 27.509 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600217.212425 m, matrix 600217.212425 m, up +11.274 mm, across 27.509 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000122': height 600239.513339 m, matrix 600239.513339 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600239.549744 m, matrix 600239.507972 m, up -5.367 mm, across 16.310 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600239.549744 m, matrix 600239.507972 m, up -5.367 mm, across 16.310 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000123': height 600203.275518 m, matrix 600203.275518 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600203.328290 m, matrix 600203.328290 m, up +52.773 mm, across 11.006 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600203.328290 m, matrix 600203.328290 m, up +52.773 mm, across 11.006 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000130': height 600190.635339 m, matrix 600190.635339 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600190.644101 m, matrix 600190.664901 m, up +29.563 mm, across 5.082 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600190.644101 m, matrix 600190.664901 m, up +29.563 mm, across 5.082 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000131': height 600164.314235 m, matrix 600164.314235 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600164.368503 m, matrix 600164.326986 m, up +12.751 mm, across 14.716 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600164.368503 m, matrix 600164.326986 m, up +12.751 mm, across 14.716 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000132': height 600212.377119 m, matrix 600212.377119 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600212.404484 m, matrix 600212.383683 m, up +6.564 mm, across 15.302 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600212.404484 m, matrix 600212.383683 m, up +6.564 mm, across 15.302 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000133': height 600126.805943 m, matrix 600126.805943 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600126.829137 m, matrix 600126.849895 m, up +43.952 mm, across 17.122 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600126.829137 m, matrix 600126.849895 m, up +43.952 mm, across 17.122 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000200': height 600248.967049 m, matrix 600248.967049 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600249.000659 m, matrix 600249.000659 m, up +33.610 mm, across 28.164 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600249.000659 m, matrix 600249.000659 m, up +33.610 mm, across 28.164 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000201': height 600253.845521 m, matrix 600253.845521 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600253.926288 m, matrix 600253.905275 m, up +59.754 mm, across 26.198 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600253.926288 m, matrix 600253.905275 m, up +59.754 mm, across 26.198 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000202': height 600240.651400 m, matrix 600240.651400 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600240.722033 m, matrix 600240.700978 m, up +49.578 mm, across 34.092 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600240.722033 m, matrix 600240.700978 m, up +49.578 mm, across 34.092 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000203': height 600237.243939 m, matrix 600237.243939 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600237.233133 m, matrix 600237.233133 m, up -10.806 mm, across 5.359 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600237.233133 m, matrix 600237.233133 m, up -10.806 mm, across 5.359 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000210': height 600271.300712 m, matrix 600271.300712 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600271.294783 m, matrix 600271.317951 m, up +17.238 mm, across 12.971 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600271.294783 m, matrix 600271.317951 m, up +17.238 mm, across 12.971 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000211': height 600331.669336 m, matrix 600331.669336 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600331.721110 m, matrix 600331.679254 m, up +9.918 mm, across 7.959 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600331.721110 m, matrix 600331.679254 m, up +9.918 mm, across 7.959 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000212': height 600278.909003 m, matrix 600278.909003 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600278.904078 m, matrix 600278.901881 m, up -7.123 mm, across 28.511 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600278.904078 m, matrix 600278.901881 m, up -7.123 mm, across 28.511 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000213': height 600292.233335 m, matrix 600292.233335 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600292.254457 m, matrix 600292.233530 m, up +0.195 mm, across 12.975 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600292.254457 m, matrix 600292.233530 m, up +0.195 mm, across 12.975 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000230': height 600239.585139 m, matrix 600239.585139 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600239.648401 m, matrix 600239.606461 m, up +21.322 mm, across 19.558 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600239.648401 m, matrix 600239.606461 m, up +21.322 mm, across 19.558 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000231': height 600273.718353 m, matrix 600273.718353 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600273.744959 m, matrix 600273.765887 m, up +47.533 mm, across 10.076 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600273.744959 m, matrix 600273.765887 m, up +47.533 mm, across 10.076 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000232': height 600245.838897 m, matrix 600245.838897 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600245.803612 m, matrix 600245.824581 m, up -14.316 mm, across 44.574 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600245.803612 m, matrix 600245.824581 m, up -14.316 mm, across 44.574 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000233': height 600281.401605 m, matrix 600281.401605 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600281.429617 m, matrix 600281.452821 m, up +51.217 mm, across 29.101 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600281.429617 m, matrix 600281.452821 m, up +51.217 mm, across 29.101 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000300': height 600251.411256 m, matrix 600251.411256 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600251.455102 m, matrix 600251.455102 m, up +43.846 mm, across 19.027 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600251.455102 m, matrix 600251.455102 m, up +43.846 mm, across 19.027 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000301': height 600205.190127 m, matrix 600205.190127 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600205.282849 m, matrix 600205.241163 m, up +51.036 mm, across 18.949 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600205.282849 m, matrix 600205.241163 m, up +51.036 mm, across 18.949 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000302': height 600252.928591 m, matrix 600252.928591 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600252.957877 m, matrix 600252.934633 m, up +6.042 mm, across 11.474 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600252.957877 m, matrix 600252.934633 m, up +6.042 mm, across 11.474 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000303': height 600185.474377 m, matrix 600185.474377 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600185.440990 m, matrix 600185.461832 m, up -12.545 mm, across 14.997 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600185.440990 m, matrix 600185.461832 m, up -12.545 mm, across 14.997 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000310': height 600205.532415 m, matrix 600205.532415 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600205.630758 m, matrix 600205.568357 m, up +35.942 mm, across 0.551 mm
+[RockPrecisionFixDiag]     holder 'Tree00': built, height 600205.630758 m, matrix 600205.568357 m, up +35.942 mm, across 0.551 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000311': height 600080.089528 m, matrix 600080.089528 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600080.151496 m, matrix 600080.109980 m, up +20.452 mm, across 33.674 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000312': height 600141.400104 m, matrix 600141.400104 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600141.484691 m, matrix 600141.461371 m, up +61.267 mm, across 21.044 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000320': height 600225.973635 m, matrix 600225.973635 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600225.956636 m, matrix 600225.998406 m, up +24.771 mm, across 13.893 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000321': height 600207.436509 m, matrix 600207.436509 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600207.398932 m, matrix 600207.443055 m, up +6.546 mm, across 12.087 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000323': height 600194.806568 m, matrix 600194.806568 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600194.801047 m, matrix 600194.801047 m, up -5.521 mm, across 31.076 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000322': height 600203.817497 m, matrix 600203.817497 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 600203.793482 m, matrix 600203.814366 m, up -3.130 mm, across 11.675 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000313': height 600041.740706 m, matrix 600041.740706 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600041.772353 m, matrix 600041.751595 m, up +10.890 mm, across 19.881 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010000330': height 599959.150209 m, matrix 599959.150209 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 599959.150290 m, matrix 599959.191889 m, up +41.680 mm, across 10.984 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010001022': height 599978.023825 m, matrix 599978.023825 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 599978.016686 m, matrix 599978.058117 m, up +34.292 mm, across 43.333 mm
+[RockPrecisionFixDiag]   quad 'Kerbin Zn3010001200': height 599939.945240 m, matrix 599939.945240 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 599940.001796 m, matrix 599939.960366 m, up +15.126 mm, across 20.031 mm
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #0: ground 600188.740047 m, lowest point 600188.324925 m, -415.122 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #1: ground 600199.881132 m, lowest point 600199.660850 m, -220.282 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #2: ground 600187.167685 m, lowest point 600186.947207 m, -220.478 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #3: ground 600199.184920 m, lowest point 600198.964723 m, -220.198 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #4: ground 600203.879186 m, lowest point 600203.701911 m, -177.274 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #5: ground 600188.373100 m, lowest point 600188.015382 m, -357.718 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #6: ground 600195.665079 m, lowest point 600195.444685 m, -220.394 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #7: ground 600190.627473 m, lowest point 600189.601315 m, -1026.158 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #8: ground 600196.368170 m, lowest point 600196.223004 m, -145.165 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #9: ground 600202.365616 m, lowest point 600202.240278 m, -125.337 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #10: ground 600187.152683 m, lowest point 600187.244178 m, +91.495 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #11: ground 600191.840009 m, lowest point 600191.619611 m, -220.398 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #12: ground 600186.701552 m, lowest point 600186.481064 m, -220.488 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #13: ground 600187.056921 m, lowest point 600186.875094 m, -181.827 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #14: ground 600193.668649 m, lowest point 600193.110035 m, -558.614 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #15: ground 600195.856824 m, lowest point 600195.591730 m, -265.095 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #16: ground 600204.261164 m, lowest point 600204.012324 m, -248.841 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #17: ground 600197.572265 m, lowest point 600197.353084 m, -219.182 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #18: ground 600192.417334 m, lowest point 600193.181002 m, +763.667 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #19: ground 600205.230199 m, lowest point 600204.757969 m, -472.230 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #20: ground 600201.920518 m, lowest point 600201.699782 m, -220.736 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #21: ground 600192.747651 m, lowest point 600193.347545 m, +599.894 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #22: ground 600191.738985 m, lowest point 600191.469923 m, -269.062 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #23: ground 600188.458751 m, lowest point 600189.845039 m, +1386.288 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #24: ground 600198.797135 m, lowest point 600198.330997 m, -466.138 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #25: ground 600199.593810 m, lowest point 600199.360338 m, -233.472 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #26: ground 600189.666975 m, lowest point 600189.446655 m, -220.320 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #27: ground 600199.866341 m, lowest point 600199.561313 m, -305.028 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #28: ground 600199.349667 m, lowest point 600199.129331 m, -220.336 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #29: ground 600192.381756 m, lowest point 600192.161426 m, -220.330 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #30: ground 600191.295076 m, lowest point 600191.074437 m, -220.638 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #31: ground 600201.045330 m, lowest point 600200.748776 m, -296.554 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #32: ground 600193.701735 m, lowest point 600193.436126 m, -265.609 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #33: ground 600195.665580 m, lowest point 600195.462626 m, -202.954 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #34: ground 600192.193864 m, lowest point 600192.419043 m, +225.179 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #35: ground 600191.671387 m, lowest point 600191.450631 m, -220.756 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #36: ground 600189.466417 m, lowest point 600189.245692 m, -220.725 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #37: ground 600187.615249 m, lowest point 600187.395016 m, -220.234 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #38: ground 600203.362048 m, lowest point 600203.195364 m, -166.684 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #39: ground 600197.276868 m, lowest point 600196.572687 m, -704.180 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #40: ground 600194.790660 m, lowest point 600194.661848 m, -128.812 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #41: ground 600194.688550 m, lowest point 600194.468140 m, -220.410 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #42: ground 600201.313833 m, lowest point 600201.008608 m, -305.225 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #43: ground 600198.486277 m, lowest point 600198.265988 m, -220.289 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #44: ground 600214.632045 m, lowest point 600214.411932 m, -220.112 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #45: ground 600201.632980 m, lowest point 600201.369257 m, -263.722 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #46: ground 600197.814429 m, lowest point 600197.985646 m, +171.216 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #47: ground 600196.592859 m, lowest point 600196.372450 m, -220.409 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #48: ground 600197.821455 m, lowest point 600196.960098 m, -861.357 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #49: ground 600202.548837 m, lowest point 600202.328550 m, -220.287 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #50: ground 600204.937591 m, lowest point 600202.918451 m, -2019.140 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #51: ground 600206.955496 m, lowest point 600206.735370 m, -220.126 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #52: ground 600196.625591 m, lowest point 600194.442118 m, -2183.472 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #53: ground 600210.715751 m, lowest point 600210.787881 m, +72.129 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #54: ground 600198.108017 m, lowest point 600199.730745 m, +1622.728 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #55: ground 600187.000550 m, lowest point 600186.897788 m, -102.761 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #56: ground 600195.470246 m, lowest point 600195.389713 m, -80.533 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #57: ground 600191.624650 m, lowest point 600190.727713 m, -896.938 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #58: ground 600201.635106 m, lowest point 600201.415038 m, -220.068 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #59: ground 600195.806677 m, lowest point 600195.552848 m, -253.829 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #60: ground 600206.965241 m, lowest point 600206.744320 m, -220.921 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #61: ground 600211.745677 m, lowest point 600211.525048 m, -220.629 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #62: ground 600199.589858 m, lowest point 600199.309459 m, -280.399 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #63: ground 600203.606977 m, lowest point 600203.386253 m, -220.724 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #64: ground 600204.277356 m, lowest point 600204.113009 m, -164.347 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #65: ground 600192.273053 m, lowest point 600192.052727 m, -220.326 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #66: ground 600201.826168 m, lowest point 600201.597975 m, -228.193 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #67: ground 600192.928537 m, lowest point 600193.038205 m, +109.668 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #68: ground 600198.141800 m, lowest point 600199.267466 m, +1125.666 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #69: ground 600191.817823 m, lowest point 600191.652713 m, -165.110 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #70: ground 600192.389206 m, lowest point 600192.306846 m, -82.360 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #71: ground 600206.099443 m, lowest point 600204.352733 m, -1746.710 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #72: ground 600192.981656 m, lowest point 600192.761179 m, -220.478 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #73: ground 600188.558027 m, lowest point 600188.546384 m, -11.643 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #74: ground 600201.693411 m, lowest point 600202.922509 m, +1229.098 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #75: ground 600199.622145 m, lowest point 600199.401879 m, -220.266 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #76: ground 600189.375366 m, lowest point 600188.525607 m, -849.759 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #77: ground 600194.034476 m, lowest point 600193.747115 m, -287.361 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #78: ground 600204.083633 m, lowest point 600203.862996 m, -220.637 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #79: ground 600194.916921 m, lowest point 600194.734567 m, -182.354 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #80: ground 600188.913223 m, lowest point 600188.530941 m, -382.282 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #81: ground 600189.860214 m, lowest point 600189.864721 m, +4.507 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #82: ground 600189.037680 m, lowest point 600188.832734 m, -204.946 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #83: ground 600213.440435 m, lowest point 600213.220536 m, -219.899 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #84: ground 600205.915850 m, lowest point 600205.694942 m, -220.907 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #85: ground 600191.607476 m, lowest point 600191.143644 m, -463.832 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #86: ground 600203.237127 m, lowest point 600203.016796 m, -220.332 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #87: ground 600202.218077 m, lowest point 600202.017009 m, -201.067 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #88: ground 600194.887457 m, lowest point 600194.713370 m, -174.087 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #89: ground 600202.006071 m, lowest point 600201.805310 m, -200.760 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #90: ground 600191.367640 m, lowest point 600191.147252 m, -220.388 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #91: ground 600204.031252 m, lowest point 600203.619247 m, -412.004 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #92: ground 600188.730869 m, lowest point 600188.510442 m, -220.427 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #93: ground 600201.126725 m, lowest point 600200.743690 m, -383.034 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #94: ground 600190.420691 m, lowest point 600190.200004 m, -220.687 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #95: ground 600206.611497 m, lowest point 600206.390556 m, -220.941 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #96: ground 600191.291826 m, lowest point 600191.099014 m, -192.812 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #97: ground 600195.540666 m, lowest point 600195.319973 m, -220.693 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #98: ground 600186.429055 m, lowest point 600186.284855 m, -144.201 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #99: ground 600199.970117 m, lowest point 600199.749789 m, -220.328 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #100: ground 600204.298299 m, lowest point 600204.130381 m, -167.918 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #101: ground 600186.797507 m, lowest point 600186.589840 m, -207.667 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #102: ground 600203.485891 m, lowest point 600203.189475 m, -296.416 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #103: ground 600197.489349 m, lowest point 600197.505497 m, +16.148 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #104: ground 600205.776132 m, lowest point 600205.494831 m, -281.301 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #105: ground 600194.697090 m, lowest point 600194.562033 m, -135.057 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #106: ground 600191.354756 m, lowest point 600191.876101 m, +521.344 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #107: ground 600202.414913 m, lowest point 600202.177317 m, -237.596 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #108: ground 600200.358088 m, lowest point 600200.096652 m, -261.436 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #109: ground 600217.215916 m, lowest point 600216.995312 m, -220.604 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #110: ground 600202.864096 m, lowest point 600202.696718 m, -167.378 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #111: ground 600193.168821 m, lowest point 600192.948531 m, -220.290 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #112: ground 600203.075500 m, lowest point 600204.220586 m, +1145.086 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #113: ground 600204.761911 m, lowest point 600204.568229 m, -193.682 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #114: ground 600191.504081 m, lowest point 600191.283902 m, -220.180 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #115: ground 600189.789542 m, lowest point 600189.573808 m, -215.734 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #116: ground 600205.769776 m, lowest point 600205.509815 m, -259.960 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #117: ground 600202.305362 m, lowest point 600202.225047 m, -80.315 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #118: ground 600205.886216 m, lowest point 600206.865651 m, +979.434 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #119: ground 600195.305590 m, lowest point 600194.929624 m, -375.966 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #120: ground 600203.047481 m, lowest point 600202.826745 m, -220.736 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #121: ground 600200.266545 m, lowest point 600200.017104 m, -249.441 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #122: ground 600189.835784 m, lowest point 600189.818124 m, -17.660 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #123: ground 600204.513885 m, lowest point 600204.299064 m, -214.821 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #124: ground 600195.579675 m, lowest point 600195.359072 m, -220.602 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #125: ground 600193.878208 m, lowest point 600193.113490 m, -764.718 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #126: ground 600192.358232 m, lowest point 600192.137974 m, -220.258 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #127: ground 600203.852071 m, lowest point 600203.429327 m, -422.744 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #128: ground 600195.662075 m, lowest point 600195.463488 m, -198.587 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #129: ground 600197.548932 m, lowest point 600197.328475 m, -220.457 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #130: ground 600204.571859 m, lowest point 600204.349786 m, -222.072 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #131: ground 600188.078802 m, lowest point 600187.762802 m, -315.999 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #132: ground 600193.893286 m, lowest point 600193.619335 m, -273.951 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #133: ground 600195.125308 m, lowest point 600194.905065 m, -220.243 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #134: ground 600196.209493 m, lowest point 600195.989247 m, -220.246 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #135: ground 600186.681306 m, lowest point 600186.460840 m, -220.467 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #136: ground 600195.406818 m, lowest point 600195.138748 m, -268.070 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #137: ground 600190.025556 m, lowest point 600189.805291 m, -220.264 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #138: ground 600199.805010 m, lowest point 600199.584658 m, -220.352 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #139: ground 600194.124804 m, lowest point 600193.809489 m, -315.315 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #140: ground 600196.645239 m, lowest point 600196.376741 m, -268.498 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #141: ground 600186.523995 m, lowest point 600186.248249 m, -275.746 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #142: ground 600188.696940 m, lowest point 600188.476597 m, -220.343 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #143: ground 600188.447510 m, lowest point 600188.226720 m, -220.790 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #144: ground 600190.597203 m, lowest point 600191.176089 m, +578.885 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #145: ground 600189.469903 m, lowest point 600189.282357 m, -187.546 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #146: ground 600196.975909 m, lowest point 600196.702603 m, -273.306 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #147: ground 600202.273061 m, lowest point 600202.053008 m, -220.053 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #148: ground 600189.457813 m, lowest point 600188.898924 m, -558.889 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #149: ground 600197.516043 m, lowest point 600197.209318 m, -306.725 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #150: ground 600191.155786 m, lowest point 600190.417701 m, -738.086 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #151: ground 600190.820740 m, lowest point 600190.109281 m, -711.458 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #152: ground 600211.753652 m, lowest point 600211.533012 m, -220.639 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #153: ground 600187.252509 m, lowest point 600186.998100 m, -254.408 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #154: ground 600187.026816 m, lowest point 600186.805949 m, -220.868 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #155: ground 600186.716155 m, lowest point 600186.495665 m, -220.491 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #156: ground 600186.341616 m, lowest point 600186.121149 m, -220.467 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #157: ground 600196.158407 m, lowest point 600195.937851 m, -220.556 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #158: ground 600204.301036 m, lowest point 600204.075755 m, -225.281 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #159: ground 600190.777324 m, lowest point 600190.556498 m, -220.826 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #160: ground 600201.338113 m, lowest point 600201.020933 m, -317.180 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #161: ground 600198.040975 m, lowest point 600198.827564 m, +786.590 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #162: ground 600205.296519 m, lowest point 600205.076038 m, -220.482 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #163: ground 600188.835842 m, lowest point 600188.615429 m, -220.413 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #164: ground 600191.294258 m, lowest point 600191.042930 m, -251.328 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #165: ground 600201.355700 m, lowest point 600201.297452 m, -58.249 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #166: ground 600204.620364 m, lowest point 600204.274000 m, -346.365 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #167: ground 600199.299710 m, lowest point 600197.986449 m, -1313.261 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #168: ground 600186.414352 m, lowest point 600186.174019 m, -240.333 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #169: ground 600201.171851 m, lowest point 600200.890460 m, -281.390 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #170: ground 600200.624623 m, lowest point 600200.410863 m, -213.760 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #171: ground 600201.285499 m, lowest point 600201.092970 m, -192.529 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #172: ground 600194.636839 m, lowest point 600194.383636 m, -253.203 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #173: ground 600208.331369 m, lowest point 600208.111283 m, -220.086 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #174: ground 600196.525191 m, lowest point 600196.319910 m, -205.281 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #175: ground 600191.619114 m, lowest point 600191.360169 m, -258.945 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #176: ground 600199.837388 m, lowest point 600199.707738 m, -129.650 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #177: ground 600207.630995 m, lowest point 600207.410932 m, -220.062 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #178: ground 600192.901106 m, lowest point 600192.707729 m, -193.377 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #179: ground 600188.910380 m, lowest point 600188.701357 m, -209.023 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #180: ground 600202.227007 m, lowest point 600202.006277 m, -220.730 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #181: ground 600189.692606 m, lowest point 600189.620382 m, -72.224 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #182: ground 600190.352435 m, lowest point 600190.131966 m, -220.470 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #183: ground 600194.426295 m, lowest point 600194.179147 m, -247.149 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #184: ground 600205.268098 m, lowest point 600205.065081 m, -203.016 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #185: ground 600194.057834 m, lowest point 600193.837550 m, -220.285 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #186: ground 600191.574966 m, lowest point 600191.354244 m, -220.723 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #187: ground 600190.388375 m, lowest point 600190.145802 m, -242.573 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #188: ground 600190.245371 m, lowest point 600190.084246 m, -161.124 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #189: ground 600202.880788 m, lowest point 600202.680946 m, -199.842 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #190: ground 600196.538191 m, lowest point 600196.278156 m, -260.035 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #191: ground 600187.780007 m, lowest point 600187.559572 m, -220.435 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #192: ground 600198.430209 m, lowest point 600198.667975 m, +237.766 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #193: ground 600204.803460 m, lowest point 600204.738620 m, -64.840 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #194: ground 600197.437424 m, lowest point 600197.249902 m, -187.522 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #195: ground 600196.770105 m, lowest point 600196.549551 m, -220.554 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #196: ground 600196.427337 m, lowest point 600196.213585 m, -213.753 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #197: ground 600214.632954 m, lowest point 600214.484272 m, -148.682 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #198: ground 600196.958619 m, lowest point 600196.707298 m, -251.321 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Grass00' #199: ground 600197.761212 m, lowest point 600197.540645 m, -220.567 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #0: ground 600193.473643 m, lowest point 600192.416145 m, -1057.499 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #1: ground 600189.306417 m, lowest point 600187.950459 m, -1355.958 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #2: ground 600190.371247 m, lowest point 600188.905440 m, -1465.806 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #3: ground 600204.503159 m, lowest point 600203.472474 m, -1030.685 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #4: ground 600201.814442 m, lowest point 600200.470742 m, -1343.701 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #5: ground 600193.742425 m, lowest point 600192.344164 m, -1398.262 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #6: ground 600197.215552 m, lowest point 600196.033196 m, -1182.356 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #7: ground 600202.658884 m, lowest point 600201.412474 m, -1246.410 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #8: ground 600189.918538 m, lowest point 600188.556618 m, -1361.921 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #9: ground 600217.816440 m, lowest point 600216.572918 m, -1243.522 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #10: ground 600211.928596 m, lowest point 600210.615111 m, -1313.485 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #11: ground 600194.300104 m, lowest point 600192.426172 m, -1873.932 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #12: ground 600189.176463 m, lowest point 600188.398465 m, -777.998 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #13: ground 600188.191233 m, lowest point 600186.841278 m, -1349.954 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #14: ground 600197.997613 m, lowest point 600196.908642 m, -1088.971 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #15: ground 600199.938946 m, lowest point 600198.403537 m, -1535.409 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #16: ground 600188.855602 m, lowest point 600187.569675 m, -1285.927 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Zn3010000130' 'Tree00' #17: ground 600203.050208 m, lowest point 600201.950983 m, -1099.225 mm above the ground
+[RockPrecisionFixDiag] End of record 3: 64 quads with rocks, 118 holders (0 not built yet); nearest quad 'Kerbin Zn3010000130': 218 rocks, 0 without ground under them
