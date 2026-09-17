@@ -29,7 +29,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         /// vessel or no terrain to read. The reading holds three measures:
         /// - <see cref="QuadMeasure"/>, on every terrain quad carrying rocks;
         /// - <see cref="HolderMeasure"/>, on every holder of rocks of those quads;
-        /// - <see cref="RockMeasure"/>, on every rock of the quad nearest to the craft.
+        /// - <see cref="RockMeasure"/>, on a few vertices of every rock of the quad nearest to the craft.
         /// </summary>
         public static Reading Take(Vessel vessel)
         {
@@ -121,12 +121,17 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                         }
                     }
                 }
-                int noGroundRockCount = 0;
+                int pointCount = 0;
+                int noGroundPointCount = 0;
                 foreach (RockMeasure rock in Rocks)
                 {
-                    if (double.IsNaN(rock.GroundM))
+                    pointCount += rock.Points.Count;
+                    foreach (PointMeasure point in rock.Points)
                     {
-                        noGroundRockCount++;
+                        if (double.IsNaN(point.GroundM))
+                        {
+                            noGroundPointCount++;
+                        }
                     }
                 }
                 // The rocks carry the name of their quad: with none measured, there is no name to give.
@@ -139,9 +144,9 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 else
                 {
                     log.Line(0, "End of record {0}: {1} quads with rocks, {2} holders ({3} not built yet);"
-                        + " nearest quad '{4}': {5} rocks, {6} without ground under them",
+                        + " nearest quad '{4}': {5} rocks, {6} vertices measured, {7} without ground under them",
                         number, Quads.Count, holderCount, unbuiltHolderCount, Rocks[0].QuadName, Rocks.Count,
-                        noGroundRockCount);
+                        pointCount, noGroundPointCount);
                 }
             }
             log.Write();

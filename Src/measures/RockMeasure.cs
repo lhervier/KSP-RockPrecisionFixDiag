@@ -4,8 +4,8 @@ using UnityEngine;
 namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
 {
     /// <summary>
-    /// Measure 3: where one rock stands against the ground, as it is drawn. Heights are distances from the
-    /// centre of the body, in metres.
+    /// Measure 3: where one rock stands against the ground, as it is drawn, at a few of its vertices spread over
+    /// the whole rock.
     /// </summary>
     internal class RockMeasure
     {
@@ -18,23 +18,16 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
         /// <summary>Rank of the rock among the rocks of its holder, from 0, in the order stock built them.</summary>
         public int Index;
 
-        /// <summary>Height of the lowest vertex of the rock, as it is drawn.</summary>
-        public double LowestM;
+        /// <summary>The measured vertices of the rock, the same ones in every rock of its kind and at every load.</summary>
+        public readonly List<PointMeasure> Points = new List<PointMeasure>();
 
-        /// <summary>
-        /// Height of the terrain collision surface under the lowest vertex of the rock, or NaN when no terrain
-        /// was found under it.
-        /// </summary>
-        public double GroundM;
-
-        /// <summary>Adds the rock to a record, on a line of its own.</summary>
+        /// <summary>Adds the rock to a record, one line per measured vertex.</summary>
         public void Log(RecordLog log)
         {
-            // NaN when no terrain was found. Negative: the lowest vertex is below the ground, which stock does
-            // on purpose to some extent.
-            log.Line(1, "rock '{0}' '{1}' #{2}: ground {3}, lowest point {4}, {5} mm above the ground",
-                QuadName, ScatterName, Index, FormatUtils.FormatHeight(GroundM), FormatUtils.FormatHeight(LowestM),
-                FormatUtils.FormatSigned((LowestM - GroundM) * 1000.0));
+            foreach (PointMeasure point in Points)
+            {
+                point.Log(log, this);
+            }
         }
 
         /// <summary>
@@ -49,8 +42,9 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
                 return rocks;
             }
 
-            // Stock writes the rocks into the mesh one after the other, each as a copy of the scatter's mesh
-            // (moved, turned and scaled), and fills the rest of the mesh with zeros.
+            // Stock writes the rocks into the mesh one after the other, each as a copy of the scatter's model
+            // (moved, turned and scaled), vertex by vertex in the order of the model, and fills the rest of the
+            // mesh with zeros.
             Mesh baseMesh = holder.scatter != null ? holder.scatter.baseMesh : null;
             int stride = baseMesh != null ? baseMesh.vertexCount : Constants.FALLBACK_ROCK_VERTICES;
             List<Vector3> vertices = new List<Vector3>();
@@ -60,56 +54,42 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
                 return rocks;
             }
 
+            // The vertices to measure are chosen on the model, which is the same at every load, rather than on
+            // the drawn rocks, whose tiny differences between loads could tip a close choice. A rock is its
+            // model turned and scaled evenly, so vertices far apart on the model are far apart on the rock.
+            // Without a model, stock draws a rock with fewer vertices than the points wanted: all are measured.
+            int[] picked;
+            if (baseMesh != null)
+            {
+                picked = VertexPicker.PickSpread(baseMesh.vertices, Constants.POINTS_PER_ROCK);
+            }
+            else
+            {
+                picked = new int[stride];
+                for (int i = 0; i < stride; i++)
+                {
+                    picked[i] = i;
+                }
+            }
+
             string quadName = holder.quad.name;
             string scatterName = HolderFinder.ScatterNameOf(holder);
             Matrix4x4 toWorld = holder.transform.localToWorldMatrix;
             for (int rock = 0; rock < holder.count; rock++)
             {
-                RockMeasure measure = Take(vertices, rock * stride, stride, toWorld, body);
-                measure.QuadName = quadName;
-                measure.ScatterName = scatterName;
-                measure.Index = rock;
+                RockMeasure measure = new RockMeasure
+                {
+                    QuadName = quadName,
+                    ScatterName = scatterName,
+                    Index = rock
+                };
+                foreach (int vertex in picked)
+                {
+                    measure.Points.Add(PointMeasure.Take(vertices[rock * stride + vertex], vertex, toWorld, body));
+                }
                 rocks.Add(measure);
             }
             return rocks;
-        }
-
-        /// <summary>
-        /// Measures the heights of the rock whose vertices are the <paramref name="stride"/> vertices of
-        /// <paramref name="vertices"/> starting at <paramref name="first"/>, drawn through the given matrix.
-        /// The names and the rank of the rock are left to the caller.
-        /// </summary>
-        private static RockMeasure Take(List<Vector3> vertices, int first, int stride, Matrix4x4 toWorld,
-            CelestialBody body)
-        {
-            // The lowest vertex is the one nearest to the centre of the body, as drawn.
-            Vector3d bottom = Vector3d.zero;
-            double lowest = double.PositiveInfinity;
-            for (int i = first; i < first + stride; i++)
-            {
-                Vector3d point = toWorld.MultiplyPoint3x4(vertices[i]);
-                double height = HeightUtils.HeightOf(point, body);
-                if (height < lowest)
-                {
-                    lowest = height;
-                    bottom = point;
-                }
-            }
-
-            // Down the vertical, from high above the lowest vertex, onto the terrain only. The rock itself has
-            // no collider and cannot stop the ray.
-            Vector3d up = (bottom - body.position).normalized;
-            RaycastHit hit;
-            Vector3 start = (Vector3)(bottom + up * Constants.RAY_START_HEIGHT);
-            bool onGround = Physics.Raycast(start, -(Vector3)up, out hit, 2f * Constants.RAY_START_HEIGHT,
-                    1 << Constants.TERRAIN_LAYER, QueryTriggerInteraction.Ignore)
-                && hit.collider.GetComponent<PQ>() != null;
-
-            return new RockMeasure
-            {
-                LowestM = lowest,
-                GroundM = onGround ? HeightUtils.HeightOf(hit.point, body) : double.NaN
-            };
         }
     }
 }

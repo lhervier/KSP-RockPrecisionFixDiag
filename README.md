@@ -23,9 +23,9 @@ see it at all.
 This instrument exists for another reason. [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix)
 changes the height at which KSP builds the ground, and checking a change like that means checking
 everything placed against that ground. Scatter is one of those things, so this instrument is meant to be
-run on stock and with Terrain Precision Fix installed. The readings taken both ways, on the same save, are
+run on stock and with Terrain Precision Fix installed. The readings taken both ways, on the same saves, are
 kept under [perfs](perfs/README.md) and summed up under [What the readings show](#what-the-readings-show). Why stock draws scatter off the ground is on
-[Rock Precision Fix's page](https://github.com/lhervier/KSP-RockPrecisionFix/blob/main/README.md#the-problem).
+[Rock Precision Fix's page](https://github.com/lhervier/KSP-RockPrecisionFix/blob/main/README.md#the-culprit).
 This page sticks to how to measure it.
 
 ## What it measures
@@ -52,20 +52,26 @@ from the centre of the body, they can still stand apart sideways. So for each ma
 holder's, the mod also measures how far it stands from the centre of the quad, in two parts: *up*, the
 gap in height, and *across*, the gap sideways.
 
-5. Then, for every object of scatter held by the quad nearest to the craft:
-   - **its lowest point**: the mod reads the object's shape from its mesh and takes its lowest point as
-     drawn, the vertex nearest to the centre of the body;
-   - **the ground under that point**: the height of the terrain collision surface, the surface a craft
-     rests on, hit by a ray cast straight down from 100 m above that point, so that the ground is found
+5. Then, for every object of scatter held by the quad nearest to the craft, at 10 of its vertices spread
+   over the whole object:
+   - **the vertex**, as drawn: the mod reads the object's shape from its mesh;
+   - **the ground under that vertex**: the height of the terrain collision surface, the surface a craft
+     rests on, hit by a ray cast straight down from 100 m above that vertex, so that the ground is found
      even under an object sunk into it.
 
+   Every object of a kind is a copy of the same model, moved, turned and scaled. The 10 vertices are
+   chosen on that model, so they are the same ones in every object of that kind and at every load: the
+   lowest vertex of the model first, then, one after the other, the vertex furthest from all those
+   already chosen. A model with 10 vertices or fewer has all of them measured. Heights alone would not
+   show an object that turns about a point without moving it; spread over the whole object, the vertices
+   show any part of it that rises or sinks against the ground.
+
 In stock, none of these heights stays the same from one load to the next: the quads, their holders, the
-lowest point of every object and the ground under it all move. Installing
+vertices of every object and the ground under them all move. Installing
 [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) is not enough to keep them
 equal: the quads' heights then come back the same at every load, but the holders' still do not, and the
-objects move against the ground even more than in stock (see
-[What the readings show](#what-the-readings-show)). Stock sinks scatter partly into the ground on purpose,
-so the gap between an object and the ground, which the log gives as well, says little on its own. What
+objects still move against the ground (see [What the readings show](#what-the-readings-show)). Stock sinks scatter partly into the ground on purpose,
+so the gap between a vertex and the ground, which the log gives as well, says little on its own. What
 matters is whether it stays the same from one load to the next.
 
 **Precision.** Unity gives centres, matrices and vertices as single precision world coordinates. The world
@@ -88,12 +94,12 @@ quads further away can be.
 4. **Save.**
 5. **Load that save and press `Alt+F6`** (`Mod+F6`: the modifier key of the game). The reading is
    written to `KSP.log`, and its last line tells what it holds: how many quads carry scatter, how many
-   holders are not built yet, and how many objects were measured on the nearest quad. Quads and
+   holders are not built yet, and how many objects and vertices were measured on the nearest quad. Quads and
    their scatter are built over several frames after loading: if holders are not built yet, or the
    counts still grow from one press to the next, wait a few seconds and press again.
    Only the last record of each load is needed.
-6. **Load the same save again, and press `Alt+F6` again.** As many times as needed: five or six loads
-   are enough.
+6. **Load the same save again, and press `Alt+F6` again.** A dozen times: how far things move changes
+   from one load to the next, and a handful of loads can come out small or large by chance.
 
 KSP overwrites `KSP.log` each time it starts: copy it before relaunching. Reloading the save from within
 the game does not overwrite it, and the record numbers keep counting from one load to the next.
@@ -109,9 +115,9 @@ Record … on …: scatter on. Heights are …
     holder '…': built, height …, matrix …, up … mm, across … mm
     …
   …
-  rock '…' '…' #0: ground …, lowest point …, … mm above the ground
+  rock '…' '…' #0 vertex …: ground …, vertex …, … mm above the ground
   …
-End of record …: … quads with rocks, … holders (… not built yet); nearest quad '…': … rocks, … without ground under them
+End of record …: … quads with rocks, … holders (… not built yet); nearest quad '…': … rocks, … vertices measured, … without ground under them
 ```
 
 - An opening line, with the body and whether scatter is on.
@@ -119,21 +125,23 @@ End of record …: … quads with rocks, … holders (… not built yet); neares
   of its matrix, *up* and *across* in millimetres.
 - Under each quad, each of its holders, one per kind of scatter, ordered by name: whether its objects are
   built yet, then the same heights, *up* and *across*, still against the centre of the quad.
-- Then, for the nearest quad only, one line per object, holder after holder: the quad, the kind of
-  scatter, the object's number, the height of the ground under it and of its lowest point, and the gap
-  between the two in millimetres. An object without ground under it is one where the ray found no
-  terrain: its ground and its gap read `--`. An object keeps its number from one load to the next, since
-  stock places the scatter from a seed.
+- Then, for the nearest quad only, one line per measured vertex, object after object and holder after
+  holder: the quad, the kind of scatter, the object's number, the vertex's number in the model, the
+  height of the ground under the vertex and of the vertex itself, and the gap between the two in
+  millimetres. A vertex without ground under it is one where the ray found no terrain: its ground and its
+  gap read `--`. An object keeps its number from one load to the next, since stock places the scatter
+  from a seed, and a vertex keeps its number since it is chosen on the model.
 - A closing line, with the counts: it is the one left in sight when following the file as it grows.
 
 A holder's matrix height minus its quad's height and its *up* are nearly the same number, by two
 different routes: a difference of heights, and a projection on the vertical.
 
 **Reading the records.** Compare the records of the successive loads on the nearest quad. Its name has to
-be the same in every record for them to compare anything. Object by object, the same kind of scatter and
-the same number, the height above the ground answers the question on its own: constant over the loads,
-that object is drawn at the same height against the ground every time; changing, it is not. The heights
-above it tell where a change comes from: the object's height above the ground minus its holder's *up*
+be the same in every record for them to compare anything. Vertex by vertex, the same kind of scatter, the
+same object and the same vertex, the height above the ground answers the question on its own: constant
+over the loads for all the vertices of an object, that object is drawn at the same place against the
+ground every time; changing, it is not. The heights above it tell where a change comes from: a vertex's
+height above the ground minus its holder's *up*
 stays constant when the change is the holder's matrix, and the holder's height minus its quad's height
 tells whether its centre left its quad's too. The quad's own *up* and *across* tell whether the
 ground is drawn away from the quad. The height of the quad itself may change from one load to the next as
@@ -141,42 +149,77 @@ well: comparing everything to it keeps that from blurring the rest.
 
 ## What the readings show
 
-The readings kept under [perfs](perfs/README.md) follow the protocol above on a single save,
-[`reference-kerbin.sfs`](perfs/reference-kerbin.sfs), loaded six times on stock and six times with
-[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) installed. All twelve records
-hold the same 64 quads and 118 holders, and name the same nearest quad, `Kerbin Zn3010000130`, with the
-same 218 objects: 200 `Grass00` and 18 `Tree00`. Below, the *range* of a reading is its largest value
-minus its smallest over the six loads of a series.
+The readings kept under [perfs](perfs/README.md) follow the protocol above on two saves, each loaded twelve
+times on stock and twelve times with
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) installed:
+
+- [`reference-kerbin.sfs`](perfs/reference-kerbin.sfs), on Kerbin: every record holds the same 64 quads
+  and 118 holders, and names the same nearest quad, `Kerbin Zn3010000130`, with the same 218 objects:
+  200 `Grass00`, with 8 vertices each, all measured, and 18 `Tree00`, with 10 vertices measured each;
+- [`reference-mune.sfs`](perfs/reference-mune.sfs), on the Mun: 128 quads and 128 holders, and the same
+  nearest quad, `Mun Zp211333000`, with 20 `Rock00`, 10 vertices measured each.
+
+Below, the *range* of a reading is its largest value minus its smallest over the twelve loads of a series,
+and the *shape* of an object is the height of each of its vertices minus the height of its first vertex in
+the log, the lowest of its model.
+
+**Kerbin**
 
 | | stock | with Terrain Precision Fix |
 |---|---|---|
-| centre of the nearest quad, range | 126 mm | 0.001 mm |
+| centre of the nearest quad, range | 131 mm | 0.002 mm |
 | matrix of each quad against its centre | *up* and *across* 0.000 mm everywhere | the same |
-| centre of each holder against its quad's | the same height, to the micrometre | range 137 mm (median over the holders), up to 201 mm |
-| *up* of the holders' matrices | −84 to +85 mm, 0.000 mm a third of the time | −60 to +176 mm, never 0 |
-| each object above the ground, range | 44 mm (median over the objects), from 27 to 116 mm | 129 mm (median), from 125 to 134 mm |
-| the same minus its holder's *up*, range | 2 mm (median), but over 10 mm for 60 objects, up to 82 mm | 1.8 mm (median), 6.9 mm at most |
+| centre of each holder against its quad's | the same height, to the micrometre | range 148 mm (median over the holders), from 88 to 227 mm |
+| *up* of the holders' matrices | −92 to +92 mm, 0.000 mm 28% of the time | −107 to +110 mm, never 0 |
+| each vertex above the ground, range | 94 mm (median over the vertices), from 66 to 167 mm | 130 mm (median), from 127 to 134 mm |
+| the same minus its holder's *up*, range | 5.3 mm (median), but over 10 mm for 80 objects, up to 119 mm | 1.7 mm (median), 6.6 mm at most |
+| shape of each object, range | 0.015 mm (median over the vertices), 0.066 mm at most | 0.015 mm (median), 0.063 mm at most |
+
+**The Mun**
+
+| | stock | with Terrain Precision Fix |
+|---|---|---|
+| centre of the nearest quad, range | 33 mm | 0.005 mm |
+| matrix of each quad against its centre | *up* and *across* 0.000 mm everywhere | the same |
+| centre of each holder against its quad's | the same height, to the micrometre | range 25 mm (median over the holders), from 15 to 42 mm |
+| *up* of the holders' matrices | within 0.1 mm of 0 three times out of four, otherwise ±15.2 to ±15.4 mm, nothing in between | −27 to +29 mm, never 0 |
+| each vertex above the ground, range | 31 mm (median over the vertices), from 12 to 37 mm | 31 mm (median), from 30 to 32 mm |
+| the same minus its holder's *up*, range | 2.2 mm (median), but over 10 mm for 3 rocks out of 20, up to 18.5 mm | 0.55 mm (median), 1.9 mm at most |
+| shape of each object, range | 0.002 mm (median over the vertices), 0.011 mm at most | 0.006 mm (median), 0.024 mm at most |
+
+**In every series, no object changes shape from one load to the next.** Within an object, the heights of
+its vertices against each other come back the same at every load to within 0.07 mm, trees 20 m tall
+included, while the whole object moves by centimetres. Whatever moves an object moves all of it by the
+same height: none of them comes back leaning another way, sunk deeper at one end or stretched.
 
 **Stock.** Every object of the nearest quad is drawn at a different height against the ground at every
-load: 44 mm apart over the six loads for half of them. Most of it comes from its holder: the holder's
-centre stays on its quad's, but the matrix it is drawn with stands above or below it by an amount that
-changes at every load, and taking that *up* off leaves 2 mm for most objects. Not for all of them: the
-ground itself moves against the centre of the quad from one load to the next, by 54 mm for half of the
-objects, the objects mostly move along with it, and 60 of them keep more than 10 mm once their holder's
-*up* is taken off.
+load: 94 mm apart over the twelve loads for half of the vertices on Kerbin, 31 mm on the Mun. Most of it
+comes from its holder: the holder's centre stays on its quad's, but the matrix it is drawn with stands
+above or below it by an amount that changes at every load, and taking that *up* off leaves a few
+millimetres for most vertices. Not for all of them: the ground itself moves against the centre of the
+quad from one load to the next, by 104 mm for half of the vertices on Kerbin and 27 mm on the Mun, the
+objects mostly move along with it, and some of them keep more than 10 mm once their holder's *up* is taken
+off: 80 objects out of 218 on Kerbin, 3 rocks out of 20 on the Mun.
 
 **With Terrain Precision Fix.** The quads stop moving: the centre of the nearest quad comes back at the
-same height to the micrometre, and the ground under each object moves by 7 mm at most against it. The
-objects are still drawn at a different height against the ground at every load, and further apart than
-in stock: 129 mm for half of them, about three times as much. All of it now comes from the holders: their
-centres no longer stay on their quads', the *up* of their matrices spans a wider range, and once it is
-taken off, no object moves by more than 7 mm.
+same height to a few micrometres, and the ground under each vertex moves by 6.7 mm at most against it on
+Kerbin, 1.8 mm on the Mun. The objects are still drawn at a different height against the ground at every
+load: 130 mm apart for half of the vertices on Kerbin, 31 mm on the Mun. All of it now comes from the
+holders: their centres no longer stay on their quads', the *up* of their matrices never comes back to 0,
+and once it is taken off, no vertex moves by more than 6.6 mm on Kerbin and 1.9 mm on the Mun.
 
-**In short.** Stock is far from perfect, and Terrain Precision Fix makes it worse. Neither is a real
-problem in play, though. Scatter has no collider: no craft rests on it and nothing hits it, so an object
-drawn a few centimetres higher or lower than at the last load changes nothing for the game. And scatter is
-sunk into the ground on purpose: on the nearest quad, the objects sit between 23 and 36 cm below the
-ground on average, depending on the load, so a shift of a few centimetres mostly moves them within the
+**How much the objects move is a draw.** The *up* of a holder changes at every load, and the range of a
+dozen draws can come out small or large: split in two halves of six loads, the Kerbin series with
+Terrain Precision Fix gives 43 mm for one half and 130 mm for the other. Over all the holders and all the
+loads, the *up* of their matrices is 31 mm on average (root mean square) on stock and 40 mm with Terrain
+Precision Fix on Kerbin, 7.5 mm and 9.6 mm on the Mun: the same order of size.
+
+**In short.** Neither stock nor Terrain Precision Fix draws scatter at the same height against the ground
+twice. Neither is a real problem in play, though. Scatter has no collider: no craft rests on it and
+nothing hits it, so an object drawn a few centimetres higher or lower than at the last load changes
+nothing for the game. And scatter is sunk into the ground on purpose: on the nearest quad, the lowest
+vertex of each object's model sits between 27 and 40 cm below the ground on average on Kerbin, and about
+2 m on the Mun, depending on the load, so a shift of a few centimetres mostly moves the objects within the
 ground, where nobody sees it.
 
 ## Get it
