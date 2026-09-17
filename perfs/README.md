@@ -15,8 +15,8 @@ load it from that game.
 
 ## Stock
 
-2026-09-17, KSP 1.12.5 on Windows. `GameData` holding Harmony, ModuleManager, KSP Community Fixes 1.41.1
-and this mod, built from commit `eb8276c`: nothing else. Terrain scatter on, the log flushed at once. KSP
+KSP 1.12.5 on Windows. `GameData` holding Harmony, ModuleManager, KSP Community Fixes 1.41.1
+and this mod: nothing else. Terrain scatter on, the log flushed at once. KSP
 was started once, and the save loaded six times in that session, with `Alt+F6` pressed after each load
 once the scene had settled.
 
@@ -32,3 +32,19 @@ End of record 1: 64 quads with rocks, 118 holders (0 not built yet); nearest qua
 
 So every record was taken once all the holders were built, and all of them name the same nearest quad:
 its 218 objects, 200 `Grass00` and 18 `Tree00`, compare one by one from one load to the next.
+
+## With Terrain Precision Fix
+
+The same install and the same build of this mod as above, with
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) 0.1.0 added to `GameData`,
+at its default settings. Terrain scatter on. The save was loaded six times, with `Alt+F6` pressed after
+each load once the scene had settled. KSP was started once for the first load and once more for the five
+others, which is why the first two records both carry the number 1.
+
+| load | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+| log | [`load1`](runs/kerbin-tpf-load1.log) | [`load2`](runs/kerbin-tpf-load2.log) | [`load3`](runs/kerbin-tpf-load3.log) | [`load4`](runs/kerbin-tpf-load4.log) | [`load5`](runs/kerbin-tpf-load5.log) | [`load6`](runs/kerbin-tpf-load6.log) |
+
+Here too every record ends on the same line as in stock, but for its number: all the holders built, and
+the same nearest quad, `Kerbin Zn3010000130`, with the same 218 objects. The records of both series
+therefore compare with each other as well, object by object.

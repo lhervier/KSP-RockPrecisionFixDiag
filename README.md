@@ -1,98 +1,75 @@
 # Rock Precision Fix Diag
 
+A measuring instrument for KSP 1.12. It lets you check, on your own install, a claim about the terrain
+scatter drawn around your craft — the rocks, and around the KSC the grass and the trees:
+
+> **KSP never draws terrain scatter at the same height against the ground twice.** Load the same save
+> several times, and every rock, tuft of grass or tree comes back drawn a little higher or a little
+> lower against the ground each time — several centimetres apart on Kerbin.
+
 **How this was made.** Written with Claude, Anthropic's AI assistant, and reviewed line by line by a
-human — me. I am saying so before anything else, because contributions made with an AI deserve a closer
+human — me. I am saying so up front, because contributions made with an AI deserve a closer
 look than others, and because some people would rather stop reading here. This mod measures and fixes
 nothing, so what there is to check is the reading itself: the source is public, and the protocol below
-runs on a stock install, on your own craft, against the figures on this page.
+runs on a stock install, wherever you land.
 
-A diagnostic mod for KSP 1.12. It shows that stock KSP does not draw terrain scatter (rocks, and around
-the KSC grass and trees) on the ground: it draws it above or below the ground, by several centimetres on
-Kerbin, and by a different amount at every load.
+## Why it matters
+
+It barely does. Stock scatter has no collider: nothing rests on it and nothing hits it, so a rock drawn a
+few centimetres higher or lower than at the last load changes nothing for your craft. Scatter is also
+sunk partly into the ground on purpose, so the shift is hard to see, and most of the time you will not
+see it at all.
+
+This instrument exists for another reason. [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix)
+changes the height at which KSP builds the ground, and checking a change like that means checking
+everything placed against that ground. Scatter is one of those things, so this instrument is meant to be
+run on stock and with Terrain Precision Fix installed. The readings taken both ways, on the same save, are
+kept under [perfs](perfs/README.md) and summed up under [What the readings show](#what-the-readings-show). Why stock draws scatter off the ground is on
+[Rock Precision Fix's page](https://github.com/lhervier/KSP-RockPrecisionFix/blob/main/README.md#the-problem).
+This page sticks to how to measure it.
 
 ## What it measures
 
-**Heights.** Every height is a distance from the centre of the body, in double precision, from the
-exact position of that centre that KSP keeps (`CelestialBody.position`). Stock builds the scatter of a
-terrain quad as one mesh per kind of scatter, each held by an object of its own
-(`PQSMod_LandClassScatterQuad`). For every quad carrying scatter around the craft, and for every holder
-of that quad, the mod reads two heights: one from the transform position, one from the translation of the
-local to world matrix. Unity gives a transform both, computes them separately, and draws with the matrix.
+The instrument compares a scene with itself. You load the same save several times, and at each load it
+reads the same things at the same place. Nothing in the scene changed between two loads, so every one of
+these readings should come out the same every time.
 
-**The matrix against the quad.** For the quad and for each of its holders, the translation of the
-matrix minus the transform position of the quad, split in two: *up*, along the vertical of the quad, and
-*across*, the length of what is left. For a holder, this is the gap that moves the scatter against the
-ground, since the scatter is drawn from the holder's matrix and the ground is placed by its quad. For the
-quad, it tells whether the ground itself is drawn where the quad stands. *Across* matters on a slope:
-an object moved sideways by *d* on a slope of angle *θ* stands above a ground higher or lower by up to
-*d* · tan *θ*.
+Stock builds the scatter of a terrain quad as one mesh per kind of scatter, each held by an object of its
+own, a *holder* (`PQSMod_LandClassScatterQuad`). Every position is read as a *height*: its distance from
+the centre of the body, in double precision, from the exact position of that centre that KSP keeps
+(`CelestialBody.position`).
 
-**The scatter against the ground.** For every object held by the quad nearest to the craft, the mod
-reads the object's shape from its mesh and takes its lowest point as drawn, the vertex nearest to the
-centre of the body. It then casts a ray straight down from 100 m above that point, so that the ground
-is found even under an object sunk into it, and reads the height of the terrain collision surface it
-hits: the surface a craft rests on. Stock sinks scatter partly into the ground on purpose, so the gap
-between the two heights says little on its own. What matters is whether it stays the same from one load
-to the next.
+At each load, for every quad carrying scatter around the craft, the mod reads:
 
-**Precision.** The positions read from transforms are single precision world coordinates. The world
+1. **the centre of the quad** (the position of its transform, in Unity's terms);
+2. **the matrix of the quad**: the translation of its local to world matrix. Unity keeps both the centre
+   of an object and its matrix, computes them separately, and draws with the matrix;
+3. **the centre of each holder of the quad**, one per kind of scatter;
+4. **the matrix of each of these holders**.
+
+These four heights should be exactly the same from one load to the next. In stock, they are not.
+
+Two heights alone do not tell whether two points are shifted against each other: at the same distance
+from the centre of the body, they can still stand apart sideways. So for each matrix, the quad's and each
+holder's, the mod also measures how far it stands from the centre of the quad, in two parts: *up*, the
+gap in height, and *across*, the gap sideways.
+
+5. Then, for every object of scatter held by the quad nearest to the craft:
+   - **its lowest point**: the mod reads the object's shape from its mesh and takes its lowest point as
+     drawn, the vertex nearest to the centre of the body;
+   - **the ground under that point**: the height of the terrain collision surface, the surface a craft
+     rests on, hit by a ray cast straight down from 100 m above that point, so that the ground is found
+     even under an object sunk into it.
+
+Here again, both heights should stay the same over the loads, and neither does: the lowest point moves at
+every load, and so does the ground found under it. Stock sinks scatter partly into the ground on purpose,
+so the gap between the two, which the log gives as well, says little on its own. What matters is whether
+it stays the same from one load to the next.
+
+**Precision.** Unity gives centres, matrices and vertices as single precision world coordinates. The world
 origin stays near the craft, so close to it they resolve a fraction of a millimetre, but the step of a
 `float` is 0.5 mm at 4 km from that origin and 1 mm at 8 km. The nearest quad is not affected; the
 quads further away can be.
-
-## What is wrong in stock
-
-Stock places the holder of a quad's scatter under an object that is itself a child of the terrain
-sphere, whose origin is the centre of the body (`PQSMod_LandClassScatterQuad.Setup`):
-
-```csharp
-base.transform.localPosition = quad.positionPlanet;
-```
-
-`quad.positionPlanet` is hundreds of kilometres long. Each object is then placed between two vertices of
-the ground mesh, in the quad's own coordinates (`PQSLandControl.LandClassScatter.CreateScatterMesh`):
-
-```csharp
-scatterPos = Vector3.Lerp(q.quad.verts[num3], q.quad.verts[num2], UnityEngine.Random.value);
-```
-
-So the scatter lies on the ground only if the holder is drawn exactly where the quad is.
-
-The figures below were taken with an earlier version of this mod, which showed gaps rather than
-heights; the names in italics are its columns. Its *Rocks* averaged every object of the nearest quad,
-all holders together. Its *Matrix* was the translation of a holder's matrix minus the holder's own
-transform position: wherever the holder has the same position as its quad, as it does here, that is the
-holder's matrix height minus its quad's height in the current version.
-
-**The positions agree.** On Gilly, in one reading over 128 quads carrying scatter, the holder and its
-quad have the same transform position to the bit: 0.000 mm on every quad. On Kerbin, 0.000 mm on every quad as well,
-over 64 quads, on each of six loads.
-
-**The matrix does not.** Kerbin, stock, the same save loaded six times near the KSC. Nearest quad
-`Kerbin Zn3010000130`, 218 objects measured: 200 `Grass00` and 18 `Tree00`.
-
-| load | 1 | 2 | 3 | 4 | 5 | 6 |
-|---|---|---|---|---|---|---|
-| *Rocks* (mm) | −324.378 | −283.626 | −283.712 | −389.836 | −304.302 | −323.870 |
-| *Matrix* (mm) | 0.000 | +40.707 | +40.791 | −64.503 | +20.497 | 0.000 |
-| *Rocks − Matrix* (mm) | −324.378 | −324.335 | −324.505 | −325.332 | −324.799 | −323.870 |
-
-*Rocks* spans 106 mm over the six loads; *Rocks − Matrix* stays within 1.5 mm. Object by object, the
-median range over the loads is 106 mm, and 3.9 mm once the holder's *Matrix* is taken off. An earlier
-series of six loads on the same quad gave a 119 mm range.
-
-Over the 118 holders of 64 quads and the six loads, the translation of the holder's matrix minus its
-transform position, vertical part, runs from −85.5 to +64.7 mm, with a standard deviation of 29.7 mm. It
-is made of whole single precision steps along the world axes, projected on the vertical: 62.5 mm is the
-step of a `float` at 600 km. It differs from one holder to the next and from one load to the next. For
-the quads, the same measurement is 0.000 mm everywhere.
-
-In plain words: the holder's transform position matches its quad, but the matrix Unity draws it with does
-not, by whole float steps. So the scatter of each quad is drawn above or below the ground by its own
-amount, and that amount changes at every load. Stock scatter has no collider: the defect is visual only.
-
-About fifty of the 218 objects, those whose lowest point is 0.5 to 1.8 m away from the ground, keep a
-residue of a few centimetres from one load to the next once *Matrix* is taken off. It is not explained.
 
 ## The protocol
 
@@ -136,10 +113,10 @@ End of record …: … quads with rocks, … holders (… not built yet); neares
 ```
 
 - An opening line, with the body and whether scatter is on.
-- **Every** quad carrying scatter around the craft, with the height of its transform position, the height
+- **Every** quad carrying scatter around the craft, with the height of its centre, the height
   of its matrix, *up* and *across* in millimetres.
 - Under each quad, each of its holders, one per kind of scatter, ordered by name: whether its objects are
-  built yet, then the same heights, *up* and *across*, still against the transform position of the quad.
+  built yet, then the same heights, *up* and *across*, still against the centre of the quad.
 - Then, for the nearest quad only, one line per object, holder after holder: the quad, the kind of
   scatter, the object's number, the height of the ground under it and of its lowest point, and the gap
   between the two in millimetres. An object without ground under it is one where the ray found no
@@ -156,9 +133,49 @@ the same number, the height above the ground answers the question on its own: co
 that object is drawn at the same height against the ground every time; changing, it is not. The heights
 above it tell where a change comes from: the object's height above the ground minus its holder's *up*
 stays constant when the change is the holder's matrix, and the holder's height minus its quad's height
-tells whether its transform position left its quad too. The quad's own *up* and *across* tell whether the
+tells whether its centre left its quad's too. The quad's own *up* and *across* tell whether the
 ground is drawn away from the quad. The height of the quad itself may change from one load to the next as
 well: comparing everything to it keeps that from blurring the rest.
+
+## What the readings show
+
+The readings kept under [perfs](perfs/README.md) follow the protocol above on a single save,
+[`reference-kerbin.sfs`](perfs/reference-kerbin.sfs), loaded six times on stock and six times with
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) installed. All twelve records
+hold the same 64 quads and 118 holders, and name the same nearest quad, `Kerbin Zn3010000130`, with the
+same 218 objects: 200 `Grass00` and 18 `Tree00`. Below, the *range* of a reading is its largest value
+minus its smallest over the six loads of a series.
+
+| | stock | with Terrain Precision Fix |
+|---|---|---|
+| centre of the nearest quad, range | 126 mm | 0.001 mm |
+| matrix of each quad against its centre | *up* and *across* 0.000 mm everywhere | the same |
+| centre of each holder against its quad's | the same height, to the micrometre | range 137 mm (median over the holders), up to 201 mm |
+| *up* of the holders' matrices | −84 to +85 mm, 0.000 mm a third of the time | −60 to +176 mm, never 0 |
+| each object above the ground, range | 44 mm (median over the objects), from 27 to 116 mm | 129 mm (median), from 125 to 134 mm |
+| the same minus its holder's *up*, range | 2 mm (median), but over 10 mm for 60 objects, up to 82 mm | 1.8 mm (median), 6.9 mm at most |
+
+**Stock.** Every object of the nearest quad is drawn at a different height against the ground at every
+load: 44 mm apart over the six loads for half of them. Most of it comes from its holder: the holder's
+centre stays on its quad's, but the matrix it is drawn with stands above or below it by an amount that
+changes at every load, and taking that *up* off leaves 2 mm for most objects. Not for all of them: the
+ground itself moves against the centre of the quad from one load to the next, by 54 mm for half of the
+objects, the objects mostly move along with it, and 60 of them keep more than 10 mm once their holder's
+*up* is taken off.
+
+**With Terrain Precision Fix.** The quads stop moving: the centre of the nearest quad comes back at the
+same height to the micrometre, and the ground under each object moves by 7 mm at most against it. The
+objects are still drawn at a different height against the ground at every load, and further apart than
+in stock: 129 mm for half of them, about three times as much. All of it now comes from the holders: their
+centres no longer stay on their quads', the *up* of their matrices spans a wider range, and once it is
+taken off, no object moves by more than 7 mm.
+
+**In short.** Stock is far from perfect, and Terrain Precision Fix makes it worse. Neither is a real
+problem in play, though. Scatter has no collider: no craft rests on it and nothing hits it, so an object
+drawn a few centimetres higher or lower than at the last load changes nothing for the game. And scatter is
+sunk into the ground on purpose: on the nearest quad, the objects sit between 23 and 36 cm below the
+ground on average, depending on the load, so a shift of a few centimetres mostly moves them within the
+ground, where nobody sees it.
 
 ## Get it
 
