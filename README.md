@@ -33,7 +33,7 @@ This page sticks to how to measure it.
 At each load of a save, for every quad carrying scatter around the craft, the heights of the quad and of
 each of its holders, centre and matrix, and, on the nearest quad, 10 vertices of every object against the
 ground under them: readings that should come out the same at every load. A sixth reading, during a
-flight, checks the pools the holders are taken from and handed back to.
+flight or across scene switches, checks the pools the holders are taken from and handed back to.
 
 **→ Full chapter: [What it measures](docs/what-it-measures.md)**
 
@@ -46,8 +46,9 @@ dozen times, with `Alt+F6` pressed after each load. Each record ends on a line c
 
 ## Checking the holder pools
 
-Reading 6: the provided save of a pod flying 5 km over the Mun, with `Alt+Shift+F6` pressed along the
-flight and after the crash. Each record ends on the number of rules the pools break: 0 expected.
+Reading 6: `Alt+Shift+F6` pressed along a flight 5 km over the Mun and after the crash, or on the Mun, at
+the Space Center and on Kerbin in turn, with the provided saves. Each record ends on the number of rules
+the pools break: 0 expected.
 
 **→ Full chapter: [Checking the holder pools](docs/checking-the-holder-pools.md)**
 
@@ -55,8 +56,8 @@ flight and after the crash. Each record ends on the number of rules the pools br
 
 Loaded twelve times on Kerbin and on the Mun, on stock and with Terrain Precision Fix, no object changes
 shape, but every one is drawn at a different height against the ground at each load: centimetres apart
-either way. Over a whole flight low over the Mun, with Terrain Precision Fix, the holder pools break no
-rule.
+either way. Over a whole flight low over the Mun, and from the Mun to Kerbin through the Space Center,
+with Terrain Precision Fix, the holder pools break no rule.
 
 **→ Full chapter: [What the readings show](docs/what-the-readings-show.md)**
 

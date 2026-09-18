@@ -77,10 +77,14 @@ ground, where nobody sees it.
 
 ## The holder pools
 
+Both series were taken with [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix)
+installed.
+
+### Over a flight
+
 The readings kept under [diag](../diag/README.md#the-holder-pools-over-a-flight) follow
-[the protocol for the holder pools](checking-the-holder-pools.md#the-protocol) over one flight, with
-[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) installed: six records, five
-along the flight and one after the crash.
+[the protocol for the holder pools](checking-the-holder-pools.md#over-a-flight) over one flight: six
+records, five along the flight and one after the crash.
 
 | record | holders in use | free | broken rules |
 |---|---|---|---|
@@ -95,3 +99,19 @@ The only pool is the Mun's `Rock00`. Its holders keep moving between in use and 
 and the pool grows from 384 holders to 608 after the crash, when stock makes new ones because it has none
 free left. **No record breaks any rule**: every holder handed back hangs in the pool's container without a
 quad, every holder in use stands on a live quad of the Mun, and every count agrees with its list.
+
+### Across scene switches
+
+The readings kept under [diag](../diag/README.md#the-holder-pools-across-scene-switches) follow
+[the protocol across scene switches](checking-the-holder-pools.md#across-scene-switches): one record on the
+Mun, one at the Space Center, one on Kerbin.
+
+| record | scene | pools | holders in use | free | broken rules |
+|---|---|---|---|---|---|
+| 1 | the Mun | the Mun's `Rock00` | 128 | 32 | 0 |
+| 2 | the Space Center | Kerbin's `Tree00`, `Grass00`, `boulder`, `Pine00`, `cactus` | 4 | 316 | 0 |
+| 3 | Kerbin | the same five | 118 | 202 | 0 |
+
+The Mun's pool is gone from the second record on: leaving the Mun, stock destroyed its holders along with
+its terrain, and left none of them in the pool's lists. **No record breaks any rule**, and none finds a
+holder in no pool: no holder of the Mun was left on a quad reused for Kerbin.

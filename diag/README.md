@@ -1,12 +1,12 @@
 # Measurement runs
 
 Readings of this mod, kept as they were logged, copied out of `KSP.log`: for the rocks, one file per load,
-each holding the last record taken after that load; for the holder pools, one file per flight, holding
-every record taken during it.
+each holding the last record taken after that load; for the holder pools, one file per flight or session,
+holding every record taken during it.
 
 The procedure for the rocks is [the protocol](../docs/measuring-the-rocks.md#the-protocol), and what a record
 holds is described under [the log](../docs/measuring-the-rocks.md#the-log). For the holder pools, they are
-[its protocol](../docs/checking-the-holder-pools.md#the-protocol) and [its log](../docs/checking-the-holder-pools.md#the-log).
+[its protocols](../docs/checking-the-holder-pools.md) and [its log](../docs/checking-the-holder-pools.md#the-log).
 
 ## The saves
 
@@ -78,7 +78,7 @@ compare one by one.
 The install above, with Terrain Precision Fix, and a later build of this mod: the first one with the
 holder record.
 
-One flight, following [its protocol](../docs/checking-the-holder-pools.md#the-protocol): `ref-mune-5km.sfs` loaded once, then
+One flight, following [its protocol](../docs/checking-the-holder-pools.md#over-a-flight): `ref-mune-5km.sfs` loaded once, then
 `Alt+Shift+F6` pressed 30 s into the flight, again about every two minutes, and once more after the pod
 crashed.
 
@@ -100,3 +100,26 @@ sixth. Every record ends on `0 broken rules`:
 
 The only pool is the Mun's `Rock00`. It holds 384 holders up to the fifth record, and 608 after the crash:
 stock makes new ones when the pool has none free left, and the record follows those as well.
+
+## The holder pools, across scene switches
+
+The same install and build as the flight above, with Terrain Precision Fix. One session, following
+[its protocol](../docs/checking-the-holder-pools.md#across-scene-switches): `reference-mune.sfs` loaded
+from the Space Center, back to the Space Center, then `reference-kerbin.sfs`, with `Alt+Shift+F6`
+pressed in each of the three scenes.
+
+| session | records |
+|---|---|
+| with Terrain Precision Fix | [`scenes-tpf-holders.log`](runs/scenes-tpf-holders.log) |
+
+The file holds the three records, the line of `KSP.log` marking the arrival in each scene, and those of
+Terrain Precision Fix. Every record ends on `0 in no pool` and `0 broken rules`:
+
+| record | scene | pools | holders in use | free |
+|---|---|---|---|---|
+| 1 | the Mun | the Mun's `Rock00` | 128 | 32 |
+| 2 | the Space Center | Kerbin's `Tree00`, `Grass00`, `boulder`, `Pine00`, `cactus` | 4 | 316 |
+| 3 | Kerbin | the same five | 118 | 202 |
+
+The Mun's pool is gone from the second record on: its holders were destroyed with its terrain, and none
+of them was left behind on a quad of Kerbin.

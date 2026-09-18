@@ -10,8 +10,8 @@ of these readings should come out the same every time. Every position is read as
 from the centre of the body, in double precision, from the exact position of that centre that KSP keeps
 (`CelestialBody.position`).
 
-Reading 6 is of another kind: taken during a flight, on a key of its own, it measures no height and checks
-the pools the holders come from.
+Reading 6 is of another kind: taken in any scene, on a key of its own, it measures no height and checks
+the pools the holders come from, during a flight or across scene switches.
 
 ## 1. The centre of the quad
 
