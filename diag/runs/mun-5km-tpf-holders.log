@@ -1,0 +1,19 @@
+[LOG 15:52:04.423] [RockPrecisionFixDiag] Holder record 1: every pool of holders of rocks, one per body and kind of scatter
+[RockPrecisionFixDiag]   Mun 'Rock00': in use 344 (counter 344): 0 destroyed, 0 without a quad, 0 on an inactive quad, 0 on a quad of another body; free 40 (counter 40): 0 destroyed, 0 outside the pool's container, 0 still with a quad; 0 both in use and free
+[RockPrecisionFixDiag] End of holder record 1: 1 pools, 344 holders in use, 40 free, 0 in no pool; 0 broken rules
+[LOG 15:54:04.355] [RockPrecisionFixDiag] Holder record 2: every pool of holders of rocks, one per body and kind of scatter
+[RockPrecisionFixDiag]   Mun 'Rock00': in use 168 (counter 168): 0 destroyed, 0 without a quad, 0 on an inactive quad, 0 on a quad of another body; free 216 (counter 216): 0 destroyed, 0 outside the pool's container, 0 still with a quad; 0 both in use and free
+[RockPrecisionFixDiag] End of holder record 2: 1 pools, 168 holders in use, 216 free, 0 in no pool; 0 broken rules
+[LOG 15:56:04.520] [RockPrecisionFixDiag] Holder record 3: every pool of holders of rocks, one per body and kind of scatter
+[RockPrecisionFixDiag]   Mun 'Rock00': in use 144 (counter 144): 0 destroyed, 0 without a quad, 0 on an inactive quad, 0 on a quad of another body; free 240 (counter 240): 0 destroyed, 0 outside the pool's container, 0 still with a quad; 0 both in use and free
+[RockPrecisionFixDiag] End of holder record 3: 1 pools, 144 holders in use, 240 free, 0 in no pool; 0 broken rules
+[LOG 15:58:04.360] [RockPrecisionFixDiag] Holder record 4: every pool of holders of rocks, one per body and kind of scatter
+[RockPrecisionFixDiag]   Mun 'Rock00': in use 224 (counter 224): 0 destroyed, 0 without a quad, 0 on an inactive quad, 0 on a quad of another body; free 160 (counter 160): 0 destroyed, 0 outside the pool's container, 0 still with a quad; 0 both in use and free
+[RockPrecisionFixDiag] End of holder record 4: 1 pools, 224 holders in use, 160 free, 0 in no pool; 0 broken rules
+[LOG 16:00:04.413] [RockPrecisionFixDiag] Holder record 5: every pool of holders of rocks, one per body and kind of scatter
+[RockPrecisionFixDiag]   Mun 'Rock00': in use 152 (counter 152): 0 destroyed, 0 without a quad, 0 on an inactive quad, 0 on a quad of another body; free 232 (counter 232): 0 destroyed, 0 outside the pool's container, 0 still with a quad; 0 both in use and free
+[RockPrecisionFixDiag] End of holder record 5: 1 pools, 152 holders in use, 232 free, 0 in no pool; 0 broken rules
+[WRN 16:01:49.741] [F: 60670]: Vessel Vaisseau sans nom crashed through terrain on Mun.
+[LOG 16:02:06.919] [RockPrecisionFixDiag] Holder record 6: every pool of holders of rocks, one per body and kind of scatter
+[RockPrecisionFixDiag]   Mun 'Rock00': in use 568 (counter 568): 0 destroyed, 0 without a quad, 0 on an inactive quad, 0 on a quad of another body; free 40 (counter 40): 0 destroyed, 0 outside the pool's container, 0 still with a quad; 0 both in use and free
+[RockPrecisionFixDiag] End of holder record 6: 1 pools, 568 holders in use, 40 free, 0 in no pool; 0 broken rules

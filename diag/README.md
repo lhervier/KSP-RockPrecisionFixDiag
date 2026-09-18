@@ -1,20 +1,25 @@
 # Measurement runs
 
-Readings of this mod, kept as they were logged: one file per load, each holding the last record taken
-after that load, copied out of `KSP.log`.
+Readings of this mod, kept as they were logged, copied out of `KSP.log`: for the rocks, one file per load,
+each holding the last record taken after that load; for the holder pools, one file per flight, holding
+every record taken during it.
 
-The procedure is [the protocol](../README.md#the-protocol) on the main page, and what a record holds is
-described under [the log](../README.md#the-log).
+The procedure for the rocks is [the protocol](../docs/measuring-the-rocks.md#the-protocol), and what a record
+holds is described under [the log](../docs/measuring-the-rocks.md#the-log). For the holder pools, they are
+[its protocol](../docs/checking-the-holder-pools.md#the-protocol) and [its log](../docs/checking-the-holder-pools.md#the-log).
 
 ## The saves
 
-Two saves of a sandbox game of KSP 1.12.5. To use one, copy it into the folder of a sandbox game and load
+Three saves of a sandbox game of KSP 1.12.5. To use one, copy it into the folder of a sandbox game and load
 it from that game.
 
 - [`reference-kerbin.sfs`](reference-kerbin.sfs): a single Mk1 command pod landed on Kerbin, about 8 km
   north-west of the KSC (latitude 0.2696°, longitude −75.2783°), where the scatter is grass and trees.
 - [`reference-mune.sfs`](reference-mune.sfs): a single Mk1 command pod landed on the Mun (latitude
   −12.4124°, longitude 91.7314°), where the scatter is rocks.
+- [`ref-mune-5km.sfs`](ref-mune-5km.sfs): a single Mk1 command pod in a circular equatorial orbit 5 km over
+  the Mun, the same save as [PQSBench's](https://github.com/lhervier/KSP-PQSBench/blob/master/README.md#the-save).
+  Some of the Mun's relief rises above that orbit, so the pod crashes into it after a while.
 
 ## The install
 
@@ -67,3 +72,31 @@ End of record 1: 128 quads with rocks, 128 holders (0 not built yet); nearest qu
 
 All the holders built, and the same nearest quad in every record: its 20 `Rock00` and their 200 vertices
 compare one by one.
+
+## The holder pools, over a flight
+
+The install above, with Terrain Precision Fix, and a later build of this mod: the first one with the
+holder record.
+
+One flight, following [its protocol](../docs/checking-the-holder-pools.md#the-protocol): `ref-mune-5km.sfs` loaded once, then
+`Alt+Shift+F6` pressed 30 s into the flight, again about every two minutes, and once more after the pod
+crashed.
+
+| flight | records |
+|---|---|
+| with Terrain Precision Fix | [`mun-5km-tpf-holders.log`](runs/mun-5km-tpf-holders.log) |
+
+The file holds the six records and the line of `KSP.log` reporting the crash, between the fifth and the
+sixth. Every record ends on `0 broken rules`:
+
+| record | holders in use | free | broken rules |
+|---|---|---|---|
+| 1 | 344 | 40 | 0 |
+| 2 | 168 | 216 | 0 |
+| 3 | 144 | 240 | 0 |
+| 4 | 224 | 160 | 0 |
+| 5 | 152 | 232 | 0 |
+| 6, after the crash | 568 | 40 | 0 |
+
+The only pool is the Mun's `Rock00`. It holds 384 holders up to the fifth record, and 608 after the crash:
+stock makes new ones when the pool has none free left, and the record follows those as well.

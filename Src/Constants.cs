@@ -10,7 +10,10 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         /// <summary>Tag in front of every line this mod writes to KSP.log.</summary>
         public const string LOG_PREFIX = "[RockPrecisionFixDiag] ";
 
-        /// <summary>Key that records a reading, pressed along with the modifier key of the game (Alt).</summary>
+        /// <summary>
+        /// Key that records a reading, pressed along with the modifier key of the game (Alt): alone for the
+        /// rocks, with Shift as well for the holders. Stock only uses it in the action group editor.
+        /// </summary>
         public const KeyCode RECORD_KEY = KeyCode.F6;
 
         /// <summary>
