@@ -2,7 +2,7 @@
 
 ## The rocks
 
-The readings kept under [diag](../diag/README.md) follow [the protocol for the rocks](measuring-the-rocks.md#the-protocol) on two saves, each loaded twelve
+The readings kept under [diag](../diag/README.md) follow [the protocol for the rocks, load after load](measuring-the-rocks.md#load-after-load) on two saves, each loaded twelve
 times on stock and twelve times with
 [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) installed:
 
@@ -74,6 +74,29 @@ nothing for the game. And scatter is sunk into the ground on purpose: on the nea
 vertex of each object's model sits between 27 and 40 cm below the ground on average on Kerbin, and about
 2 m on the Mun, depending on the load, so a shift of a few centimetres mostly moves the objects within the
 ground, where nobody sees it.
+
+### Along a flight
+
+The readings kept under [diag](../diag/README.md#the-rocks-over-a-flight) follow
+[the protocol over a flight](measuring-the-rocks.md#over-a-flight), with Terrain Precision Fix installed:
+six records, five along the flight and one after the crash, 1,600 holders in all.
+
+| record | holders | *up* of the holders' matrices | largest *across* | largest gap between a holder's centre and its quad's |
+|---|---|---|---|---|
+| 1 | 344 | −25.9 to +13.3 mm | 10.0 mm | 25.2 mm |
+| 2 | 168 | −17.7 to +17.5 mm | 10.0 mm | 22.6 mm |
+| 3 | 144 | −26.5 to +9.4 mm | 9.9 mm | 22.5 mm |
+| 4 | 224 | −20.1 to +18.6 mm | 8.2 mm | 20.1 mm |
+| 5 | 152 | −13.8 to +21.1 mm | 10.0 mm | 20.1 mm |
+| 6, after the crash | 568 | −25.7 to +17.4 mm | 10.0 mm | 24.0 mm |
+
+The matrices of the quads stand on their centres, *up* and *across* 0.000 mm, in every record. **The
+holders do not, at any record**: not one of the 1,600 has its centre at its quad's height, nor an *up* of
+0, and the objects of the nearest quad are drawn off the ground by their holder's *up*. The offset does not
+grow along the flight, though: 9.0 mm on average (root mean square) over all the holders, between 6.9 and
+10.6 mm from one record to another, where the twelve loads of the Mun gave 9.6 mm. Quads built minutes
+into the flight, and those still there after the crash, are drawn off the ground as much as those of a
+load, and no more.
 
 ## The holder pools
 

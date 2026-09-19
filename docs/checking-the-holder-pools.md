@@ -6,7 +6,7 @@ and handed back to, over a flight and across scene switches.
 ## Over a flight
 
 1. **Scatter on, and the log written at once**: steps 1 and 2 of
-   [the protocol for the rocks](measuring-the-rocks.md#the-protocol).
+   [the protocol for the rocks](measuring-the-rocks.md#load-after-load).
 2. **Load [`ref-mune-5km.sfs`](../diag/ref-mune-5km.sfs)**, copied into the folder of a sandbox game: a
    Mk1 command pod in a circular equatorial orbit 5 km over the Mun. Flying that low, the terrain keeps
    building the quads ahead of the pod and destroying those behind it, sending their holders through the

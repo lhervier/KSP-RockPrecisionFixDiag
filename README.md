@@ -40,7 +40,8 @@ flight or across scene switches, checks the pools the holders are taken from and
 ## Measuring the rocks
 
 Readings 1 to 5: scatter on and the log written at once, a craft landed and saved, then that save loaded a
-dozen times, with `Alt+F6` pressed after each load. Each record ends on a line counting what it holds.
+dozen times, with `Alt+F6` pressed after each load; or the same key pressed along a flight 5 km over the
+Mun. Each record ends on a line counting what it holds.
 
 **→ Full chapter: [Measuring the rocks](docs/measuring-the-rocks.md)**
 
@@ -56,8 +57,9 @@ the pools break: 0 expected.
 
 Loaded twelve times on Kerbin and on the Mun, on stock and with Terrain Precision Fix, no object changes
 shape, but every one is drawn at a different height against the ground at each load: centimetres apart
-either way. Over a whole flight low over the Mun, and from the Mun to Kerbin through the Space Center,
-with Terrain Precision Fix, the holder pools break no rule.
+either way. Along a flight low over the Mun, with Terrain Precision Fix, the holders stay off their quads
+by as much as after a load, and no more. Over that flight, and from the Mun to Kerbin through the Space
+Center, the holder pools break no rule.
 
 **→ Full chapter: [What the readings show](docs/what-the-readings-show.md)**
 

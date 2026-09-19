@@ -1,9 +1,9 @@
 # Measuring the rocks
 
 How to take readings 1 to 5 of [What it measures](what-it-measures.md): the quads, their holders and the
-objects of scatter against the ground, load after load.
+objects of scatter against the ground, load after load, or along a flight.
 
-## The protocol
+## Load after load
 
 1. **Terrain scatter must be on**: *Settings → Graphics → Terrain Scatters*.
 2. **Have KSP write its log at once**: in the debug menu (`Alt+F12 → Debugging`), tick the option that
@@ -26,6 +26,29 @@ objects of scatter against the ground, load after load.
 
 KSP overwrites `KSP.log` each time it starts: copy it before relaunching. Reloading the save from within
 the game does not overwrite it, and the record numbers keep counting from one load to the next.
+
+## Over a flight
+
+The protocol above reads scatter built right after a load, around a craft that does not move. Over a
+flight, the world origin follows the craft, and the terrain keeps building the quads ahead of it and
+destroying those behind it: reading the rocks along a flight shows where they are drawn once they have
+come through that.
+
+1. **Scatter on, and the log written at once**: steps 1 and 2 of [load after load](#load-after-load).
+2. **Load [`ref-mune-5km.sfs`](../diag/ref-mune-5km.sfs)**, copied into the folder of a sandbox game: a
+   Mk1 command pod in a circular equatorial orbit 5 km over the Mun. Some of the Mun's relief rises above
+   the orbit, so the pod crashes after a while.
+3. **Press `Alt+F6`** 30 s into the flight, then again every two minutes, and once more after the crash.
+4. **Copy `KSP.log`** before relaunching KSP.
+
+Each record reads on its own: the heights of every quad and of its holders, as after a load. To compare
+two installs, fly the same save in each and press at the same moments after the load: the pod then passes
+over the same ground, and each record names the same quads and the same nearest quad as its counterpart,
+whose vertices compare one by one.
+
+The pod flies 5 km above the ground, so every quad, the nearest included, stands 5 km or more from the
+world origin: its heights carry the [precision](what-it-measures.md#precision) of that distance, about a
+millimetre, where the landed saves resolve the nearest quad to a few micrometres.
 
 ## The log
 

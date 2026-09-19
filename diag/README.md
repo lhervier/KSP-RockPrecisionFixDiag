@@ -1,11 +1,12 @@
 # Measurement runs
 
-Readings of this mod, kept as they were logged, copied out of `KSP.log`: for the rocks, one file per load,
-each holding the last record taken after that load; for the holder pools, one file per flight or session,
-holding every record taken during it.
+Readings of this mod, kept as they were logged, copied out of `KSP.log`: for the rocks after a load, one
+file per load, each holding the last record taken after that load; for the rocks over a flight and for the
+holder pools, one file per flight or session, holding every record taken during it.
 
-The procedure for the rocks is [the protocol](../docs/measuring-the-rocks.md#the-protocol), and what a record
-holds is described under [the log](../docs/measuring-the-rocks.md#the-log). For the holder pools, they are
+The procedure for the rocks is [load after load](../docs/measuring-the-rocks.md#load-after-load) or
+[over a flight](../docs/measuring-the-rocks.md#over-a-flight), and what a record holds is described under
+[the log](../docs/measuring-the-rocks.md#the-log). For the holder pools, they are
 [its protocols](../docs/checking-the-holder-pools.md) and [its log](../docs/checking-the-holder-pools.md#the-log).
 
 ## The saves
@@ -72,6 +73,34 @@ End of record 1: 128 quads with rocks, 128 holders (0 not built yet); nearest qu
 
 All the holders built, and the same nearest quad in every record: its 20 `Rock00` and their 200 vertices
 compare one by one.
+
+## The rocks, over a flight
+
+The install above, with Terrain Precision Fix, and the build of this mod of
+[the holder pools](#the-holder-pools-over-a-flight) below.
+
+One flight, following [its protocol](../docs/measuring-the-rocks.md#over-a-flight): `ref-mune-5km.sfs`
+loaded once, then `Alt+F6` pressed 30 s into the flight, again every two minutes, and once more after the
+pod crashed.
+
+| flight | records |
+|---|---|
+| with Terrain Precision Fix | [`mun-5km-tpf-rocks.log`](runs/mun-5km-tpf-rocks.log) |
+
+The file holds the six records and the line of `KSP.log` reporting the crash, between the fifth and the
+sixth. Every record has all its holders built, and 200 vertices measured on its nearest quad, all of them
+with ground under them:
+
+| record | quads with rocks | holders | nearest quad |
+|---|---|---|---|
+| 1 | 344 | 344 | `Mun Zp200000011` |
+| 2 | 168 | 168 | `Mun Xn231111111` |
+| 3 | 144 | 144 | `Mun Xn211311311` |
+| 4 | 224 | 224 | `Mun Xn122020000` |
+| 5 | 152 | 152 | `Mun Xn013331113` |
+| 6, after the crash | 568 | 568 | `Mun Zn200000011` |
+
+The counts of holders are those of the holder records of the flight below, taken at the same moments.
 
 ## The holder pools, over a flight
 

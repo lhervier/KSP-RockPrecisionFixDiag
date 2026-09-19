@@ -92,5 +92,6 @@ objects still move against the ground. Reading 6, on the other hand, should brea
 
 Unity gives centres, matrices and vertices as single precision world coordinates. The world origin stays
 near the craft, so close to it they resolve a fraction of a millimetre, but the step of a `float` is
-0.5 mm at 4 km from that origin and 1 mm at 8 km. The nearest quad is not affected; the quads further away
-can be.
+0.5 mm at 4 km from that origin and 1 mm at 8 km. Around a landed craft, the nearest quad is not affected;
+the quads further away can be. [Over a flight](measuring-the-rocks.md#over-a-flight) 5 km up, all of them
+are.
