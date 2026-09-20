@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using com.github.lhervier.ksp.rockprecisionfixdiag.measures;
 
 namespace com.github.lhervier.ksp.rockprecisionfixdiag
@@ -29,7 +30,8 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
         /// vessel or no terrain to read. The reading holds three measures:
         /// - <see cref="QuadMeasure"/>, on every terrain quad carrying rocks;
         /// - <see cref="HolderMeasure"/>, on every holder of rocks of those quads;
-        /// - <see cref="RockMeasure"/>, on a few vertices of every rock of the quad nearest to the craft.
+        /// - <see cref="RockMeasure"/>, on a few vertices of every rock of the quad nearest to the craft, and
+        ///   <see cref="ColliderMeasure"/> on those of them that carry a collider.
         /// </summary>
         public static Reading Take(Vessel vessel)
         {
@@ -37,6 +39,10 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
             {
                 return null;
             }
+
+            // The colliders a mod can give the rocks are read where the physics engine holds them, and the game
+            // does not hand it every move of a transform as it happens.
+            Physics.SyncTransforms();
 
             // Usefull variables
             CelestialBody body = vessel.mainBody;
@@ -53,7 +59,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
             // The holders are what can be found in the scene, grouped under the quads carrying rocks.
             Dictionary<PQ, List<PQSMod_LandClassScatterQuad>> holders = HolderFinder.Find(sphere);
 
-            // Measures 1 and 2 on every quad and every holder.
+            // Every quad and every holder are measured.
             PQ nearest = null;
             double nearestDistance = double.MaxValue;
             foreach (KeyValuePair<PQ, List<PQSMod_LandClassScatterQuad>> quadHolders in holders)
@@ -69,7 +75,7 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 }
             }
 
-            // Measure 3 covers only the rocks of one quad, the nearest to the craft. That is enough to compare
+            // The rocks are measured on one quad only, the nearest to the craft. That is enough to compare
             // with the heights of its holders, and one line per rock of every quad around the craft would bury
             // the log in tens of thousands of lines at each reading.
             if (nearest != null)
@@ -123,9 +129,14 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 }
                 int pointCount = 0;
                 int noGroundPointCount = 0;
+                int colliderCount = 0;
                 foreach (RockMeasure rock in Rocks)
                 {
                     pointCount += rock.Points.Count;
+                    if (rock.Collider != null)
+                    {
+                        colliderCount++;
+                    }
                     foreach (PointMeasure point in rock.Points)
                     {
                         if (double.IsNaN(point.GroundM))
@@ -144,9 +155,10 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag
                 else
                 {
                     log.Line(0, "End of record {0}: {1} quads with rocks, {2} holders ({3} not built yet);"
-                        + " nearest quad '{4}': {5} rocks, {6} vertices measured, {7} without ground under them",
+                        + " nearest quad '{4}': {5} rocks, {6} vertices measured, {7} without ground under them,"
+                        + " {8} colliders measured",
                         number, Quads.Count, holderCount, unbuiltHolderCount, Rocks[0].QuadName, Rocks.Count,
-                        pointCount, noGroundPointCount);
+                        pointCount, noGroundPointCount, colliderCount);
                 }
             }
             log.Write();

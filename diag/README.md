@@ -11,7 +11,7 @@ The procedure for the rocks is [load after load](../docs/measuring-the-rocks.md#
 
 ## The saves
 
-Three saves of a sandbox game of KSP 1.12.5. To use one, copy it into the folder of a sandbox game and load
+Four saves of a sandbox game of KSP 1.12.5. To use one, copy it into the folder of a sandbox game and load
 it from that game.
 
 - [`reference-kerbin.sfs`](reference-kerbin.sfs): a single Mk1 command pod landed on Kerbin, about 8 km
@@ -21,6 +21,9 @@ it from that game.
 - [`ref-mune-5km.sfs`](ref-mune-5km.sfs): a single Mk1 command pod in a circular equatorial orbit 5 km over
   the Mun, the same save as [PQSBench's](https://github.com/lhervier/KSP-PQSBench/blob/master/README.md#the-save).
   Some of the Mun's relief rises above that orbit, so the pod crashes into it after a while.
+- [`ref-kerbin-scatter-collider-eva.sfs`](ref-kerbin-scatter-collider-eva.sfs): a Mk1 command pod landed in
+  a desert of Kerbin (latitude −5.6080°, longitude −143.5447°), with Jebediah out on EVA, standing on a
+  boulder next to it.
 
 ## The install
 
@@ -73,6 +76,41 @@ End of record 1: 128 quads with rocks, 128 holders (0 not built yet); nearest qu
 
 All the holders built, and the same nearest quad in every record: its 20 `Rock00` and their 200 vertices
 compare one by one.
+
+## The colliders
+
+A different install: the one above, plus [Kopernicus](https://github.com/Kopernicus/Kopernicus)
+1.12.1.247 and the
+[Stock Scatter Collider Enabler Patch](https://github.com/Poodmund/Stock-Scatter-Collider-Enabler-Patch)
+1.0.1, which gives every stock object of scatter a collision mesh. Without them the scatter has no
+collider and there is nothing to read.
+
+Two series, following
+[the protocol with colliders on the scatter](../docs/measuring-the-rocks.md#with-colliders-on-the-scatter):
+[`ref-kerbin-scatter-collider-eva.sfs`](ref-kerbin-scatter-collider-eva.sfs) loaded six times on stock and
+six times with Terrain Precision Fix, each load with a record and a picture of the kerbal's feet.
+
+| load | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+| stock | [`1`](runs/collider-stock-load1.log) | [`2`](runs/collider-stock-load2.log) | [`3`](runs/collider-stock-load3.log) | [`4`](runs/collider-stock-load4.log) | [`5`](runs/collider-stock-load5.log) | [`6`](runs/collider-stock-load6.log) |
+| its pictures | [`1`](../imgs/collider-stock-load1.png) | [`2`](../imgs/collider-stock-load2.png) | [`3`](../imgs/collider-stock-load3.png) | [`4`](../imgs/collider-stock-load4.png) | [`5`](../imgs/collider-stock-load5.png) | [`6`](../imgs/collider-stock-load6.png) |
+| with Terrain Precision Fix | [`1`](runs/collider-tpf-load1.log) | [`2`](runs/collider-tpf-load2.log) | [`3`](runs/collider-tpf-load3.log) | [`4`](runs/collider-tpf-load4.log) | [`5`](runs/collider-tpf-load5.log) | [`6`](runs/collider-tpf-load6.log) |
+| its pictures | [`1`](../imgs/collider-tpf-load1.png) | [`2`](../imgs/collider-tpf-load2.png) | [`3`](../imgs/collider-tpf-load3.png) | [`4`](../imgs/collider-tpf-load4.png) | [`5`](../imgs/collider-tpf-load5.png) | [`6`](../imgs/collider-tpf-load6.png) |
+
+Each series is one session of KSP, with the same build of this mod throughout. Every record of both series
+ends on the same line, but for its number:
+
+```
+End of record 1: 173 quads with rocks, 306 holders (0 not built yet); nearest quad 'Kerbin Xn0131000203': 6 rocks, 60 vertices measured, 0 without ground under them, 6 colliders measured
+```
+
+The same nearest quad in every record, carrying the same six objects — one `boulder` and five `cactus` —
+each with a collider, so they compare one by one from one load to the next and from one series to the
+other. The records of the series with Terrain Precision Fix are numbered 6 to 11: its session had already
+served for loads that were not kept.
+
+A third series, with Rock Precision Fix installed as well, belongs to
+[that mod's repository](https://github.com/lhervier/KSP-RockPrecisionFix/blob/main/diag/README.md).
 
 ## The rocks, over a flight
 

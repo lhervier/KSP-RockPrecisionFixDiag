@@ -50,6 +50,31 @@ The pod flies 5 km above the ground, so every quad, the nearest included, stands
 world origin: its heights carry the [precision](what-it-measures.md#precision) of that distance, about a
 millimetre, where the landed saves resolve the nearest quad to a few micrometres.
 
+## With colliders on the scatter
+
+Reading 7 needs a mod that gives the scatter colliders. One is the
+[Stock Scatter Collider Enabler Patch](https://github.com/Poodmund/Stock-Scatter-Collider-Enabler-Patch),
+a single config file that asks [Kopernicus](https://github.com/Kopernicus/Kopernicus) to give every stock
+object of scatter a collision mesh of its own shape, on most stock bodies. It is on CKAN. Its own version
+file says KSP 1.8 to 1.11, but it holds no code, and it works on 1.12.5.
+
+1. **Scatter on, and the log written at once**: steps 1 and 2 of [load after load](#load-after-load).
+2. **Install Kopernicus, then that patch.** Note the version of each: they belong with the readings.
+3. **Land a craft where there are rocks, and put a kerbal on one.** On Kerbin, boulders stand in the
+   deserts. Walk the kerbal up the rock with the jetpack, and save there. The kerbal is what makes the gap
+   visible: it stands on the collider, so it sinks into the rock one sees, or floats above it. The
+   reading itself does not need it.
+4. **Load that save and press `Alt+F6`.** The closing line of the record ends on how many colliders were
+   measured: 0 means nothing gave the scatter around the craft a collider, and there is nothing to read.
+5. **Take a picture of the kerbal's feet** at each load, from as near the same viewpoint as you can. A
+   kerbal always sinks a little into whatever it stands on, so one picture proves nothing: what shows is
+   how much it changes from one load to the next.
+6. **Load the same save again, press `Alt+F6` and take the picture again.** Half a dozen times: how far a
+   collider stands from the object it belongs to is drawn afresh at every load.
+
+Every record holds one line per object with a collider, so the series can be read on the logs alone. The
+pictures say what it means for whoever plays.
+
 ## The log
 
 Every record is written on lines starting with `[RockPrecisionFixDiag]`, every height in metres, from
@@ -63,7 +88,9 @@ Record … on …: scatter on. Heights are …
   …
   rock '…' '…' #0 vertex …: ground …, vertex …, … mm above the ground
   …
-End of record …: … quads with rocks, … holders (… not built yet); nearest quad '…': … rocks, … vertices measured, … without ground under them
+  rock '…' '…' #0 collider: physics …, drawn …, up … mm, across … mm
+  …
+End of record …: … quads with rocks, … holders (… not built yet); nearest quad '…': … rocks, … vertices measured, … without ground under them, … colliders measured
 ```
 
 - An opening line, with the body and whether scatter is on.
@@ -77,6 +104,11 @@ End of record …: … quads with rocks, … holders (… not built yet); neares
   millimetres. A vertex without ground under it is one where the ray found no terrain: its ground and its
   gap read `--`. An object keeps its number from one load to the next, since stock places the scatter
   from a seed, and a vertex keeps its number since it is chosen on the model.
+- After the vertices of an object, and only if it has a collider, one more line: the height of the centre
+  of its collision box where the physics engine holds it, the height of that same centre where the object
+  is drawn, and the gap between the two, *up* and *across*. A positive *up* puts the collider above the
+  object one sees. Each holder's line ends on how many of its objects carry a collider, and the closing
+  line on how many were measured: all read 0 on a stock install.
 - A closing line, with the counts: it is the one left in sight when following the file as it grows.
 
 A holder's matrix height minus its quad's height and its *up* are nearly the same number, by two

@@ -15,12 +15,17 @@ runs on a stock install, wherever you land.
 
 ## Why it matters
 
-It barely does. Stock scatter has no collider: nothing rests on it and nothing hits it, so a rock drawn a
-few centimetres higher or lower than at the last load changes nothing for your craft. Scatter is also
-sunk partly into the ground on purpose, so the shift is hard to see, and most of the time you will not
-see it at all.
+On a stock install, it barely does. Stock scatter has no collider: nothing rests on it and nothing hits
+it, so a rock drawn a few centimetres higher or lower than at the last load changes nothing for your
+craft. Scatter is also sunk partly into the ground on purpose, so the shift is hard to see, and most of
+the time you will not see it at all.
 
-This instrument exists for another reason. [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix)
+Install a mod that gives the scatter colliders, and it does matter: the rock your craft hits is then no
+longer the rock you see, by up to several centimetres, drawn afresh at every load. A kerbal left standing
+on a boulder sinks into it at one load and stands clear of it at the next. This instrument measures that
+gap as well, on whichever mod you have installed.
+
+It was written for a third reason. [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix)
 changes the height at which KSP builds the ground, and checking a change like that means checking
 everything placed against that ground. Scatter is one of those things, so this instrument is meant to be
 run on stock and with Terrain Precision Fix installed. The readings taken both ways, on the same saves, are
@@ -33,7 +38,9 @@ This page sticks to how to measure it.
 At each load of a save, for every quad carrying scatter around the craft, the heights of the quad and of
 each of its holders, centre and matrix, and, on the nearest quad, 10 vertices of every object against the
 ground under them: readings that should come out the same at every load. A sixth reading, during a
-flight or across scene switches, checks the pools the holders are taken from and handed back to.
+flight or across scene switches, checks the pools the holders are taken from and handed back to. A
+seventh, where a mod has given the scatter colliders, compares where an object is drawn with where the
+physics engine holds its collider.
 
 **→ Full chapter: [What it measures](docs/what-it-measures.md)**
 
@@ -41,7 +48,9 @@ flight or across scene switches, checks the pools the holders are taken from and
 
 Readings 1 to 5: scatter on and the log written at once, a craft landed and saved, then that save loaded a
 dozen times, with `Alt+F6` pressed after each load; or the same key pressed along a flight 5 km over the
-Mun. Each record ends on a line counting what it holds.
+Mun. Each record ends on a line counting what it holds. Reading 7 needs a mod that gives the scatter
+colliders, and reads better with a kerbal left standing on a rock: it sinks into the rock or stands clear
+of it by a different amount at every load.
 
 **→ Full chapter: [Measuring the rocks](docs/measuring-the-rocks.md)**
 
@@ -59,7 +68,9 @@ Loaded twelve times on Kerbin and on the Mun, on stock and with Terrain Precisio
 shape, but every one is drawn at a different height against the ground at each load: centimetres apart
 either way. Along a flight low over the Mun, with Terrain Precision Fix, the holders stay off their quads
 by as much as after a load, and no more. Over that flight, and from the Mun to Kerbin through the Space
-Center, the holder pools break no rule.
+Center, the holder pools break no rule. With colliders on the scatter, the rock a craft hits is not the
+rock one sees: up to 104 mm apart on stock and 70 mm with Terrain Precision Fix, drawn afresh at every
+load.
 
 **→ Full chapter: [What the readings show](docs/what-the-readings-show.md)**
 

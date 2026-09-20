@@ -4,7 +4,7 @@ using UnityEngine;
 namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
 {
     /// <summary>
-    /// Measure 1: where a terrain quad carrying rocks stands, where Unity draws it, and the same for each of
+    /// Where a terrain quad carrying rocks stands, where Unity draws it, and the same for each of
     /// its holders. Heights are distances from the centre of the body, in metres.
     /// </summary>
     internal class QuadMeasure

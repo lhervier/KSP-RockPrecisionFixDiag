@@ -13,6 +13,10 @@ from the centre of the body, in double precision, from the exact position of tha
 Reading 6 is of another kind: taken in any scene, on a key of its own, it measures no height and checks
 the pools the holders come from, during a flight or across scene switches.
 
+Reading 7 compares nothing between loads. Within one reading, it compares where an object is drawn with
+where the physics engine holds the collider of that same object. It only comes out with a mod that gives
+the scatter colliders, since stock gives it none.
+
 ## 1. The centre of the quad
 
 The position of the quad's transform, in Unity's terms.
@@ -79,13 +83,39 @@ The mod reads each pool through its private fields, and counts the holders that 
 Where a free holder stands inside its container is not one of them: stock hands a holder back without
 moving it, so it keeps the offset its last quad gave it.
 
+## 7. The collider of each object
+
+Stock scatter has no collider: nothing rests on it and nothing hits it. Mods can add them, and the
+reading then covers, for every object of the quad nearest to the craft that has one:
+
+- **where the object is drawn**: the centre of the box its collision mesh spans, put through the matrix
+  its holder is drawn with and the object's own position, turn and scale under that holder;
+- **where the physics engine holds it**: the centre of the same box as the engine reports it, from the
+  pose it was handed.
+
+Both are the centre of the same box, so they can be compared even though the engine widens that box to
+hold it once turned: widening a box leaves its centre where it was. The gap between the two is given as
+*up* and *across*, like the others. A positive *up* means the collider stands above the object one sees.
+
+Unity keeps the position of an object and its matrix separately and computes them by different routes;
+what it hands the physics engine is its own business. This reading answers what that means on the ground:
+whether the rock a craft hits is the rock it can see.
+
+Each holder's line also gives how many of its objects carry a collider, and the closing line of the
+record how many were measured over the nearest quad. Both read 0 on a stock install.
+
+**What limits it.** An object is matched to the collider under its holder by rank, in the order the game
+built them, which is how the mods that add them proceed. A mod that ordered them another way would give
+gaps of metres, not of millimetres, and the mismatch would be plain.
+
 ## What to expect
 
 In stock, none of the heights of readings 1 to 5 stays the same from one load to the next: the quads,
 their holders, the vertices of every object and the ground under them all move. Installing
 [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix) is not enough to keep them
 equal: the quads' heights then come back the same at every load, but the holders' still do not, and the
-objects still move against the ground. Reading 6, on the other hand, should break no rule. See
+objects still move against the ground. Reading 6, on the other hand, should break no rule. With colliders
+on the scatter, reading 7 gives centimetres either way, on stock and with Terrain Precision Fix alike. See
 [What the readings show](what-the-readings-show.md).
 
 ## Precision

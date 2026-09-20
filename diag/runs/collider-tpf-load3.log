@@ -1,0 +1,547 @@
+[RockPrecisionFixDiag] Record 8 on Kerbin: scatter on. Heights are distances from the centre of Kerbin, in metres
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333310': height 601630.493053 m, matrix 601630.493053 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601630.565511 m, matrix 601630.557028 m, up +63.975 mm, across 30.438 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601630.565511 m, matrix 601630.557028 m, up +63.975 mm, across 30.438 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601630.565511 m, matrix 601630.557028 m, up +63.975 mm, across 30.438 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333311': height 601755.269328 m, matrix 601755.269328 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601755.335423 m, matrix 601755.343907 m, up +74.579 mm, across 38.654 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601755.335423 m, matrix 601755.343907 m, up +74.579 mm, across 38.654 mm, 6 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601755.335423 m, matrix 601755.343907 m, up +74.579 mm, across 38.654 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333312': height 601368.857815 m, matrix 601368.857815 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601368.953761 m, matrix 601368.945241 m, up +87.426 mm, across 35.447 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601368.953761 m, matrix 601368.945241 m, up +87.426 mm, across 35.447 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601368.953761 m, matrix 601368.945241 m, up +87.426 mm, across 35.447 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333313': height 601674.170635 m, matrix 601674.170635 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601674.221363 m, matrix 601674.272647 m, up +102.012 mm, across 32.951 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601674.221363 m, matrix 601674.272647 m, up +102.012 mm, across 32.951 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601674.221363 m, matrix 601674.272647 m, up +102.012 mm, across 32.951 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222212': height 601669.616633 m, matrix 601669.616633 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601669.634690 m, matrix 601669.694523 m, up +77.890 mm, across 39.730 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601669.634690 m, matrix 601669.694523 m, up +77.890 mm, across 39.730 mm, 6 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601669.634690 m, matrix 601669.694523 m, up +77.890 mm, across 39.730 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222213': height 601945.371274 m, matrix 601945.371274 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601945.491420 m, matrix 601945.482893 m, up +111.619 mm, across 12.047 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601945.491420 m, matrix 601945.482893 m, up +111.619 mm, across 12.047 mm, 6 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601945.491420 m, matrix 601945.482893 m, up +111.619 mm, across 12.047 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222220': height 601352.550077 m, matrix 601352.550077 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601352.595956 m, matrix 601352.595956 m, up +45.879 mm, across 33.379 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601352.595956 m, matrix 601352.595956 m, up +45.879 mm, across 33.379 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601352.595956 m, matrix 601352.595956 m, up +45.879 mm, across 33.379 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222221': height 601485.465224 m, matrix 601485.465224 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601485.556331 m, matrix 601485.564893 m, up +99.669 mm, across 51.364 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601485.556331 m, matrix 601485.564893 m, up +99.669 mm, across 51.364 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601485.556331 m, matrix 601485.564893 m, up +99.669 mm, across 51.364 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222231': height 601693.832351 m, matrix 601693.832351 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601693.957454 m, matrix 601693.948891 m, up +116.539 mm, across 16.110 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601693.957454 m, matrix 601693.948891 m, up +116.539 mm, across 16.110 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601693.957454 m, matrix 601693.948891 m, up +116.539 mm, across 16.110 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222232': height 601376.268080 m, matrix 601376.268080 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601376.375067 m, matrix 601376.383667 m, up +115.587 mm, across 59.164 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601376.375067 m, matrix 601376.383667 m, up +115.587 mm, across 59.164 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601376.375067 m, matrix 601376.383667 m, up +115.587 mm, across 59.164 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222233': height 601568.915475 m, matrix 601568.915475 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601568.997449 m, matrix 601568.997449 m, up +81.974 mm, across 32.243 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601568.997449 m, matrix 601568.997449 m, up +81.974 mm, across 32.243 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601568.997449 m, matrix 601568.997449 m, up +81.974 mm, across 32.243 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222322': height 601225.531991 m, matrix 601225.531991 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601225.571957 m, matrix 601225.563355 m, up +31.364 mm, across 15.243 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601225.571957 m, matrix 601225.563355 m, up +31.364 mm, across 15.243 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601225.571957 m, matrix 601225.563355 m, up +31.364 mm, across 15.243 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222320': height 601347.545492 m, matrix 601347.545492 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'Grass00': built, height 601347.626133 m, matrix 601347.634698 m, up +89.206 mm, across 53.387 mm, 0 colliders
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601347.626133 m, matrix 601347.634698 m, up +89.206 mm, across 53.387 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601347.626133 m, matrix 601347.634698 m, up +89.206 mm, across 53.387 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000002': height 600912.215590 m, matrix 600912.215590 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600912.311074 m, matrix 600912.311074 m, up +95.484 mm, across 49.896 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600912.311074 m, matrix 600912.311074 m, up +95.484 mm, across 49.896 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000003': height 600905.022000 m, matrix 600905.022000 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600905.132942 m, matrix 600905.132942 m, up +110.942 mm, across 22.146 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600905.132942 m, matrix 600905.132942 m, up +110.942 mm, across 22.146 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000010': height 601086.287100 m, matrix 601086.287100 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601086.437853 m, matrix 601086.378086 m, up +90.986 mm, across 27.002 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601086.437853 m, matrix 601086.378086 m, up +90.986 mm, across 27.002 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000011': height 601416.292075 m, matrix 601416.292075 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601416.351729 m, matrix 601416.411505 m, up +119.430 mm, across 36.237 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601416.351729 m, matrix 601416.411505 m, up +119.430 mm, across 36.237 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000012': height 601129.994639 m, matrix 601129.994639 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601130.060305 m, matrix 601130.060305 m, up +65.667 mm, across 51.992 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601130.060305 m, matrix 601130.060305 m, up +65.667 mm, across 51.992 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000013': height 601212.383987 m, matrix 601212.383987 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601212.510395 m, matrix 601212.501720 m, up +117.733 mm, across 31.436 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601212.510395 m, matrix 601212.501720 m, up +117.733 mm, across 31.436 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000020': height 600869.873444 m, matrix 600869.873444 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600869.964244 m, matrix 600869.972953 m, up +99.509 mm, across 56.748 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600869.964244 m, matrix 600869.972953 m, up +99.509 mm, across 56.748 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000021': height 600958.602206 m, matrix 600958.602206 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600958.702459 m, matrix 600958.693749 m, up +91.543 mm, across 25.563 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600958.702459 m, matrix 600958.693749 m, up +91.543 mm, across 25.563 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000022': height 600885.011759 m, matrix 600885.011759 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600885.101217 m, matrix 600885.109963 m, up +98.205 mm, across 24.119 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600885.101217 m, matrix 600885.109963 m, up +98.205 mm, across 24.119 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000023': height 600962.892754 m, matrix 600962.892754 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600962.947960 m, matrix 600963.007651 m, up +114.898 mm, across 39.203 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600962.947960 m, matrix 600963.007651 m, up +114.898 mm, across 39.203 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000030': height 601029.608617 m, matrix 601029.608617 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601029.710384 m, matrix 601029.710384 m, up +101.768 mm, across 9.633 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601029.710384 m, matrix 601029.710384 m, up +101.768 mm, across 9.633 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000031': height 601049.656803 m, matrix 601049.656803 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601049.759194 m, matrix 601049.699463 m, up +42.660 mm, across 56.150 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601049.759194 m, matrix 601049.699463 m, up +42.660 mm, across 56.150 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000032': height 600971.612149 m, matrix 600971.612149 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600971.753270 m, matrix 600971.762019 m, up +149.870 mm, across 39.962 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600971.753270 m, matrix 600971.762019 m, up +149.870 mm, across 39.962 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000033': height 601046.416022 m, matrix 601046.416022 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601046.507797 m, matrix 601046.507797 m, up +91.776 mm, across 34.528 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601046.507797 m, matrix 601046.507797 m, up +91.776 mm, across 34.528 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000100': height 601304.724264 m, matrix 601304.724264 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601304.821183 m, matrix 601304.829823 m, up +105.558 mm, across 32.142 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601304.821183 m, matrix 601304.829823 m, up +105.558 mm, across 32.142 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000101': height 601086.429316 m, matrix 601086.429316 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601086.515739 m, matrix 601086.515739 m, up +86.422 mm, across 35.100 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601086.515739 m, matrix 601086.515739 m, up +86.422 mm, across 35.100 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000102': height 601341.783992 m, matrix 601341.783992 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601341.843803 m, matrix 601341.843803 m, up +59.811 mm, across 45.900 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601341.843803 m, matrix 601341.843803 m, up +59.811 mm, across 45.900 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000103': height 601216.519792 m, matrix 601216.519792 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601216.581983 m, matrix 601216.633076 m, up +113.284 mm, across 26.029 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601216.581983 m, matrix 601216.633076 m, up +113.284 mm, across 26.029 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000110': height 601078.196076 m, matrix 601078.196076 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601078.258845 m, matrix 601078.250203 m, up +54.127 mm, across 32.330 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601078.258845 m, matrix 601078.250203 m, up +54.127 mm, across 32.330 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000111': height 601081.195943 m, matrix 601081.195943 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601081.272218 m, matrix 601081.272218 m, up +76.275 mm, across 36.939 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601081.272218 m, matrix 601081.272218 m, up +76.275 mm, across 36.939 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000112': height 601054.353952 m, matrix 601054.353952 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601054.458755 m, matrix 601054.467435 m, up +113.482 mm, across 33.696 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601054.458755 m, matrix 601054.467435 m, up +113.482 mm, across 33.696 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000113': height 601088.183106 m, matrix 601088.183106 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601088.276079 m, matrix 601088.267398 m, up +84.292 mm, across 15.049 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601088.276079 m, matrix 601088.267398 m, up +84.292 mm, across 15.049 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000120': height 601168.079217 m, matrix 601168.079217 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601168.174018 m, matrix 601168.122992 m, up +43.775 mm, across 52.162 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601168.174018 m, matrix 601168.122992 m, up +43.775 mm, across 52.162 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000121': height 601186.419961 m, matrix 601186.419961 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601186.538134 m, matrix 601186.469670 m, up +49.709 mm, across 50.188 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601186.538134 m, matrix 601186.469670 m, up +49.709 mm, across 50.188 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000122': height 601093.246274 m, matrix 601093.246274 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601093.347681 m, matrix 601093.356432 m, up +110.158 mm, across 48.851 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601093.347681 m, matrix 601093.356432 m, up +110.158 mm, across 48.851 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000123': height 601141.338837 m, matrix 601141.338837 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601141.410816 m, matrix 601141.410816 m, up +71.979 mm, across 26.848 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601141.410816 m, matrix 601141.410816 m, up +71.979 mm, across 26.848 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000130': height 601111.787692 m, matrix 601111.787692 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601111.835683 m, matrix 601111.844400 m, up +56.707 mm, across 49.456 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601111.835683 m, matrix 601111.844400 m, up +56.707 mm, across 49.456 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000131': height 601072.562934 m, matrix 601072.562934 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601072.641664 m, matrix 601072.650382 m, up +87.448 mm, across 36.919 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601072.641664 m, matrix 601072.650382 m, up +87.448 mm, across 36.919 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000132': height 601062.295865 m, matrix 601062.295865 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601062.457745 m, matrix 601062.398011 m, up +102.146 mm, across 60.703 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601062.457745 m, matrix 601062.398011 m, up +102.146 mm, across 60.703 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000133': height 600990.324732 m, matrix 600990.324732 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600990.438747 m, matrix 600990.438747 m, up +114.015 mm, across 23.993 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600990.438747 m, matrix 600990.438747 m, up +114.015 mm, across 23.993 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000200': height 600926.224477 m, matrix 600926.224477 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600926.270771 m, matrix 600926.270771 m, up +46.293 mm, across 70.998 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600926.270771 m, matrix 600926.270771 m, up +46.293 mm, across 70.998 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000201': height 600899.082910 m, matrix 600899.082910 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600899.173663 m, matrix 600899.164878 m, up +81.968 mm, across 38.645 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600899.173663 m, matrix 600899.164878 m, up +81.968 mm, across 38.645 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000202': height 600874.149985 m, matrix 600874.149985 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600874.229284 m, matrix 600874.229284 m, up +79.299 mm, across 41.913 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600874.229284 m, matrix 600874.229284 m, up +79.299 mm, across 41.913 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000203': height 600862.400645 m, matrix 600862.400645 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600862.447441 m, matrix 600862.456264 m, up +55.618 mm, across 57.244 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600862.447441 m, matrix 600862.456264 m, up +55.618 mm, across 57.244 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000210': height 600936.017695 m, matrix 600936.017695 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600936.143710 m, matrix 600936.075246 m, up +57.551 mm, across 35.180 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600936.143710 m, matrix 600936.075246 m, up +57.551 mm, across 35.180 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000211': height 600993.348284 m, matrix 600993.348284 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600993.513830 m, matrix 600993.445356 m, up +97.072 mm, across 35.678 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600993.513830 m, matrix 600993.445356 m, up +97.072 mm, across 35.678 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000212': height 600871.573662 m, matrix 600871.573662 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600871.673263 m, matrix 600871.622433 m, up +48.771 mm, across 63.878 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600871.673263 m, matrix 600871.622433 m, up +48.771 mm, across 63.878 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000213': height 601026.557329 m, matrix 601026.557329 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601026.636256 m, matrix 601026.636256 m, up +78.927 mm, across 48.053 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601026.636256 m, matrix 601026.636256 m, up +78.927 mm, across 48.053 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000220': height 600784.056285 m, matrix 600784.056285 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600784.100299 m, matrix 600784.151053 m, up +94.768 mm, across 26.977 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600784.100299 m, matrix 600784.151053 m, up +94.768 mm, across 26.977 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000221': height 600808.519684 m, matrix 600808.519684 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600808.610385 m, matrix 600808.601524 m, up +81.840 mm, across 6.868 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600808.610385 m, matrix 600808.601524 m, up +81.840 mm, across 6.868 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000230': height 600849.551847 m, matrix 600849.551847 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600849.628394 m, matrix 600849.619532 m, up +67.686 mm, across 30.454 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600849.628394 m, matrix 600849.619532 m, up +67.686 mm, across 30.454 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000231': height 600891.549369 m, matrix 600891.549369 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600891.662245 m, matrix 600891.653382 m, up +104.013 mm, across 30.963 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600891.662245 m, matrix 600891.653382 m, up +104.013 mm, across 30.963 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000232': height 600824.372431 m, matrix 600824.372431 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600824.419282 m, matrix 600824.419282 m, up +46.852 mm, across 68.745 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600824.419282 m, matrix 600824.419282 m, up +46.852 mm, across 68.745 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000300': height 601085.738780 m, matrix 601085.738780 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601085.802813 m, matrix 601085.794024 m, up +55.243 mm, across 31.022 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601085.802813 m, matrix 601085.794024 m, up +55.243 mm, across 31.022 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000301': height 601064.166822 m, matrix 601064.166822 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601064.267269 m, matrix 601064.198775 m, up +31.953 mm, across 36.124 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601064.267269 m, matrix 601064.198775 m, up +31.953 mm, across 36.124 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000302': height 601004.000074 m, matrix 601004.000074 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601004.059280 m, matrix 601004.068106 m, up +68.032 mm, across 51.307 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601004.059280 m, matrix 601004.068106 m, up +68.032 mm, across 51.307 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000303': height 600952.320466 m, matrix 600952.320466 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600952.425025 m, matrix 600952.425025 m, up +104.559 mm, across 18.406 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600952.425025 m, matrix 600952.425025 m, up +104.559 mm, across 18.406 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000310': height 601008.475825 m, matrix 601008.475825 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601008.529591 m, matrix 601008.580511 m, up +104.686 mm, across 33.362 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601008.529591 m, matrix 601008.580511 m, up +104.686 mm, across 33.362 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000311': height 600947.839269 m, matrix 600947.839269 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600947.873312 m, matrix 600947.933033 m, up +93.764 mm, across 24.358 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600947.873312 m, matrix 600947.933033 m, up +93.764 mm, across 24.358 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000312': height 600900.217133 m, matrix 600900.217133 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600900.277754 m, matrix 600900.277754 m, up +60.621 mm, across 21.052 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600900.277754 m, matrix 600900.277754 m, up +60.621 mm, across 21.052 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000313': height 600907.424509 m, matrix 600907.424509 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600907.496084 m, matrix 600907.546951 m, up +122.442 mm, across 10.421 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600907.496084 m, matrix 600907.546951 m, up +122.442 mm, across 10.421 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000320': height 600840.133928 m, matrix 600840.133928 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600840.215204 m, matrix 600840.215204 m, up +81.275 mm, across 26.126 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600840.215204 m, matrix 600840.215204 m, up +81.275 mm, across 26.126 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000321': height 600851.265274 m, matrix 600851.265274 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600851.388273 m, matrix 600851.379407 m, up +114.133 mm, across 16.218 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600851.388273 m, matrix 600851.379407 m, up +114.133 mm, across 16.218 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000330': height 600830.752879 m, matrix 600830.752879 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600830.809363 m, matrix 600830.860163 m, up +107.284 mm, across 42.113 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600830.809363 m, matrix 600830.860163 m, up +107.284 mm, across 42.113 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000331': height 600865.140493 m, matrix 600865.140493 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600865.189276 m, matrix 600865.248951 m, up +108.458 mm, across 20.151 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600865.189276 m, matrix 600865.248951 m, up +108.458 mm, across 20.151 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000333': height 600808.244002 m, matrix 600808.244002 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600808.333977 m, matrix 600808.325071 m, up +81.069 mm, across 34.089 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600808.333977 m, matrix 600808.325071 m, up +81.069 mm, across 34.089 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001200': height 600904.292652 m, matrix 600904.292652 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600904.373018 m, matrix 600904.373018 m, up +80.365 mm, across 36.727 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600904.373018 m, matrix 600904.373018 m, up +80.365 mm, across 36.727 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001201': height 601005.198307 m, matrix 601005.198307 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601005.279299 m, matrix 601005.270504 m, up +72.197 mm, across 48.629 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601005.279299 m, matrix 601005.270504 m, up +72.197 mm, across 48.629 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001202': height 600926.874903 m, matrix 600926.874903 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600926.988808 m, matrix 600926.997640 m, up +122.737 mm, across 42.078 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600926.988808 m, matrix 600926.997640 m, up +122.737 mm, across 42.078 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001203': height 600985.033533 m, matrix 600985.033533 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600985.143271 m, matrix 600985.152104 m, up +118.571 mm, across 29.889 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600985.143271 m, matrix 600985.152104 m, up +118.571 mm, across 29.889 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001220': height 600872.465490 m, matrix 600872.465490 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600872.613893 m, matrix 600872.605023 m, up +139.533 mm, across 31.153 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600872.613893 m, matrix 600872.605023 m, up +139.533 mm, across 31.153 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001221': height 600920.636930 m, matrix 600920.636930 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600920.732296 m, matrix 600920.732296 m, up +95.365 mm, across 46.381 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600920.732296 m, matrix 600920.732296 m, up +95.365 mm, across 46.381 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001222': height 600792.077369 m, matrix 600792.077369 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600792.190904 m, matrix 600792.190904 m, up +113.535 mm, across 27.850 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600792.190904 m, matrix 600792.190904 m, up +113.535 mm, across 27.850 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131001223': height 600819.861051 m, matrix 600819.861051 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600819.940100 m, matrix 600819.931192 m, up +70.141 mm, across 34.158 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600819.940100 m, matrix 600819.931192 m, up +70.141 mm, across 34.158 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333320': height 601279.095728 m, matrix 601279.095728 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601279.177961 m, matrix 601279.177961 m, up +82.233 mm, across 63.589 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601279.177961 m, matrix 601279.177961 m, up +82.233 mm, across 63.589 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333321': height 601223.847533 m, matrix 601223.847533 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601223.994084 m, matrix 601223.985528 m, up +137.995 mm, across 24.586 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601223.994084 m, matrix 601223.985528 m, up +137.995 mm, across 24.586 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333322': height 601135.797357 m, matrix 601135.797357 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601135.932793 m, matrix 601135.864468 m, up +67.112 mm, across 35.840 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601135.932793 m, matrix 601135.864468 m, up +67.112 mm, across 35.840 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333323': height 601127.189797 m, matrix 601127.189797 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601127.288804 m, matrix 601127.297397 m, up +107.600 mm, across 48.976 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601127.288804 m, matrix 601127.297397 m, up +107.600 mm, across 48.976 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333330': height 601167.924569 m, matrix 601167.924569 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601168.009383 m, matrix 601168.009383 m, up +84.814 mm, across 33.846 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601168.009383 m, matrix 601168.009383 m, up +84.814 mm, across 33.846 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333331': height 601185.750658 m, matrix 601185.750658 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601185.840926 m, matrix 601185.849484 m, up +98.826 mm, across 49.622 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601185.840926 m, matrix 601185.849484 m, up +98.826 mm, across 49.622 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333332': height 601097.741290 m, matrix 601097.741290 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601097.833679 m, matrix 601097.833679 m, up +92.389 mm, across 22.328 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601097.833679 m, matrix 601097.833679 m, up +92.389 mm, across 22.328 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0112333333': height 601088.985714 m, matrix 601088.985714 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601089.077808 m, matrix 601089.077808 m, up +92.095 mm, across 34.083 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601089.077808 m, matrix 601089.077808 m, up +92.095 mm, across 34.083 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222200': height 601585.493611 m, matrix 601585.493611 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601585.560195 m, matrix 601585.568680 m, up +75.069 mm, across 41.566 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601585.560195 m, matrix 601585.568680 m, up +75.069 mm, across 41.566 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222201': height 601546.771135 m, matrix 601546.771135 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601546.864978 m, matrix 601546.873464 m, up +102.329 mm, across 29.465 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601546.864978 m, matrix 601546.873464 m, up +102.329 mm, across 29.465 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222202': height 601968.134987 m, matrix 601968.134987 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601968.240556 m, matrix 601968.240556 m, up +105.569 mm, across 31.945 mm, 6 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601968.240556 m, matrix 601968.240556 m, up +105.569 mm, across 31.945 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222203': height 601861.571535 m, matrix 601861.571535 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601861.688329 m, matrix 601861.628505 m, up +56.970 mm, across 28.796 mm, 6 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601861.688329 m, matrix 601861.628505 m, up +56.970 mm, across 28.796 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222210': height 601456.836678 m, matrix 601456.836678 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601456.869865 m, matrix 601456.869865 m, up +33.187 mm, across 40.522 mm, 5 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601456.869865 m, matrix 601456.869865 m, up +33.187 mm, across 40.522 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222211': height 601803.392659 m, matrix 601803.392659 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601803.530092 m, matrix 601803.461739 m, up +69.080 mm, across 22.948 mm, 6 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601803.530092 m, matrix 601803.461739 m, up +69.080 mm, across 22.948 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222222': height 601107.498417 m, matrix 601107.498417 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601107.617988 m, matrix 601107.617988 m, up +119.571 mm, across 65.282 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601107.617988 m, matrix 601107.617988 m, up +119.571 mm, across 65.282 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222223': height 601071.768150 m, matrix 601071.768150 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601071.814000 m, matrix 601071.805401 m, up +37.251 mm, across 28.467 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601071.814000 m, matrix 601071.805401 m, up +37.251 mm, across 28.467 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222230': height 601758.683539 m, matrix 601758.683539 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601758.749274 m, matrix 601758.740711 m, up +57.172 mm, across 25.516 mm, 6 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601758.749274 m, matrix 601758.740711 m, up +57.172 mm, across 25.516 mm, 2 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222321': height 601162.291005 m, matrix 601162.291005 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601162.360747 m, matrix 601162.369313 m, up +78.308 mm, across 48.110 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601162.360747 m, matrix 601162.369313 m, up +78.308 mm, across 48.110 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0113222323': height 601112.601514 m, matrix 601112.601514 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601112.617333 m, matrix 601112.685751 m, up +84.237 mm, across 53.299 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601112.617333 m, matrix 601112.685751 m, up +84.237 mm, across 53.299 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111010': height 601192.147724 m, matrix 601192.147724 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601192.221717 m, matrix 601192.230343 m, up +82.620 mm, across 31.719 mm, 4 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601192.221717 m, matrix 601192.230343 m, up +82.620 mm, across 31.719 mm, 3 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111011': height 601059.484263 m, matrix 601059.484263 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601059.586850 m, matrix 601059.578223 m, up +93.960 mm, across 24.792 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601059.586850 m, matrix 601059.578223 m, up +93.960 mm, across 24.792 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111012': height 601133.486412 m, matrix 601133.486412 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601133.566860 m, matrix 601133.566860 m, up +80.448 mm, across 42.831 mm, 3 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601133.566860 m, matrix 601133.566860 m, up +80.448 mm, across 42.831 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111013': height 600985.685703 m, matrix 600985.685703 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600985.741511 m, matrix 600985.741511 m, up +55.808 mm, across 43.509 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600985.741511 m, matrix 600985.741511 m, up +55.808 mm, across 43.509 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111100': height 601026.463362 m, matrix 601026.463362 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 601026.574787 m, matrix 601026.566158 m, up +102.796 mm, across 14.099 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 601026.574787 m, matrix 601026.566158 m, up +102.796 mm, across 14.099 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111101': height 600993.329044 m, matrix 600993.329044 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600993.411596 m, matrix 600993.402966 m, up +73.922 mm, across 10.214 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600993.411596 m, matrix 600993.402966 m, up +73.922 mm, across 10.214 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111102': height 600918.560599 m, matrix 600918.560599 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600918.674358 m, matrix 600918.683024 m, up +122.426 mm, across 36.334 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600918.674358 m, matrix 600918.683024 m, up +122.426 mm, across 36.334 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111103': height 600866.488217 m, matrix 600866.488217 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600866.592939 m, matrix 600866.541908 m, up +53.691 mm, across 49.622 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600866.592939 m, matrix 600866.541908 m, up +53.691 mm, across 49.622 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111110': height 600977.952019 m, matrix 600977.952019 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600978.023167 m, matrix 600978.014535 m, up +62.516 mm, across 35.368 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600978.023167 m, matrix 600978.014535 m, up +62.516 mm, across 35.368 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111111': height 600977.835663 m, matrix 600977.835663 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600977.891747 m, matrix 600977.891747 m, up +56.084 mm, across 31.989 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600977.891747 m, matrix 600977.891747 m, up +56.084 mm, across 31.989 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111112': height 600873.280856 m, matrix 600873.280856 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600873.391063 m, matrix 600873.322686 m, up +41.829 mm, across 36.054 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600873.391063 m, matrix 600873.322686 m, up +41.829 mm, across 36.054 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111113': height 600899.146469 m, matrix 600899.146469 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600899.242886 m, matrix 600899.234215 m, up +87.746 mm, across 14.467 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600899.242886 m, matrix 600899.234215 m, up +87.746 mm, across 14.467 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111120': height 600854.867546 m, matrix 600854.867546 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600854.945500 m, matrix 600854.954203 m, up +86.657 mm, across 43.215 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600854.945500 m, matrix 600854.954203 m, up +86.657 mm, across 43.215 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111121': height 600808.630723 m, matrix 600808.630723 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600808.735829 m, matrix 600808.735829 m, up +105.107 mm, across 26.472 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600808.735829 m, matrix 600808.735829 m, up +105.107 mm, across 26.472 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111123': height 600834.887214 m, matrix 600834.887214 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600835.035544 m, matrix 600834.967148 m, up +79.934 mm, across 46.857 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600835.035544 m, matrix 600834.967148 m, up +79.934 mm, across 46.857 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111130': height 600812.718521 m, matrix 600812.718521 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600812.829309 m, matrix 600812.778330 m, up +59.809 mm, across 42.819 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600812.829309 m, matrix 600812.778330 m, up +59.809 mm, across 42.819 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111131': height 600852.745628 m, matrix 600852.745628 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600852.892354 m, matrix 600852.832659 m, up +87.032 mm, across 13.600 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600852.892354 m, matrix 600852.832659 m, up +87.032 mm, across 13.600 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111132': height 600833.920509 m, matrix 600833.920509 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600834.063450 m, matrix 600834.012530 m, up +92.021 mm, across 40.978 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600834.063450 m, matrix 600834.012530 m, up +92.021 mm, across 40.978 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111133': height 600848.949699 m, matrix 600848.949699 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600849.073406 m, matrix 600849.064661 m, up +114.961 mm, across 16.313 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600849.073406 m, matrix 600849.064661 m, up +114.961 mm, across 16.313 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111310': height 600877.944710 m, matrix 600877.944710 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600878.041524 m, matrix 600877.981884 m, up +37.174 mm, across 30.627 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600878.041524 m, matrix 600877.981884 m, up +37.174 mm, across 30.627 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111311': height 600902.967616 m, matrix 600902.967616 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600903.052731 m, matrix 600903.052731 m, up +85.115 mm, across 37.347 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600903.052731 m, matrix 600903.052731 m, up +85.115 mm, across 37.347 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111313': height 600855.566489 m, matrix 600855.566489 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600855.602409 m, matrix 600855.593589 m, up +27.099 mm, across 26.570 mm, 1 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600855.602409 m, matrix 600855.593589 m, up +27.099 mm, across 26.570 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000000': height 600989.190322 m, matrix 600989.190322 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600989.242625 m, matrix 600989.251259 m, up +60.937 mm, across 42.823 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600989.242625 m, matrix 600989.251259 m, up +60.937 mm, across 42.823 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000001': height 600935.809579 m, matrix 600935.809579 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'boulder': built, height 600935.857685 m, matrix 600935.857685 m, up +48.106 mm, across 23.131 mm, 2 colliders
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600935.857685 m, matrix 600935.857685 m, up +48.106 mm, across 23.131 mm, 4 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000322': height 600737.385077 m, matrix 600737.385077 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600737.441796 m, matrix 600737.501423 m, up +116.346 mm, across 10.312 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000323': height 600701.933539 m, matrix 600701.933539 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600702.003273 m, matrix 600701.994369 m, up +60.831 mm, across 21.913 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000332': height 600783.390189 m, matrix 600783.390189 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600783.465096 m, matrix 600783.465096 m, up +74.907 mm, across 40.734 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002000': height 600670.652679 m, matrix 600670.652679 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600670.713966 m, matrix 600670.722900 m, up +70.221 mm, across 47.957 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002001': height 600712.055622 m, matrix 600712.055622 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600712.176420 m, matrix 600712.176420 m, up +120.797 mm, across 12.923 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002002': height 600621.578880 m, matrix 600621.578880 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600621.692051 m, matrix 600621.632507 m, up +53.626 mm, across 19.384 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002003': height 600611.212945 m, matrix 600611.212945 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600611.253573 m, matrix 600611.304152 m, up +91.208 mm, across 29.413 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002010': height 600756.718432 m, matrix 600756.718432 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600756.773183 m, matrix 600756.782121 m, up +63.689 mm, across 49.363 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002011': height 600687.686055 m, matrix 600687.686055 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600687.767752 m, matrix 600687.758814 m, up +72.758 mm, across 47.369 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002012': height 600662.447645 m, matrix 600662.447645 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600662.555781 m, matrix 600662.555781 m, up +108.137 mm, across 49.317 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002013': height 600650.226566 m, matrix 600650.226566 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600650.292594 m, matrix 600650.301570 m, up +75.004 mm, across 28.918 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002021': height 600590.055851 m, matrix 600590.055851 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600590.151275 m, matrix 600590.160286 m, up +104.435 mm, across 25.383 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002023': height 600609.963337 m, matrix 600609.963337 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600609.997704 m, matrix 600610.006753 m, up +43.417 mm, across 63.667 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002030': height 600637.633034 m, matrix 600637.633034 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600637.747537 m, matrix 600637.756550 m, up +123.516 mm, across 33.912 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002031': height 600636.180208 m, matrix 600636.180208 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600636.260879 m, matrix 600636.329441 m, up +149.233 mm, across 33.340 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002032': height 600621.152112 m, matrix 600621.152112 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600621.235832 m, matrix 600621.235832 m, up +83.720 mm, across 12.399 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002033': height 600629.613827 m, matrix 600629.613827 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600629.735458 m, matrix 600629.726405 m, up +112.578 mm, across 27.977 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002100': height 600661.735505 m, matrix 600661.735505 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600661.860424 m, matrix 600661.869364 m, up +133.858 mm, across 28.743 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002101': height 600671.004647 m, matrix 600671.004647 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600671.168186 m, matrix 600671.108574 m, up +103.927 mm, across 13.487 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002102': height 600604.442012 m, matrix 600604.442012 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600604.550642 m, matrix 600604.491062 m, up +49.050 mm, across 49.971 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002103': height 600659.409731 m, matrix 600659.409731 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600659.511264 m, matrix 600659.442697 m, up +32.965 mm, across 51.806 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002110': height 600719.170170 m, matrix 600719.170170 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600719.273167 m, matrix 600719.273167 m, up +102.997 mm, across 35.367 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002111': height 600790.562261 m, matrix 600790.562261 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600790.669132 m, matrix 600790.678076 m, up +115.815 mm, across 49.644 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002112': height 600682.461293 m, matrix 600682.461293 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600682.529946 m, matrix 600682.529946 m, up +68.654 mm, across 74.731 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002113': height 600718.934012 m, matrix 600718.934012 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600718.967912 m, matrix 600719.027518 m, up +93.506 mm, across 29.032 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002120': height 600620.272433 m, matrix 600620.272433 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600620.348664 m, matrix 600620.339649 m, up +67.216 mm, across 20.485 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002121': height 600643.294748 m, matrix 600643.294748 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600643.387314 m, matrix 600643.318732 m, up +23.984 mm, across 44.347 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002122': height 600657.329301 m, matrix 600657.329301 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600657.437312 m, matrix 600657.437312 m, up +108.011 mm, across 33.611 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002123': height 600679.213400 m, matrix 600679.213400 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600679.359236 m, matrix 600679.308749 m, up +95.349 mm, across 55.220 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002130': height 600686.484096 m, matrix 600686.484096 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600686.611264 m, matrix 600686.611264 m, up +127.168 mm, across 44.258 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002131': height 600686.177614 m, matrix 600686.177614 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600686.230493 m, matrix 600686.230493 m, up +52.880 mm, across 28.353 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002132': height 600686.252265 m, matrix 600686.252265 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600686.343060 m, matrix 600686.343060 m, up +90.795 mm, across 43.661 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002133': height 600659.969464 m, matrix 600659.969464 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600660.127463 m, matrix 600660.067904 m, up +98.441 mm, across 43.010 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002201': height 600607.697818 m, matrix 600607.697818 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600607.814770 m, matrix 600607.755288 m, up +57.470 mm, across 44.943 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002203': height 600568.638106 m, matrix 600568.638106 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600568.690934 m, matrix 600568.690934 m, up +52.828 mm, across 37.062 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002210': height 600616.136965 m, matrix 600616.136965 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600616.244092 m, matrix 600616.244092 m, up +107.127 mm, across 37.285 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002211': height 600620.593645 m, matrix 600620.593645 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600620.673628 m, matrix 600620.664538 m, up +70.893 mm, across 37.349 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002212': height 600599.648919 m, matrix 600599.648919 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600599.722406 m, matrix 600599.722406 m, up +73.486 mm, across 41.056 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002213': height 600620.656888 m, matrix 600620.656888 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600620.772033 m, matrix 600620.762905 m, up +106.017 mm, across 38.821 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002221': height 600523.736601 m, matrix 600523.736601 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600523.865257 m, matrix 600523.856093 m, up +119.493 mm, across 28.560 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002223': height 600496.221250 m, matrix 600496.221250 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600496.336478 m, matrix 600496.336478 m, up +115.228 mm, across 36.487 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002230': height 600552.219047 m, matrix 600552.219047 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600552.334979 m, matrix 600552.284700 m, up +65.653 mm, across 48.956 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002231': height 600579.560313 m, matrix 600579.560313 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600579.656283 m, matrix 600579.656283 m, up +95.970 mm, across 69.871 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002232': height 600510.535900 m, matrix 600510.535900 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600510.643182 m, matrix 600510.583762 m, up +47.862 mm, across 69.136 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002233': height 600517.699126 m, matrix 600517.699126 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600517.830064 m, matrix 600517.839268 m, up +140.142 mm, across 26.328 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002300': height 600645.315969 m, matrix 600645.315969 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600645.434384 m, matrix 600645.434384 m, up +118.414 mm, across 38.877 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002301': height 600634.018457 m, matrix 600634.018457 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600634.050492 m, matrix 600634.110010 m, up +91.553 mm, across 55.184 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002302': height 600596.547959 m, matrix 600596.547959 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600596.612369 m, matrix 600596.621499 m, up +73.540 mm, across 32.528 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131002303': height 600621.550061 m, matrix 600621.550061 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600621.608724 m, matrix 600621.608724 m, up +58.663 mm, across 34.891 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0130111331': height 600738.917436 m, matrix 600738.917436 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600739.032442 m, matrix 600739.023584 m, up +106.148 mm, across 16.923 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000222': height 600736.705662 m, matrix 600736.705662 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600736.825725 m, matrix 600736.816828 m, up +111.166 mm, across 13.863 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000223': height 600738.876983 m, matrix 600738.876983 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600738.944013 m, matrix 600738.944013 m, up +67.029 mm, across 30.968 mm, 5 colliders
+[RockPrecisionFixDiag]   quad 'Kerbin Xn0131000233': height 600788.083288 m, matrix 600788.083288 m, up 0.000 mm, across 0.000 mm
+[RockPrecisionFixDiag]     holder 'cactus': built, height 600788.105235 m, matrix 600788.164853 m, up +81.565 mm, across 35.977 mm, 5 colliders
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 120: ground 600842.407028 m, vertex 600839.813711 m, -2593.316 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 104: ground 600842.309591 m, vertex 600843.625230 m, +1315.640 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 35: ground 600842.476606 m, vertex 600844.487497 m, +2010.891 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 62: ground 600842.467495 m, vertex 600842.912157 m, +444.662 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 173: ground 600842.181185 m, vertex 600841.525458 m, -655.727 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 15: ground 600842.348351 m, vertex 600840.527195 m, -1821.156 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 21: ground 600842.385057 m, vertex 600841.625380 m, -759.677 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 34: ground 600842.246745 m, vertex 600843.783416 m, +1536.671 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 0: ground 600842.556003 m, vertex 600841.284199 m, -1271.804 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 vertex 90: ground 600842.335489 m, vertex 600844.349981 m, +2014.492 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'boulder' #0 collider: physics 600842.300930 m, drawn 600842.271028 m, up +29.913 mm, across 32.821 mm
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 53: ground 600848.025335 m, vertex 600847.434727 m, -590.608 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 33: ground 600848.059771 m, vertex 600854.961859 m, +6902.088 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 334: ground 600847.929863 m, vertex 600851.422903 m, +3493.040 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 100: ground 600848.144812 m, vertex 600851.977347 m, +3832.535 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 159: ground 600848.052723 m, vertex 600849.707571 m, +1654.848 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 418: ground 600847.948536 m, vertex 600853.398569 m, +5450.033 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 303: ground 600848.136070 m, vertex 600853.716285 m, +5580.215 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 125: ground 600848.097890 m, vertex 600850.685303 m, +2587.413 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 340: ground 600847.964272 m, vertex 600850.246522 m, +2282.249 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 vertex 348: ground 600847.931727 m, vertex 600852.501195 m, +4569.468 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #0 collider: physics 600851.216483 m, drawn 600851.198302 m, up +18.183 mm, across 26.747 mm
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 53: ground 600846.439987 m, vertex 600845.627597 m, -812.390 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 33: ground 600846.479419 m, vertex 600855.858334 m, +9378.915 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 334: ground 600846.311953 m, vertex 600851.046481 m, +4734.528 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 100: ground 600846.577971 m, vertex 600851.803510 m, +5225.538 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 159: ground 600846.476141 m, vertex 600848.717034 m, +2240.893 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 418: ground 600846.339062 m, vertex 600853.731862 m, +7392.800 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 303: ground 600846.567956 m, vertex 600854.166756 m, +7598.801 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 125: ground 600846.519638 m, vertex 600850.046765 m, +3527.127 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 340: ground 600846.361866 m, vertex 600849.448131 m, +3086.265 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 vertex 348: ground 600846.309864 m, vertex 600852.512071 m, +6202.207 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #1 collider: physics 600850.768488 m, drawn 600850.743019 m, up +25.461 mm, across 20.938 mm
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 53: ground 600844.250359 m, vertex 600843.433220 m, -817.139 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 33: ground 600844.226906 m, vertex 600849.336110 m, +5109.204 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 334: ground 600844.332044 m, vertex 600846.560080 m, +2228.036 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 100: ground 600844.164707 m, vertex 600846.996308 m, +2831.600 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 159: ground 600844.227079 m, vertex 600845.215712 m, +988.633 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 418: ground 600844.313765 m, vertex 600848.109462 m, +3795.697 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 303: ground 600844.170906 m, vertex 600848.359886 m, +4188.980 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 125: ground 600844.203484 m, vertex 600845.982810 m, +1779.326 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 340: ground 600844.298675 m, vertex 600845.637770 m, +1339.095 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 vertex 348: ground 600844.335114 m, vertex 600847.405711 m, +3070.598 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #2 collider: physics 600846.455028 m, drawn 600846.384692 m, up +70.328 mm, across 28.423 mm
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 53: ground 600843.314737 m, vertex 600842.875885 m, -438.852 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 33: ground 600843.342334 m, vertex 600848.234148 m, +4891.814 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 334: ground 600843.251382 m, vertex 600845.714549 m, +2463.167 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 100: ground 600843.349960 m, vertex 600846.109935 m, +2759.975 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 159: ground 600843.332871 m, vertex 600844.493872 m, +1161.001 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 418: ground 600843.261695 m, vertex 600847.120961 m, +3859.266 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 303: ground 600843.348925 m, vertex 600847.347759 m, +3998.835 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 125: ground 600843.350722 m, vertex 600845.190057 m, +1839.335 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 340: ground 600843.270901 m, vertex 600844.877242 m, +1606.341 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 vertex 348: ground 600843.256453 m, vertex 600846.482148 m, +3225.695 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #3 collider: physics 600845.574722 m, drawn 600845.555033 m, up +19.690 mm, across 5.135 mm
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 53: ground 600862.673806 m, vertex 600862.194702 m, -479.104 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 33: ground 600862.668587 m, vertex 600867.752599 m, +5084.012 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 334: ground 600862.662981 m, vertex 600865.139861 m, +2476.881 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 100: ground 600862.670228 m, vertex 600865.548391 m, +2878.162 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 159: ground 600862.676807 m, vertex 600863.872908 m, +1196.101 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 418: ground 600862.669605 m, vertex 600866.598706 m, +3929.101 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 303: ground 600862.670354 m, vertex 600866.832487 m, +4162.134 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 125: ground 600862.662818 m, vertex 600864.594511 m, +1931.693 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 340: ground 600862.674318 m, vertex 600864.271183 m, +1596.865 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 vertex 348: ground 600862.654452 m, vertex 600865.935977 m, +3281.525 mm above the ground
+[RockPrecisionFixDiag]   rock 'Kerbin Xn0131000203' 'cactus' #4 collider: physics 600864.970658 m, drawn 600864.973632 m, up -2.974 mm, across 1.038 mm
+[RockPrecisionFixDiag] End of record 8: 173 quads with rocks, 306 holders (0 not built yet); nearest quad 'Kerbin Xn0131000203': 6 rocks, 60 vertices measured, 0 without ground under them, 6 colliders measured

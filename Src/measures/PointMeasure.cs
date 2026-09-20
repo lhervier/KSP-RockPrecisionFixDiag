@@ -37,20 +37,29 @@ namespace com.github.lhervier.ksp.rockprecisionfixdiag.measures
         {
             Vector3d point = toWorld.MultiplyPoint3x4(vertex);
 
-            // Down the vertical, from high above the vertex, onto the terrain only. The rock itself has no
-            // collider and cannot stop the ray.
+            // Down the vertical, from high above the vertex, onto the terrain layer. Stock rocks have no collider,
+            // but Kopernicus can give them one on that same layer, which would stop the ray on top of the rock:
+            // every hit is kept, and the nearest one on a terrain quad is the ground.
             Vector3d up = (point - body.position).normalized;
-            RaycastHit hit;
             Vector3 start = (Vector3)(point + up * Constants.RAY_START_HEIGHT);
-            bool onGround = Physics.Raycast(start, -(Vector3)up, out hit, 2f * Constants.RAY_START_HEIGHT,
-                    1 << Constants.TERRAIN_LAYER, QueryTriggerInteraction.Ignore)
-                && hit.collider.GetComponent<PQ>() != null;
+            RaycastHit[] hits = Physics.RaycastAll(start, -(Vector3)up, 2f * Constants.RAY_START_HEIGHT,
+                1 << Constants.TERRAIN_LAYER, QueryTriggerInteraction.Ignore);
+            double groundM = double.NaN;
+            float groundDistance = float.MaxValue;
+            foreach (RaycastHit hit in hits)
+            {
+                if (hit.distance < groundDistance && hit.collider.GetComponent<PQ>() != null)
+                {
+                    groundM = HeightUtils.HeightOf(hit.point, body);
+                    groundDistance = hit.distance;
+                }
+            }
 
             return new PointMeasure
             {
                 VertexIndex = vertexIndex,
                 HeightM = HeightUtils.HeightOf(point, body),
-                GroundM = onGround ? HeightUtils.HeightOf(hit.point, body) : double.NaN
+                GroundM = groundM
             };
         }
     }

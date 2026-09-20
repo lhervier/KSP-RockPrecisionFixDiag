@@ -98,6 +98,65 @@ grow along the flight, though: 9.0 mm on average (root mean square) over all the
 into the flight, and those still there after the crash, are drawn off the ground as much as those of a
 load, and no more.
 
+## The colliders
+
+The readings kept under [diag](../diag/README.md#the-colliders) follow
+[the protocol with colliders on the scatter](measuring-the-rocks.md#with-colliders-on-the-scatter):
+[`ref-kerbin-scatter-collider-eva.sfs`](../diag/ref-kerbin-scatter-collider-eva.sfs), a kerbal standing on
+a boulder in a desert of Kerbin, loaded six times on stock and six times with
+[Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix), with a picture of the
+kerbal's feet at each load. Every record names the same nearest quad and measures the same six objects
+with a collider: one `boulder` and five `cactus`. *Up* is positive when the collider stands above the
+object one sees.
+
+**Stock**
+
+| load | *up* of the six colliders | largest *across* | *up* of their holder's matrix |
+|---|---|---|---|
+| [1](../diag/runs/collider-stock-load1.log) | −59.1 to +15.3 mm | 42.6 mm | +51.2 mm |
+| [2](../diag/runs/collider-stock-load2.log) | −68.7 to +2.3 mm | 83.3 mm | −9.4 mm |
+| [3](../diag/runs/collider-stock-load3.log) | +39.2 to +104.2 mm | 38.7 mm | +10.1 mm |
+| [4](../diag/runs/collider-stock-load4.log) | −2.3 to +73.3 mm | 23.4 mm | 0.000 mm |
+| [5](../diag/runs/collider-stock-load5.log) | −50.8 to +5.0 mm | 37.8 mm | +11.2 mm |
+| [6](../diag/runs/collider-stock-load6.log) | −2.0 to +87.7 mm | 52.5 mm | −69.3 mm |
+
+**With Terrain Precision Fix**
+
+| load | *up* of the six colliders | largest *across* | *up* of their holder's matrix |
+|---|---|---|---|
+| [1](../diag/runs/collider-tpf-load1.log) | −36.2 to +0.1 mm | 44.5 mm | +119.9 mm |
+| [2](../diag/runs/collider-tpf-load2.log) | −55.5 to +37.7 mm | 27.7 mm | +1.1 mm |
+| [3](../diag/runs/collider-tpf-load3.log) | −3.0 to +70.3 mm | 32.8 mm | +55.6 mm |
+| [4](../diag/runs/collider-tpf-load4.log) | −4.4 to +32.2 mm | 24.5 mm | +10.9 mm |
+| [5](../diag/runs/collider-tpf-load5.log) | −70.2 to −33.9 mm | 28.7 mm | +151.7 mm |
+| [6](../diag/runs/collider-tpf-load6.log) | −48.2 to +44.1 mm | 38.7 mm | +75.1 mm |
+
+**The collider of an object is not where that object is drawn**, in either series. Over the 36 readings of
+each, the gap runs from −68.7 to +104.2 mm on stock, 48.1 mm on average (root mean square), and from
+−70.2 to +70.3 mm with Terrain Precision Fix, 31.6 mm on average; sideways, up to 83.3 mm and 44.5 mm. Each
+object is drawn afresh at every load: over its six loads, the boulder alone covers 102 mm on stock and
+72 mm with Terrain Precision Fix, and the widest cactus 163 mm and 114 mm.
+
+**It does not follow the holder.** On load 4 of the stock series, the holder of those six objects sits
+exactly on its quad, *up* and *across* 0.000 mm, and its colliders still stand up to 73 mm from the
+objects they belong to. Whatever separates the two happens below the holder, where each object carries its
+own position under it.
+
+**Seen from the ground.** On the boulder the kerbal stands on, the gap reads −4.3, −48.1, +48.2, +10.2,
+−9.1 and +53.7 mm over the stock loads, and −22.5, +37.7, +29.9, +2.3, −33.9 and +14.9 mm with Terrain
+Precision Fix. The pictures kept beside the logs sort themselves in the same order: boots sunk to the
+ankles where the gap is most negative, boots clear of the rock where it is most positive. They are
+illustrations, not measurements: the viewpoint is not exactly the same twice, and a kerbal sinks a little
+into whatever it stands on.
+
+**What it changes.** Everything else this mod measures leaves the game as it was: stock scatter has no
+collider, so an object drawn a few centimetres off changes nothing for a craft. With colliders on the
+scatter, it does: the rock a craft hits is not the rock its pilot sees, by several centimetres, drawn
+afresh at every load. Terrain Precision Fix does not settle it. What
+[Rock Precision Fix](https://github.com/lhervier/KSP-RockPrecisionFix) makes of it, and the third series,
+with both fixes installed, are on
+[its own page](https://github.com/lhervier/KSP-RockPrecisionFix/blob/main/docs/checking-the-culprit.md).
+
 ## The holder pools
 
 Both series were taken with [Terrain Precision Fix](https://github.com/lhervier/KSP-TerrainPrecisionFix)
