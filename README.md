@@ -1,5 +1,7 @@
 # Rock Precision Fix Diag
 
+**⚠️ Work in progress.** This is an active investigation, not a finished mod. The figures, the code and the conclusions on this page can still change, and several questions are still open.
+
 A measuring instrument for KSP 1.12. It lets you check, on your own install, a claim about the terrain
 scatter drawn around your craft — the rocks, and around the KSC the grass and the trees:
 
